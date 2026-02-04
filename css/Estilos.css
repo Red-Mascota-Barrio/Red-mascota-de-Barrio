@@ -1,0 +1,122 @@
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-titulo img {
+  width: 45px;
+}
+
+.logo-titulo h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.nav-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+
+.nav-horizontal a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 6px 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-horizontal a:hover {
+  color: #4CAF50;
+}
+
+.btn-login {
+  border: 1px solid #4CAF50;
+  border-radius: 6px;
+}
+
+.btn-register {
+  background-color: #4CAF50;
+  color: white !important;
+  border-radius: 6px;
+}
+
+.btn-register:hover {
+  background-color: #43a047;
+}
+
+.banner-pc {
+  background-color: #3bb6a4;
+  padding: 25px 40px;
+  height: 100%;
+  position:absolute;
+  width: 100%;
+}
+
+.banner-contenido {
+  display: flex;
+  align-items: flex-start;
+  gap: 350px;
+  align-items: center;
+  
+}
+
+.banner-img {
+  background: white;
+  padding: 12px;
+  border: 2px solid #2a8f83;
+}
+
+.banner-img img {
+  width: 800px;
+  display: block;
+}
+
+.banner-texto {
+  color: white;
+  max-width: 520px;
+}
+
+.banner-texto h2 {
+  margin-top: 0;
+  font-size: 55px;
+}
+
+.frase {
+  font-style: italic;
+  margin: 10px 0;
+}
+
+.descripcion {
+  font-size: 1,5em;
+  line-height: 1.5;
+}
+
+.btn-leer {
+  margin-top: 15px;
+  padding: 6px 30px;
+  border: 2px solid #1e6f65;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-leer:hover {
+  background-color: #1e6f65;
+}
