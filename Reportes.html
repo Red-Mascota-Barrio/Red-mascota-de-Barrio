@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes de la comunidad</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link rel="stylesheet" href="Reportes.css">
+
+</head>
+<body>
+
+
+    <header>
+        <div class="logo">
+            
+            <img src="img/logo.png" alt="logopricipal">
+            <p>Red de Mascotas de Barrio</p>
+        </div>
+
+        <nav class="nav-horizontal">
+            <a href="#Inicio">Inicio</a>
+            <a href="#Adopta">Adopta</a>
+            <a href="#Foros">Foros</a>
+            <a href="#Propietarios">Propietarios</a>
+            <a href="#Mascotas">Mascotas</a>
+            <button class="perfil"></button>
+        </nav>
+
+        <div class="perfil"></div>
+
+    </header>
+
+    <div class="contenedor">
+
+    
+    <main class="principal">
+
+        <h1>Reportes de la Comunidad</h1>
+        <p class="subtitulo">
+        </p>
+
+          <div class="reporte">
+            <span class="estado pendiente">Pendiente</span>
+
+            <p><b></b></p>
+            <p>
+            </p>
+
+            <div class="acciones">
+                <small></small>
+                <button onclick="verDetalles('RPT001')">
+                    Ver Detalles
+                </button>
+            </div>
+        </div>
+
+         <div class="reporte">
+            <span class="estado revision">En Revisión</span>
+ 
+            </p>
+
+            <div class="acciones">
+                <small></small>
+                <button onclick="verDetalles('RPT002')">
+                    Ver Detalles
+                </button>
+            </div>
+        </div>
+
+        <div class="reporte">
+            <span class="estado resuelto">Resuelto</span>
+            </p>
+
+            <div class="acciones">
+                <small></small>
+                <button onclick="verDetalles('RPT003')">
+                    Ver Detalles
+                </button>
+            </div>
+        </div>
+        
+
+        
+        <div class="nuevo">
+            <button onclick="crearReporte()">
+                Crear Nuevo Reporte
+            </button>
+        </div>
+
+        
+        <div class="paginacion">
+            <button onclick="cambiarPagina(-1)">❮</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button onclick="cambiarPagina(1)">❯</button>
+        </div>
+
+    </main>
+
+    
+    <aside class="sidebar">
+
+        <h3>Estadísticas de Reportes</h3>
+
+        <div class="estadistica">
+            <p>Pendientes</p>
+            <div class="barra azul"></div>
+
+            <p>En Revisión</p>
+            <div class="barra verde"></div>
+
+            <p>Resueltos</p>
+            <div class="barra roja"></div>
+
+
+        </div>
+
+         </ul>
+
+        <h3>Guías y Políticas</h3>
+        <ul class="links">
+            <li><a href="#">Preguntas Frecuentes</a></li>
+        </ul>
+
+    </aside>
+
+</div>
+
+    
+</body>
+</html>    

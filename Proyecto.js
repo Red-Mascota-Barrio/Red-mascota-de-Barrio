@@ -1,13 +1,32 @@
-function irA(seccion){
-    alert("Ir a: " + seccion);
+function irInicio(){
+    alert("Vas al inicio");
 }
 
-function crearCuenta(){
-    alert("Crear nuevo foro");
+function irForos(){
+    alert("Sección de foros");
 }
 
-function verCategoria(cat){
-    alert("Categoría: " + cat);
+function irContacto(){
+    alert("Página de contacto");
+}
+
+function verPerfil(){
+    alert("Perfil de usuario");
+}
+
+function crearForo(){
+    alert("Formulario para crear nuevo foro");
+}
+
+function entrarForo(nombre){
+    alert("Entraste al foro de " + nombre);
+}
+
+function filtrar(categoria){
+    document.getElementById("perros").style.display = "none";
+    document.getElementById("gatos").style.display = "none";
+
+    document.getElementById(categoria).style.display = "block";
 }
 
 function anterior(){
