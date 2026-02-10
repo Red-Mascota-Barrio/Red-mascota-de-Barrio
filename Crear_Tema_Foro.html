@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red De Mascotas</title>
+    <link rel="icon" type="image/x-icon" href="img/LogoPagina.png">
+    <link rel="stylesheet" href="css/style_Crear_Tema_Foro.css">
+
+</head>
+
+<body>
+
+
+    <header>
+        <div class="logo">
+
+            <img src="img/logopricipal.jpg" alt="logopricipal">
+            <p>Red de Mascotas de Barrio</p>
+        </div>
+
+        <nav class="nav-horizontal">
+            <a href="#Inicio">Inicio</a>
+            <a href="#Adopta">Adopta</a>
+            <a href="#Foros">Foros</a>
+            <a href="#Propietarios">Propietarios</a>
+            <a href="#Mascotas">Mascotas</a>
+        </nav>
+
+        <div class="perfil">
+            <img src="" alt="">
+        </div>
+
+    </header>
+    <main class="contenedor">
+
+
+        <section class="formulario-foro">
+            <form>
+
+                <section>
+                    <label for="nombre">Nombre del Foro</label>
+                    <input type="text" id="nombre" placeholder="Introduce el nombre del foro">
+                </section>
+
+                <section>
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" placeholder="Descripción sobre el foro"></textarea>
+                </section>
+
+                <section>
+                    <label for="categoria">Selecciona una categoría</label>
+                    <select id="categoria">
+                        <option>General</option>
+                    </select>
+                </section>
+
+                <fieldset>
+                    <legend>Etiquetas</legend>
+                    <label><input type="checkbox"> Perros</label>
+                    <label><input type="checkbox"> Interesantes</label>
+                    <label><input type="checkbox"> Necesita</label>
+                    <label><input type="checkbox"> Ayuda</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Visibilidad</legend>
+                    <label><input type="radio" name="visibilidad"> Público</label>
+                    <label><input type="radio" name="visibilidad"> Privado</label>
+                </fieldset>
+
+                <section>
+                    <label for="contenido">Contenido</label>
+                    <textarea id="contenido" placeholder="Escribe el contenido del foro..."></textarea>
+                </section>
+
+                <section>
+                    <label for="imagen">Subir Imagen</label>
+                    <input type="file" id="imagen">
+                </section>
+
+                <footer class="botones">
+                    <button type="button" class="cancelar">Cancelar</button>
+                    <button type="submit" class="crear">Crear Foro</button>
+                </footer>
+
+            </form>
+        </section>
+
+        <aside class="preview-foro">
+            <h1>Crea tu Nuevo Foro de Mascotas</h1>
+            <p>Comparte tu pasión por los animales y conéctate con otros amantes de las mascotas.</p>
+        </aside>
+
+    </main>
+
+</body>
+
+</html>
