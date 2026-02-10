@@ -120,6 +120,24 @@ nav a:hover {
     #b3b3b3;
 }
 
-header img {
-    width: 40px;
+header div img {
+    width: 63px;
+}
+
+header .logo {
+    align-content: center;
+    display: flex;
+}
+
+header .logo p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.acciones .guardar:hover {
+    background: linear-gradient(135deg ,  #32aa8e 0%, #4c7a94 100%);
+}
+
+.acciones .cancelar:hover {
+    background-color: #919191;
 }
