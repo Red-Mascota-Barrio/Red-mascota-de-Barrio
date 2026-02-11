@@ -63,8 +63,6 @@ header .perfil {
 }
 
 
-
-
 *{
     margin:0;
     padding:0;
@@ -82,7 +80,10 @@ header .perfil {
 }
 
 .logo{
-    font-weight:bold;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .menu a{
@@ -135,7 +136,7 @@ header .perfil {
 
 .pendiente{ background:#19c3af; }
 .revision{ background:#5cd4ca; }
-.resuelto{ background:#70eabf; }
+.resuelto{ background:#4cc399; }
 
 .acciones{
     display:flex;
@@ -185,4 +186,9 @@ button:hover{
 .links a{
     text-decoration:none;
     color:#111716;
+}
+
+.nuevo button a{
+    color:white;
+    text-decoration:none;
 }

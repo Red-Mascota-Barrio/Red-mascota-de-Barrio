@@ -9,6 +9,10 @@ body {
   display: flex;
   min-height: 100vh;
 }
+.menu_lateral{
+  color: white;
+  text-decoration: none;
+}
 
 .menu {
   width: 230px;
