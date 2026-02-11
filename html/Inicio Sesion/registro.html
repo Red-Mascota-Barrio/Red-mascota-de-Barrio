@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red De Mascotas</title>
+    <link rel="icon" type="image/x-icon" href="/img/LogoPagina.png">
+    <link rel="stylesheet" href="/css/regitrase.css">
+    
+</head>
+
+<body>
+    <div class="contenedor-login">
+
+        <div class="seccion-imagen">
+            <img src="/img/imagen.png" alt="Logo" class="imagen-login">
+        </div>
+
+
+        <div class="seccion-formulario">
+            <div class="formulario-box">
+                <h1>Registro</h1>
+
+                <form id="formRegistro">
+                    <br>
+                    <div class="grupo-entrada">
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" id="usuario" name="usuario" required>
+                    </div>
+
+                    <div class="grupo-entrada">
+                        <label for="contrasena">Contraseña:</label>
+                        <input type="password" id="contrasena" name="contrasena" required>
+                    </div>
+
+                    <div class="grupo-entrada">
+                        <label for="contrasena2">Confirmar Contraseña:</label>
+                        <input type="password" id="contrasena2" name="contrasena2" required>
+                    </div>
+
+                    <button type="submit" class="boton-iniciar">Registrarse</button>
+
+                </form>
+                <p class="registro-link">¿Ya tienes cuenta? <a href="#">Dale click para Ingresar</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/js/funtionsRegistro.js"></script>
+
+</html>
