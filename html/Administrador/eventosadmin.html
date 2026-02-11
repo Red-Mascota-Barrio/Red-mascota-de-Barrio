@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Red de Mascotas del Barrio</title>
+    <link rel="stylesheet" href="/css/eventos.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <div class="menu">
+            <div class="logo">
+                <img width="200%" src="/img/logo.1.jpg" alt="Patita" class="imagen_logo">
+                <span>Red de Mascotas del Barrio</span>
+            </div>
+
+            <button>Dashboard</button>
+            <button>Usuarios</button>
+            <button>Mascotas</button>
+            <button>Adopciones</button>
+            <button>Eventos</button>
+            <button>Foro</button>
+            <button>Reportes</button>
+
+            <button>Salir</button>
+        </div>
+
+        <div class="contenido">
+
+            <div class="encabezado">
+                <img width="80px" src="/img/logo.1.jpg" alt="Patita" class="icono-logo">
+                <h1>Red de Mascotas del Barrio</h1>
+            </div>
+
+            <h2>Eventos</h2>
+
+            <div class="bloques">
+                <div class="bloque">
+                    <div class="decoracion">
+                        <img width="120px"  src="/img/evento_vacunacion.png" alt="Mascotas en Adopción">
+                        <n>
+                        <p>Mascotas en Adopción</p>
+                        <n>
+                        <h3 id="contadorAdopcion">0</h3>
+
+                        <button class="btn-crear" onclick="crearEvento('adopcion')">Crear</button>
+                    </div>
+                    <input type="date" class="input-fecha">
+                    <input type="time" class="input-hora">
+                </div>
+
+                <div class="bloque">
+                    <div class="decoracion">
+                        <img width="120px" src="/img/activi.1.1.png" alt="Eventos">
+                        <n>
+                        <p>Próximos Eventos</p>
+                        <n>
+                        <h3 id="contadorEventos">0</h3>
+
+                        <button class="btn-crear" onclick="crearEvento('evento')">Crear</button>
+                    </div>
+                    <input type="date" class="input-fecha">
+                    <input type="time" class="input-hora">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

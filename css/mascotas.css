@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #F7F8F4;
+}
+
+.contenedor {
+  display: flex;
+  min-height: 100vh;
+}
+
+.menu {
+  width: 290px;
+  background: linear-gradient(135deg, #4eb69d 0%, rgb(168, 229, 248)100%);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logo {
+  display: flex;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+  gap: 10px;
+}
+
+.imagen_logo {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.menu button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background-color: #3AA6BF;
+}
+
+.contenido {
+  flex: 1;
+  padding: 30px 40px;
+}
+
+.contenido h1 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* ENCABEZADO TABLA */
+thead {
+  background-color: #e0e0e0;
+}
+
+th {
+  padding: 12px;
+  text-align: left;
+}
+
+/* CUERPO TABLA */
+td {
+  padding: 12px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #dff3ef;
+}
+
+.contenido button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #55BFD6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.contenido button:hover {
+  background-color: #4fb3a3;
+}
