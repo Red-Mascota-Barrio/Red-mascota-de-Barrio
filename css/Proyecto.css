@@ -43,10 +43,16 @@
     height: 50px;
 }
 
+.perfil img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .contenedor{
     display: flex;
-    height: calc(100vh - 70px);
+    height: calc(100vh -70px);
 }
 
 
