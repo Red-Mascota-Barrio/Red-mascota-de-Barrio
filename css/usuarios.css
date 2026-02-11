@@ -13,6 +13,11 @@ body {
   min-height: 100vh;
 }
 
+a{
+  color: white;
+  text-decoration: none;
+}
+
 .menu {
   width: 290px;
   background: linear-gradient(135deg, #4eb69d 0%, rgb(168, 229, 248)100%);
