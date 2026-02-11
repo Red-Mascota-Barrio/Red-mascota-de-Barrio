@@ -1,6 +1,15 @@
+html {
+
+  scroll-behavior: smooth;
+
+}
+
 body {
   margin: 0%;
   padding: 0%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #40dab6 0%, #65a1c3 100%);
 
 }
 
@@ -32,7 +41,6 @@ body {
   align-items: center;
   gap: 18px;
 }
-
 
 .nav-horizontal a {
   text-decoration: none;
@@ -67,11 +75,20 @@ body {
 }
 
 .banner-pc {
-  background: linear-gradient(135deg, #40dab6 0%, #65a1c3 100%);
+
   padding: 25px 40px;
-  height: 100%;
-  position: absolute;
-  width: 95%;
+
+}
+
+.banner-pc2 {
+
+  padding: 25px 40px;
+
+}
+
+.banner-pc3 {
+
+  padding: 25px 40px;
 }
 
 .banner-contenido {
@@ -122,8 +139,6 @@ body {
   padding: 6px 10px;
   transition: all 0.3s ease;
 }
-
-/* continuacion inicio */
 
 #gatos {
   color: white;
@@ -211,4 +226,26 @@ button:hover {
 .card img {
 
   border: black solid 4px;
+}
+
+.Flecha {
+  text-align: center;
+  padding-right: 100px;
+  margin-right: 20px;
+  font-size: 50px;
+  color: black;
+  opacity: 0.0;
+  transition: all 0.3s ease;
+
+  cursor: pointer;
+}
+.Flecha:hover {
+    opacity: 1;     
+    color: red;     
+  }
+
+@media (max-width: 768px) {
+  .contenedor {
+    flex-direction: column;
+  }
 }
