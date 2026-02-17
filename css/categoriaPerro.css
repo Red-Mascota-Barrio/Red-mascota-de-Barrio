@@ -1,0 +1,158 @@
+* {
+    
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+body {
+
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4eb69d 0%, rgb(198, 198, 198) 100%);
+    color: #333;
+
+}
+
+.logo{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    width: 50px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    gap: 15px;
+}
+
+header .logo {
+    font-weight: bold;
+}
+
+header nav a {
+    margin: 0 8px;
+    text-decoration: none;
+    color: #555;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+header .perfil {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+    }
+}
+
+.contenedor{
+  display:flex;
+  min-height:90vh;
+  background:linear-gradient(90deg,#3ec6a8,#6aa9b0);
+}
+
+
+.sidebar{
+  width:220px;
+  background:#d9d9d9;
+  padding:20px;
+}
+
+.sidebar h3{
+  margin-bottom:15px;
+}
+
+.btn{
+  width:100%;
+  padding:10px;
+  background:#3ec6a8;
+  border:none;
+  color:white;
+  border-radius:6px;
+  margin-bottom:20px;
+  cursor:pointer;
+}
+
+.categoria{
+  width:100%;
+  padding:8px;
+  margin:5px 0;
+  background:#48b39a;
+  border:none;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+
+.foro-contenido{
+  flex:1;
+  padding:40px;
+}
+
+.foro-contenido h2{
+  margin-bottom:30px;
+  color:#2b2b2b;
+}
+
+
+.tarjetas{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:40px;
+  margin-top: 40px;
+}
+
+.tarjeta{
+  background:#e9e9e9;
+  padding:25px;
+  border-radius:20px;
+  width:300px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  text-align:center;
+}
+
+.tarjeta h3{
+  margin-bottom:15px;
+}
+
+.tarjeta ul{
+  list-style:none;
+  margin-bottom:20px;
+  text-align:left;
+}
+
+.tarjeta ul li{
+  padding:5px 0;
+  border-bottom:1px solid #ccc;
+}
+
+.tarjeta button{
+  background:#dcdcdc;
+  border:none;
+  padding:8px 20px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.tarjeta button:hover{
+  background:#bfbfbf;
+}
