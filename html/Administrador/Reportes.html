@@ -42,6 +42,12 @@
             <div class="reporte">
                 <span class="estado pendiente">Pendiente</span>
 
+                <div class="paginacion">
+      <button onclick="cambiarPagina('pendiente', -1)">Anterior</button>
+      <span id="pagina-pendiente">1</span>
+      <button onclick="cambiarPagina('pendiente', 1)">Siguiente</button>
+    </div>
+
                 <div class="acciones">
                     <small></small>
                     <button onclick="verDetalles('RPT001')">
@@ -52,6 +58,12 @@
 
             <div class="reporte">
                 <span class="estado revision">En Revisión</span>
+
+                 <div class="paginacion">
+      <button onclick="cambiarPagina('revision', -1)">Anterior</button>
+      <span id="pagina-revision">1</span>
+      <button onclick="cambiarPagina('revision', 1)">Siguiente</button>
+    </div>
 
                 </p>
 
@@ -65,7 +77,12 @@
 
             <div class="reporte">
                 <span class="estado resuelto">Resuelto</span>
-                </p>
+                
+                <div class="paginacion">
+      <button onclick="cambiarPagina('resuelto', -1)">Anterior</button>
+      <span id="pagina-resuelto">1</span>
+      <button onclick="cambiarPagina('resuelto', 1)">Siguiente</button>
+    </div>
 
                 <div class="acciones">
                     <small></small>
@@ -84,13 +101,6 @@
             </div>
 
 
-            <div class="paginacion">
-                <button onclick="cambiarPagina(-1)">❮</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button onclick="cambiarPagina(1)">❯</button>
-            </div>
 
         </main>
 

@@ -166,9 +166,24 @@ button:hover{
 
 
 .paginacion{
+    margin-top:10px ;
     display:flex;
     justify-content:center;
     gap:10px;
+    align-items: center;
+}
+
+.paginacion button{
+    background: #1f8f6a;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.paginacion button:hover{
+    background: #146c50;
 }
 
 
