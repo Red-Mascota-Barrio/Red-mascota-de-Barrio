@@ -10,12 +10,10 @@ let botones = document.querySelectorAll(".menu button");//lee los botones de men
 botones.forEach(function(boton){//recorre los botones del menu//
   if(boton.textContent == "Dashboard"){
     boton.addEventListener("click", function(){
-      alert("esto es el inicio");
     })
   }
   if(boton.textContent == "Salir"){//si el texto es salir//
     boton.addEventListener("click", function(){
-      alert("ha cerrado sesion");
     })
   }
 });
@@ -23,9 +21,7 @@ botones.forEach(function(boton){//recorre los botones del menu//
 let bloques = document.querySelectorAll(".bloque");
 
 bloques[0].addEventListener("click", function(){
-  alert("estas son las mascotas en adopcion");
 });
 
 bloques[1].addEventListener("click", function(){
-  alert("estos son los proximos eventos");
 });

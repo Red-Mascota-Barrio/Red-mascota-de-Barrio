@@ -1,27 +1,27 @@
 * {
-    
+
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    
+
 }
 
 body {
 
     min-height: 100vh;
-    background: linear-gradient(135deg, #4eb69d 0%, rgb(198, 198, 198) 100%);
+    background: linear-gradient(135deg, #4eb69d 0%, #65a1c3 100%);
     color: #333;
 
 }
 
-.logo{
+.logo {
     text-align: center;
     align-items: center;
     display: flex;
     justify-content: center;
 }
 
-img{
+img {
     width: 50px;
 }
 
@@ -30,7 +30,7 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: white;
-    padding: 10px 20px    ;
+    padding: 10px 20px;
     gap: 15px;
 }
 
@@ -75,7 +75,7 @@ header .perfil {
     border-radius: 8px;
     padding: 25px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.479);
 }
 
 .card h2 {
@@ -121,13 +121,14 @@ header .perfil {
 
 /* MASCOTAS */
 .pets {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
-    flex-wrap: wrap;
+    padding: 20px;
 }
 
 .pet-card {
-    background: #f4f7f6;
+    background: #dddddd5e;
     border-radius: 6px;
     padding: 15px;
     width: 200px;
@@ -137,7 +138,7 @@ header .perfil {
 
 .pet-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.349);
 }
 
 .pet-card img {
@@ -164,5 +165,10 @@ header .perfil {
 
 /* OBJETIVO */
 .highlight {
-    background: #eef7f4;
+    background: #ffffffe3;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
 }

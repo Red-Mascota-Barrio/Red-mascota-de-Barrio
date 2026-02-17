@@ -1,3 +1,88 @@
-{
-    "liveServer.settings.port": 5501
-}
+import tkinter as tk
+from tkinter import ttk, messagebox
+
+
+class CentroServicios:
+
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Centro de Servicios")
+        self.root.geometry("450x450")
+
+        # Variables
+        self.nombre = tk.StringVar()
+        self.edad = tk.StringVar()
+        self.servicio = tk.StringVar(value="Consulta")
+        self.terminos = tk.BooleanVar()
+        self.ciudad = tk.StringVar()
+        self.prioridad = tk.IntVar(value=1)
+
+        self.crear_interfaz()
+
+    def crear_interfaz(self):
+
+        # Datos
+        ttk.Label(self.root, text="Nombre:").pack()
+        ttk.Entry(self.root, textvariable=self.nombre).pack()
+
+        ttk.Label(self.root, text="Edad:").pack()
+        ttk.Entry(self.root, textvariable=self.edad).pack()
+
+        ttk.Button(self.root, text="Registrar", command=self.registrar).pack(pady=5)
+
+        # Servicio
+        ttk.Label(self.root, text="Tipo de servicio:").pack()
+
+        for s in ["Consulta", "Reclamo", "Petición"]:
+            ttk.Radiobutton(self.root, text=s, variable=self.servicio, value=s).pack()
+
+        # Ciudad
+        ttk.Label(self.root, text="Ciudad:").pack()
+        combo = ttk.Combobox(self.root, textvariable=self.ciudad,
+                             values=["Bogotá", "Medellín", "Cali"],
+                             state="readonly")
+        combo.pack()
+        combo.current(0)
+
+        # Prioridad
+        ttk.Label(self.root, text="Prioridad (1-5):").pack()
+        tk.Spinbox(self.root, from_=1, to=5, textvariable=self.prioridad).pack()
+
+        # Términos
+        ttk.Checkbutton(self.root, text="Acepto términos",
+                        variable=self.terminos).pack(pady=5)
+
+        # Botón final
+        ttk.Button(self.root, text="Procesar", command=self.procesar).pack(pady=10)
+
+    def registrar(self):
+        if not self.nombre.get() or not self.edad.get():
+            messagebox.showwarning("Error", "Ingrese nombre y edad")
+        else:
+            messagebox.showinfo("Registro",
+                                f"Usuario: {self.nombre.get()}")
+
+    def procesar(self):
+        if not self.terminos.get():
+            messagebox.showwarning("Error", "Debe aceptar los términos")
+            return
+
+        resumen = f"""
+Usuario: {self.nombre.get()}
+Edad: {self.edad.get()}
+Servicio: {self.servicio.get()}
+Ciudad: {self.ciudad.get()}
+Prioridad: {self.prioridad.get()}
+        """
+
+        messagebox.showinfo("Solicitud enviada", resumen)
+
+
+def main():
+    root = tk.Tk()
+    app = CentroServicios(root)
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    main()
