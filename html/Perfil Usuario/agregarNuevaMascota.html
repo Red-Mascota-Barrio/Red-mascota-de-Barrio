@@ -12,7 +12,7 @@
 <body>
 
     <header class="topbar">
-        <div class="logo"><img src="../../img/logopricipal.jpg">
+        <div class="logo"><img src="../../img/Logo1.jpeg">
             <p>Red de Mascotas de Barrio</p>
         </div>
         <nav>
@@ -37,8 +37,8 @@
                 <div>
                     <label>Especie*</label>
                     <div class="botones">
-                        <button>🐶 Perro</button>
-                        <button>🐱 Gato</button>
+                        <button class="btn1">🐶 Perro</button>
+                        <button class="btn1">🐱 Gato</button>
                     </div>
                 </div>
             </div>
@@ -51,8 +51,8 @@
                 <div>
                     <label>Género*</label>
                     <div class="botones">
-                        <button>♂ Macho</button>
-                        <button>♀ Hembra</button>
+                        <button class="btn2">Macho</button>
+                        <button class="btn2">Hembra</button>
                     </div>
                 </div>
             </div>
@@ -78,9 +78,10 @@
             </div>
 
             <div class="foto">
+                <br>
                 <label>Foto de la Mascota</label>
-                <div class="foto-box">Área de carga</div>
-                <button class="subir">Subir foto</button>
+                <br>
+                <button class="subir" type="file" multiple>Subir foto</button>
             </div>
 
             <div class="salud">
@@ -88,17 +89,9 @@
                 <label><input type="checkbox"> Vacunas al día</label>
             </div>
 
-            <h3>Información del Veterinario</h3>
-            <div class="fila">
-                <input type="text" placeholder="Nombre del veterinario">
-                <input type="text" placeholder="Teléfono de contacto">
-            </div>
-
-            <label>Notas adicionales</label>
-            <textarea placeholder="Alergias, comportamiento, etc."></textarea>
-
             <div class="acciones">
-                <button type="button" class="cancelar">Cancelar</button>
+                <a href="../../html/Perfil Usuario/agregarNuevaMascota.html"><button type="button"
+                        class="cancelar">Cancelar</button></a>
                 <button type="button" class="guardar">Guardar Mascota</button>
             </div>
         </div>
@@ -112,5 +105,7 @@
     </div>
 
 </body>
+
+<script src="../../js/AgregarNuevaMascota.js"></script>
 
 </html>
