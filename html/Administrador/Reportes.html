@@ -41,29 +41,20 @@
 
             <div class="reporte">
                 <span class="estado pendiente">Pendiente</span>
+                <div class="alineacion-paginacion">
+                   
 
-                <div class="paginacion">
-      <button onclick="cambiarPagina('pendiente', -1)">Anterior</button>
-      <span id="pagina-pendiente">1</span>
-      <button onclick="cambiarPagina('pendiente', 1)">Siguiente</button>
-    </div>
-
-                <div class="acciones">
-                    <small></small>
-                    <button onclick="verDetalles('RPT001')">
-                        Ver Detalles
-                    </button>
+                    <div class="acciones">
+                        <small></small>
+                        <button onclick="verDetalles('RPT001')">
+                            Ver Detalles
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <div class="reporte">
                 <span class="estado revision">En Revisión</span>
-
-                 <div class="paginacion">
-      <button onclick="cambiarPagina('revision', -1)">Anterior</button>
-      <span id="pagina-revision">1</span>
-      <button onclick="cambiarPagina('revision', 1)">Siguiente</button>
-    </div>
 
                 </p>
 
@@ -77,25 +68,22 @@
 
             <div class="reporte">
                 <span class="estado resuelto">Resuelto</span>
-                
-                <div class="paginacion">
-      <button onclick="cambiarPagina('resuelto', -1)">Anterior</button>
-      <span id="pagina-resuelto">1</span>
-      <button onclick="cambiarPagina('resuelto', 1)">Siguiente</button>
-    </div>
+
 
                 <div class="acciones">
                     <small></small>
+                    <a href="../Foro/P_detalleForo.html">
                     <button onclick="verDetalles('RPT003')">
                         Ver Detalles
                     </button>
+                    </a>
                 </div>
             </div>
 
 
 
             <div class="nuevo">
-                <button onclick="crearReporte()" >
+                <button onclick="crearReporte()">
                     <a href="/html/Foro/Reportar_usuario.html">Crear Nuevo Reporte</a>
                 </button>
             </div>
