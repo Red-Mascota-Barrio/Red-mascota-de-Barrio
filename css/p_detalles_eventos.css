@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body { 
+  background-color: #F7F8F4;
+  color: #3A3A3A;
+}
+
+.contenedor {
+  display: flex;
+  min-height: 100vh;
+}
+
+.menu {
+  width: 230px;
+  background: linear-gradient(135deg, #4eb69d 0%, rgb(168, 229, 248)100%);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.imagen_logo {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  object-fit: contain;
+}
+
+.menu button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background-color: #3AA6BF;
+}
+
+.contenido {
+  flex: 1;
+  padding: 30px 40px;
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.icono-logo {
+  width: 60px;
+  height: 60px;
+}
+
+.encabezado h1 {
+  font-size: 26px;
+  color: #55BFD6;
+  margin: 0;
+}
+
+.eventos {
+    position: absolute;
+    background: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.estado {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 14px;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 14px;
+}
+
+.pendiente {
+    background-color: #19c3af;
+}
+
+.evento-logo {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+}
+
+.evento-imagen img{
+    width: 150px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.evento-inf {
+    margin-left: 19px;
+}
+
+.acciones {
+     margin-left: 19px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.boton {
+    padding: 12px 14px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.boton-aceptar {
+    background-color: #19c3af;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.boton-rechazar {
+    background-color: rgb(224, 112, 112);
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
