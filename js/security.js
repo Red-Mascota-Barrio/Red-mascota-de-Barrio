@@ -1,1 +1,0 @@
-window.location.replace("html/inicioPagina/inicio.html");
