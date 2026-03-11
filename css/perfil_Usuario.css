@@ -73,7 +73,7 @@ header .perfil {
 .card {
     background: #ffffff;
     border-radius: 8px;
-    padding: 25px;
+    padding: 35px;
     margin-bottom: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.479);
 }
@@ -172,3 +172,19 @@ a {
     text-decoration: none;
     color: #000000;
 }
+
+/* menu dezplegable */
+.dropdown{
+
+    border-radius: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+}
+.btnbtn-secondarydropdown-toggle{
+
+    width: 20px;
+}
+/* termina menu /*
+    

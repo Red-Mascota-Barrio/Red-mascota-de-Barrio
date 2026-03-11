@@ -7,10 +7,155 @@
     <title>Red De Mascotas</title>
     <link rel="icon" type="image/x-icon" href="../../img/LogoPagina.png">
     <link rel="stylesheet" href="../../css/regitrase.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
 </head>
 
 <body>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Terminos Y Condiciones</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="white-space:pre-line; overflow-y:auto" ;></div>
+
+                    <Textarea class="form-control">
+                        Términos y Condiciones – Red de Mascotas
+
+                    Última actualización: 18 de febrero de 2026
+
+                    Bienvenido a Red de Mascotas, una plataforma digital creada para conectar personas, mascotas,
+                    fundaciones, veterinarias y servicios relacionados con el bienestar animal.
+
+                    Al acceder y utilizar esta plataforma, aceptas cumplir con los presentes Términos y Condiciones. Si
+                    no estás de acuerdo con ellos, te recomendamos no utilizar nuestros servicios.
+
+                    1. Objeto del servicio
+
+                    Red de Mascotas tiene como objetivo:
+
+                    Facilitar la adopción responsable.
+
+                    Publicar mascotas perdidas o encontradas.
+
+                    Promover el bienestar animal.
+
+                    Conectar usuarios con veterinarias, fundaciones, cuidadores y otros servicios relacionados.
+
+                    Brindar información educativa sobre mascotas.
+
+                    No somos responsables directos por las adopciones, acuerdos, ventas, intercambios o servicios
+                    realizados entre usuarios.
+
+                    2. Registro y cuentas de usuario
+
+                    Para acceder a ciertas funciones, es necesario registrarse.
+
+                    El usuario se compromete a:
+
+                    Proporcionar información real, actual y verificable.
+
+                    Mantener la confidencialidad de su cuenta.
+
+                    No compartir sus credenciales.
+
+                    Red de Mascotas se reserva el derecho de suspender o eliminar cuentas que incumplan estas normas.
+
+                    3. Uso adecuado de la plataforma
+
+                    Está estrictamente prohibido:
+
+                    Publicar contenido falso, engañoso o fraudulento.
+
+                    Promover maltrato animal, violencia o actividades ilegales.
+
+                    Vender animales de forma irresponsable o ilegal.
+
+                    Publicar contenido ofensivo, sexual, violento o discriminatorio.
+
+                    Usar la plataforma para estafas.
+
+                    El incumplimiento podrá dar lugar a la suspensión inmediata de la cuenta.
+
+                    4. Publicaciones y contenido
+
+                    El usuario es el único responsable del contenido que publica.
+
+                    Red de Mascotas no se responsabiliza por:
+
+                    Información falsa.
+
+                    Publicaciones engañosas.
+
+                    Problemas derivados de adopciones o transacciones entre usuarios.
+
+                    Nos reservamos el derecho de eliminar cualquier contenido que viole estos términos.
+
+                    5. Adopciones y transacciones
+
+                    Red de Mascotas actúa únicamente como intermediario tecnológico.
+
+                    No garantizamos:
+
+                    La veracidad de las publicaciones.
+
+                    El estado de salud de las mascotas.
+
+                    El comportamiento de adoptantes o adoptadores.
+
+                    Recomendamos realizar procesos responsables, verificaciones y contratos de adopción.
+
+                    6. Protección y bienestar animal
+
+                    Promovemos el trato digno y respetuoso hacia los animales. Cualquier contenido relacionado con
+                    maltrato será eliminado y podrá ser reportado a las autoridades competentes.
+
+                    7. Propiedad intelectual
+
+                    Todo el contenido, diseño, logotipo, marca, estructura y código pertenecen a Red de Mascotas. Queda
+                    prohibida su reproducción sin autorización expresa.
+
+                    8. Disponibilidad del servicio
+
+                    No garantizamos disponibilidad continua. Podremos suspender el servicio por mantenimiento, mejoras o
+                    causas técnicas.
+
+                    9. Modificaciones
+
+                    Podremos modificar estos términos en cualquier momento. Los cambios entrarán en vigencia desde su
+                    publicación.
+
+                    10. Legislación aplicable
+
+                    Estos términos se rigen por las leyes de la República de Colombia. Cualquier controversia será
+                    resuelta ante las autoridades colombianas competentes.
+
+                    11. Contacto
+
+                    Correo: soporte@reddemascotas.com
+
+                    Colombia</Textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO estoy de acuerdo</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Estoy de acuerdo</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
     <div class="contenedor-login">
 
         <div class="seccion-imagen">
@@ -53,7 +198,12 @@
 
                 </form>
                 <p class="registro-link">¿Ya tienes cuenta? <a href="../Inicio Sesion/Inicio_Sesion.html">Dale
-                        click para Ingresar</a></p>
+                        click para Ingresar</a>
+                    <a class="btnbtn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> terminos y
+                        condiciones</a>
+                </p>
+                </p>
+
             </div>
         </div>
     </div>
