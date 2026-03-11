@@ -93,13 +93,14 @@ body {
 }
 
 .filtros select,
-.btn-buscar {
+.boton-buscar {
   padding: 8px 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ccc;
 }
 
-.btn-buscar {
+.boton-buscar {
+  border-radius: 10px;
   background: #bfbfbf;
   cursor: pointer;
 }
@@ -166,6 +167,14 @@ body {
   cursor: pointer;
 }
 
-.paginacion .activo {
-  background: #a0a0a0;
+.activo {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc
+}
+
+.btn-adop {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }

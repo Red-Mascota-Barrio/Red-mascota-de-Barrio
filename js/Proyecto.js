@@ -14,6 +14,9 @@ function verPerfil(){
     alert("Perfil de usuario");
 }
 
+function crearForo(){
+    alert("Formulario para crear nuevo foro");
+}
 
 function entrarForo(nombre){
     alert("Entraste al foro de " + nombre);

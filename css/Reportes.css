@@ -63,6 +63,8 @@ header .perfil {
 }
 
 
+
+
 *{
     margin:0;
     padding:0;
@@ -80,10 +82,7 @@ header .perfil {
 }
 
 .logo{
-    text-align: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    font-weight:bold;
 }
 
 .menu a{
@@ -136,7 +135,7 @@ header .perfil {
 
 .pendiente{ background:#19c3af; }
 .revision{ background:#5cd4ca; }
-.resuelto{ background:#4cc399; }
+.resuelto{ background:#70eabf; }
 
 .acciones{
     display:flex;
@@ -203,18 +202,6 @@ button:hover{
 .links a{
     text-decoration:none;
     color:#111716;
-}
-
-.nuevo button a{
-    color:white;
-    text-decoration:none;
-}
-
-.reporte-card{
-    background: #e9e9e9;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
 }
 
 

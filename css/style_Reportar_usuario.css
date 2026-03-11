@@ -175,8 +175,3 @@ main {
         flex-direction: column;
     }
 }
-
-.botones button a {
-    color: white;
-    text-decoration: none;
-}

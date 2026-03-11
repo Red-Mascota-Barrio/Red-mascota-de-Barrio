@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/CrearEvento.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red De Mascotas</title>
+    <link rel="icon" type="image/x-icon" href="../../img/LogoPagina.png">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="logo"><img src="/img/logopricipal.jpg">
+            <p>Red de Mascotas de Barrio</p>
+        </div>
+
+        <div class="flex-1">
+            <nav>
+                <a href="#">Inicio</a>
+                <a href="#">Adopta</a>
+                <a href="#">Foros</a>
+                <a href="#">Eventos</a>
+                <a href="#">Mascotas</a>
+            </nav>
+
+            <div class="perfil"></div>
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+        <div class="formulario">
+            <h2>Crear Nuevo Evento</h2>
+
+            <div class="foto">
+                <br>
+                <label>Logo del Evento</label>
+                <br><br>
+                <input type="file" multiple></input>
+            </div>
+
+            <br>
+
+            <div class="fila">
+                <div>
+                    <label>Nombre*</label>
+                    <input type="text" placeholder="Nombre del evento">
+                </div>
+            </div>
+
+            <div class="fila">
+                <div>
+                    <label>Tipo De Evento*</label>
+                    <div class="botones">
+                        <button class="btn2">Adopcion</button>
+                        <button class="btn2">Paseos</button>
+                        <button class="btn2">Concursos</button>
+                        <button class="btn2">Charlas</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fila">
+                <div>
+                    <label>Lugar del Evento*</label>
+                    <input type="text" placeholder="Ubicación del evento">
+                </div>
+            </div>
+
+            <div class="flex">
+                <div class="fila">
+                    <div>
+                        <label>Fecha del Evento*</label>
+                        <input type="date">
+                    </div>
+                </div>
+
+                <div class="fila">
+                    <div>
+                        <label>Hora del Evento*</label>
+                        <input type="time">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="acciones">
+                <a href="Eventos.html"><button type="button"
+                        class="cancelar">Cancelar</button></a>
+                <button type="button" class="guardar" onclick="crearevento()">Guardar Evento</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script src="../../js/crear_evento.js"></script>
+
+</html>

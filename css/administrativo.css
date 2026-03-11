@@ -6,9 +6,11 @@ body {
 }
 
 .contenedor {
+  text-align: center;
   display: flex;
   min-height: 100vh;
 }
+
 .menu_lateral{
   color: white;
   text-decoration: none;
@@ -102,7 +104,7 @@ h2 {
   font-size: 22px;
 }
 
-.tarjeta p {
+.tarjeta p { /*tamaño margen tarjeta*/
   margin: 0;
   font-size: 14px;
   color: #7A7A7A;
@@ -140,13 +142,9 @@ h2 {
   box-shadow: 0 6px 14px rgba(0,0,0,0.08);
   transition: 0.2s;
 }
+       
 
-.bloque:hover {
-  transform: translateY(-4px);
-  border-left-color: #FF6B4A;
-}
-
-.bloque p {
+.bloque p { /*tamaño margen bloque*/
   margin-top: 10px;
   font-weight: bold;
 }
