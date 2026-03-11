@@ -25,10 +25,9 @@
 
 
                 <div class="opciones_inicio">
-                    <a
-                         href="Inicio_Sesion_Administrador.html">
-                    <button type="submit" class="Administrador">Administrador
-                    </button></a>
+                    <a href="Inicio_Sesion_Administrador.html">
+                        <button type="submit" class="Administrador">Administrador
+                        </button></a>
 
                 </div>
 
@@ -47,7 +46,7 @@
                         <input type="password" id="contrasena" name="contrasena" required>
                     </div>
 
-                    <button type="submit" class="boton-iniciar">Iniciar Sesión</button>
+                    <button type="button" class="boton-iniciar" onclick="verificarLogin()">Iniciar Sesión</button>
 
                 </form>
                 <p class="registro-link">¿No tienes cuenta? <a href="../Inicio Sesion/registro.html">Regístrate aquí</p>
@@ -56,5 +55,6 @@
         </div>
     </div>
 </body>
+<script src="../../js/verificacionLogin.js"></script>
 
 </html>

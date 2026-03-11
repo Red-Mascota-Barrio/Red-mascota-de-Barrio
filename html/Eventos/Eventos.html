@@ -17,15 +17,16 @@
             <p>Red de Mascotas de Barrio</p>
         </div>
 
-        <nav class="nav-horizontal">
-            <a href="#Inicio">Inicio</a>
-            <a href="#Adopta">Adopta</a>
-            <a href="#Foros">Foros</a>
-            <a href="#Propietarios">Propietarios</a>
-            <a href="#Mascotas">Mascotas</a>
-        </nav>
+        <div class="flex">
+            <nav class="nav-horizontal">
+                <a href="#Inicio">Inicio</a>
+                <a href="#Adopta">Adopta</a>
+                <a href="#Foros">Foros</a>
+                <a href="#Mascotas">Mascotas</a>
+            </nav>
 
-        <div class="perfil"></div>
+            <div class="perfil"></div>
+        </div>
     </header>
 
     <div class="contenedor-eventos">
@@ -36,20 +37,25 @@
             <div class="TituloEventos">
 
                 <h2>Eventos de la Comunidad</h2>
-                <p class="desc">Participa en actividades y conoce a otros amantes de las mascotas.</p>
+
 
             </div>
+            <br>
 
-
-            <div class="filtros">
-                <button class="active">Todos los Eventos</button>
-                <button>Próximos</button>
-                <button>Mis Eventos</button>
-                <button>Pasados</button>
+            <div class="Cont-filtros">
+                <div class="filtros">
+                    <button class="btn active">Todos los Eventos</button>
+                    <button class="btn">Próximos</button>
+                    <button class="btn">Mis Eventos</button>
+                </div>
+                <button class="btn-crear" onclick="CrearEvento()">
+                    + Crear Evento
+                </button>
             </div>
+
 
             <div class="evento">
-                <img src="../../img/evento1.png" class="img-evento">
+                <img src="../../img/perroPerfil.jpg" class="img-evento">
                 <div class="info">
                     <span class="tag verde">Paseo</span>
                     <h3>Paseo matutino por el parque</h3>
@@ -61,7 +67,7 @@
                         <p><strong>Lugar:</strong> Parque Central</p>
                     </div>
 
-                    <button class="btn-info">Más info</button>
+                    <button class="btn-info" onclick="paticiparEvento()">Participar</button>
                 </div>
             </div>
 
@@ -69,23 +75,6 @@
         </section>
 
         <aside class="sidebar">
-
-            <section class="box">
-                <h3>Próximos Eventos Destacados</h3>
-                <ul>
-                    <li><a href="#">Caminata de Agilidad Canina</a></li>
-                    <li><a href="#">Charla de Nutrición para Mascotas</a></li>
-                    <li><a href="#">Día de Spa para Perros</a></li>
-                </ul>
-            </section>
-
-            <section class="box">
-                <h3>Mis Próximos Eventos</h3>
-                <ul>
-                    <li><a href="#">Feria de Adopción</a></li>
-                    <li><a href="#">Taller de Obediencia</a></li>
-                </ul>
-            </section>
 
             <section class="box">
                 <h3>Categorías Populares</h3>
@@ -99,7 +88,7 @@
 
             <section class="box">
                 <h3>Calendario</h3>
-                <img src="../../img/calendario.png" class="calendario">
+                <img src="../../img/Calendario.jpg" class="calendario">
             </section>
 
         </aside>
@@ -107,5 +96,7 @@
     </div>
 
 </body>
+
+<script src="../../js/Eventos.js"></script>
 
 </html>
