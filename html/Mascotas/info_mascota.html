@@ -4,80 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red de Mascotas de Barrio</title>
-    <link rel="stylesheet" href="../../css/info_mascota.css">
+    <title>Red De Mascotas</title>
+    <link rel="icon" type="image/x-icon" href="../../img/LogoPagina.png">
+    <link rel="stylesheet" href="../../css/perfil_Usuario.css">
+
 </head>
 
 <body>
-    <header class="encabezado">
-        <div class="logo-titulo">
-            <img src="../../img/logopricipal.jpg" alt="Logo">
-            <h1>Red de Mascotas de Barrio</h1>
+
+
+    <header>
+        <div class="logo">
+            <img src="../../img/logopricipal.jpg" alt="logopricipal">
+            <p>Red de Mascotas de Barrio</p>
         </div>
 
         <nav class="nav-horizontal">
             <a href="#Inicio">Inicio</a>
             <a href="#Adopta">Adopta</a>
             <a href="#Foros">Foros</a>
+            <a href="#Propietarios">Propietarios</a>
             <a href="#Mascotas">Mascotas</a>
-            <a href="#IniciarSesion" class="btn-login">Iniciar sesión</a>
-            <a href="#Registrarse" class="btn-register">Registrarse</a>
         </nav>
+
+        <div class="perfil"></div>
+
     </header>
 
-    <div class="base-perfil">
+    <main class="container">
 
-        <h1>¡Descubre a Max!</h1>
-        <div class="banner-pc">
-        <div class="perfil">
-            
-            <img src="../../img/logo_info.jpg" alt="Max" class="img-logo">
-        </div>
+        <section class="card">
+            <h2>Perfil del Propietario</h2>
 
-        <main class="content">
-
-            <section class="right">
-
-                <p>Tu futuro mejor amigo te está esperando.</p>
-
-                <div class="info">
-                    <p><strong>Especie:</strong> Perro</p>
-                    <p><strong>Raza:</strong> Golden Retriever</p>
-                    <p><strong>Edad:</strong> 2 años</p>
-                    <p><strong>Género:</strong> Macho</p>
-                    <p><strong>Tamaño:</strong> Grande</p>
-                    <p><strong>Ubicación:</strong> Refugio Piedecuesta</p>
+            <div class="profile">
+                <img src="../../img/perfilEnBlanco.jpg" alt="Juan Perez">
+                <div class="profile-info">
+                    <h3>Juan Perez</h3>
+                    <p class="muted">
+                        Telefono: +123456789
+                    </p>
+                    <p class="muted">
+                        Correo electrónico: example@gmail.com
+                    </p>
+                    <p class="bio">
+                        “Me encantan los animales y disfruto conectando con otros
+                        dueños de mascotas en el barrio.”
+                    </p>
                 </div>
+            </div>
 
-                <p class="estado">
-                    Estado de adopción: <span>Disponible</span>
-                </p>
+        </section>
 
-                <h3>Sobre Max</h3>
-                <p>
-                    Max es un Golden Retriever lleno de energía y cariño.
-                    Le encanta jugar, correr y convivir con personas y otros perros.
-                </p>
+        <section class="card highlight">
+            <h3 class="section-title">Mascotas del Propietario</h3>
 
+            <div class="pets">
+                <a href="../Mascotas/info_mascota.html">
+                    <div class="pet-card">
+                        <img src="../../img/perroPerfil.jpg" alt="Max">
+                        <p><strong>Nombre:</strong> Max</p>
+                        <p>Tipo: Perro</p>
+                        <p class="status adoptable">Adoptable</p>
+                    </div>
+                </a>
 
-                <ul>
-                    <li>Energético y juguetón</li>
-                    <li>Compatible con niños</li>
-                    <li>Se lleva bien con otros perros</li>
-                    <li>Requiere ejercicio diario</li>
-                    <li>Ideal para familias activas</li>
-                </ul>
+                <!-- Aquí van las otras mascotas del usuario -->
 
-                <h3 class="mascota">¿Listo para darle un hogar a Max?</h3>
+            </div>
+        </section>
 
-                <button class="btn-mascota">Dar en Adopcion</button>
-
-
-            </section>
-        </main>
-        </div>
-
-    </div>
+    </main>
 
 </body>
 
