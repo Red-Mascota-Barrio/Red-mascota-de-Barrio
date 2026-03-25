@@ -383,6 +383,90 @@ INSERT INTO `usuarios_mascotas` VALUES
 (5,5,5,'2024-03-09','Activo',NULL,NULL);
 
 /* Sentencias Sql */
+Crear evento 
+insert into eventos (nombre, tipo, lugar, fecha, hora, imagen ) values ('feria de adopción', 'Adopción', 'Parque central', '2026-04-10', '10:00', 'logo.jpn');
+
+Consultar eventos 
+select * from eventos; 
+select * from eventos where tipo = 'Adopcion'; 
+
+Actualizar evento 
+update eventos set nombre = 'Feria Animal' , lugar = 'Parque Norte' where id = 1;
+
+Eliminar evento 
+delete from eventos where id = 1;
+
+
+Eventos 
+select * from eventos; 
+proximos 
+select * from eventos where fecha >= curdate() order by fecha asc; 
+Mis eventos 
+select * from eventos where id_usuario =1; 
+select * from eventos where tipo = 'Paseos';
+select * from eventos where tipo = 'Adopción';
+select tipo,  count(*) as total from eventos group by tipo;
+
+Crear evento 
+insert into eventos (nombre, tipo, descripcion, fecha, hora, lugar, id_usuario) values ('Paseo matutino' , ' Paseos', 'Paseos con mascotas', '2026-02-05', '08:00', 'Parque central', 1); 
+Participar 
+insert into partcipantes (id_usuario, id_evento) values (1,5); 
+select * from participantes where id_evento =5; 
+Eliminar participacion 
+delete from participantes where id_usuario =1 and id_evento = 5;
+Editar evento 
+update eventos set nombre = 'Nuevo nombre', lugar = 'Nuevo lugar' where id = 5;
+Eliminar evento 
+delete from eventos where id = 5;
+Conculta para el calendario 
+select nombre, fecha, hora from eventos order by fecha asc; 
+
+
+Detalle foro 
+Pendiente 
+select * from foros where estado = 'Pendiente';
+En revision 
+select * from foros where estado = ' En revision';
+Resuelto 
+select * from foros where estado = 'Resultado'; 
+Insertar publicacion 
+insert into foros (titulo, descripcion, estado, fecha, id_usuario) values ('Gato en adopcion', 'Busco hogar para gato', 'Pendiente', now(), 1;
+Cambiar de estado 
+update foros set estado = 'En revisión' where id = 1;
+resuelto 
+update foros set estado = 'Resuelto' where id =1;
+Eliminar foro 
+delete from foros where id =1;
+paginación 
+select * from foros where estado = 'pendiente' limit 3 offset 0; 
+select * from foros where estado = 'pendiente' limit 3 offset 3;
+
+
+Reportar usuario 
+insertar reporte 
+insert into reportes (usuario_reportado, motivo, descripcion, enlace, evidencia, anonimo, estado, fecha) values ('juan123','Acoso','El usuario envia mensajes ofensivos ', 'https://ejemplo.com', 'img1.pgn', true , 'Pendiente', now());
+Consultar reportes 
+select * from reportes; 
+ver reportes pendientes 
+select * from reportes where estado ='Pendiente' ; 
+ver reportes por nmotivo 
+select * from reportes where motivo = 'Acoso'; 
+Actualizar estado de reporte 
+update reportes set estado = ' En revision' where id = 1;
+update reportes set estado = 'Resulto' where id = 1;
+Eliminar reporte 
+Delete from reportes where id = 1;
+Contar reportes
+select motivo, count(*) as total from reportes group by motivo;
+paginación 
+select * from reportes limit 5 offset 0;
+
+
+
+
+
+
+
 
 
 
