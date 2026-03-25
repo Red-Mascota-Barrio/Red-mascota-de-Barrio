@@ -383,6 +383,158 @@ INSERT INTO `usuarios_mascotas` VALUES
 (5,5,5,'2024-03-09','Activo',NULL,NULL);
 
 /* Sentencias Sql */
+/*Sentencias Maybel Pag eventos*/ 
+/*listo los eventos*/
+select * from eventos;
+/*muestro los eventos activos*/
+select nombre, fecha_evento, ubicacion from eventos where estado = 'Activo';
+/*ordeno por fecha*/
+select * from eventos order by fecha_evento asc;
+/*detalle de un evento*/
+select * from eventos where id_evento = 1;
+/*buscar algun evento*/
+select * from eventos where nombre like '%vacuna%';
+/*filtar por tipo de evento*/
+select * from eventos where tipo_evento_id = 2;
+/*ver los proximos eventos*/
+select * from eventos where fecha_evento >= curdate() and estado = 'Activo';
+/*consulta toda la tabla*/
+select e.nombre, e.fecha_evento, e.ubicacion, t.nombre as tipo_evento, u.nombre as organizador from eventos e join tipos_evento t on e.tipo_evento_id = t.id_tipo_evento 
+join usuarios u on e.usuario_organizador_id = u.id_usuario;
+/*editar evento*/
+update eventos set nombre = 'Vacunación gratuita', descripcion = 'Vacunas y revisión medica', fecha_evento = '2026-05-24', ubicacion = 'Parque central' where id_evento = 6;
+/*cambiar estado*/
+update eventos set estado = 'Inactivo' where id_evento = 3;
+/*eliminar un evento*/
+delete from eventos where id_evento = 3;
+/*crear eventos*/
+insert into eventos (nombre, descripcion, fecha_evento, ubicacion, estado, tipo_evento_id, usuario_organizador_id)
+values ('Jornada de adopción', 'Adopción de mascotas', '2026-06-10', 'Plaza norte', 'Activo', 1, 2);
+/*contar eventos*/
+select count(*) as total_eventos from eventos;
+select count(*) as eventos_activos from eventos where estado = 'Activo';
+
+
+/*Sentencias Maybel Pag usuarios*/
+/*ver todos los usuarios*/
+select id_usuario, nombre, apellido, correo, telefono, estado from usuarios;
+/*listar usuarios con su rol*/
+select u.id_usuario, concat(u.nombre, ' ', u.apellido) as nombre_completo, u.correo, u.telefono, u.estado, r.nombre as rol from usuarios u join roles r on u.rol_id = r.id_rol
+order by u.id_usuario asc;
+/*buscar usuarios*/
+select u.id_usuario, u.nombre, u.apellido, u.correo, r.nombre as rol from usuarios u join roles r on u.rol_id = r.id_rol where u.nombre like '%mateo%' or u.apellido like '%mateo%' 
+or u.correo like '%mateo%';
+/*usuarios activos*/
+select u.nombre, u.apellido, u.correo, r.nombre as rol from usuarios u join roles r on u.rol_id = r.id_rol where u.estado = 'Activo' and r.nombre = 'Usuario';
+/*mostrar solo administradores*/
+select u.id_usuario, u.nombre, u.correo from usuarios u join roles r on u.rol_id = r.id_rol where r.nombre = 'Admin';
+/*usuarios registrados ultimamente*/
+select u.nombre, u.apellido, u.correo, u.fecha_registro from usuarios u where u.fecha_registro >= '2023-01-01' order by u.fecha_registro desc;
+/*usuarios inactivos*/
+select u.nombre, u.apellido, u.correo, r.nombre as rol from usuarios u join roles r on u.rol_id = r.id_rol where u.estado = 'Inactivo'; 
+/*cantidad de usuarios*/
+select r.nombre as rol, count(u.id_usuario) as cantidad_usuarios from roles r left join usuarios u on u.rol_id = r.id_rol group by r.nombre;
+/*cantidad de usuarios activos por rol*/
+select r.nombre as rol, count(u.id_usuario) as activos from roles r join usuarios u on u.rol_id = r.id_rol where u.estado = 'Activo' group by r.nombre;
+/*ver los detalles de un usuario*/
+select u.id_usuario, u.nombre, u.apellido, u.correo, u.telefono, u.estado, r.nombre as rol from usuarios u join roles r on u.rol_id = r.id_rol where u.id_usuario = 1; 
+/*ver si hay un correo duplicado*/
+select u.correo, r.nombre as rol from usuarios u join roles r on u.rol_id = r.id_rol where u.correo = 'mateo.garcia@email.com'; 
+/*cambiar el rol de un usuario*/
+update usuarios set rol_id = 1 where id_usuario = 2; 
+/*los usuarios con telefono registrado*/
+select u.nombre, u.apellido, u.telefono from usuarios u where u.telefono is not null;
+/*los usuarios sin descripcion*/
+select u.nombre, u.apellido from usuarios u where u.descripcion is null;
+/*crear usuarios*/
+insert into usuarios (nombre, apellido, correo, contrasena, telefono, fecha_registro, estado, rol_id) values ('Carlos', 'Ramírez', 'carlos.ramirez@email.com', 'Carlos123#', '3150000000',
+curdate(),'Activo', 2);
+/*editar usuario*/
+update usuarios set nombre = 'Carlos Andrés', telefono = '3213658749', descripcion = 'Amante de los animales' where id_usuario = 1;
+/*contar usuarios*/
+select count(*) as total_usuarios from usuarios; 
+select count(*) as usuarios_activos from usuarios where estado = 'Activo'; 
+
+
+
+/*Sentencias Maybel Pag mascotas*/ 
+/*ver todos los datos completos de la mascotas*/
+select id_mascota, nombre, genero, fecha_nacimiento, peso_kg, tamano, esterilizado, vacunas_al_dia, estado_adopcion from mascotas;
+/*buscar mascotas por nombre*/
+select * from mascotas where nombre like '%Tom%';
+/*mascotas por tamaño*/
+select * from mascotas where tamano = 'mediano';
+/*agregar nueva mascota*/
+insert into mascotas (nombre, genero, fecha_nacimiento, peso_kg, tamano, esterilizado, vacunas_al_dia, notas_adicionales, foto, estado_adopcion, raza_id)
+values ('Max', 'macho', '2025-01-01', 5.00, 'mediano', 1, 1, 'Muy juguetón', 'predeterminado.png', 0, 2);
+/*editar datos de una mascota*/
+update mascotas set nombre = 'Thor', peso_kg = 3.0, notas_adicionales = 'Muy amigable' where id_mascota = 3; 
+/*eliminar mascota*/
+delete from mascotas where id_mascota = 5;
+/*mascotas ordenadas por edad*/
+select nombre, genero, fecha_nacimiento, timestampdiff(year, fecha_nacimiento, curdate()) as edad from mascotas order by edad asc;
+/*lista de mascotas que no tienen foto*/
+select id_mascota, nombre, foto from mascotas where foto = 'predeterminado.png' or foto is null;
+/*actualizar foto de una mascota*/
+update mascotas set foto = 'nueva_foto.png' where id_mascota = 3;
+/*filtro de mascotas por peso*/
+select id_mascota, nombre, peso_kg from mascotas where peso_kg between 2.0 and 5.0 order by peso_kg asc; 
+/*buscar mascotas por la letra del nombre*/
+select * from mascotas where upper (nombre) like 'T%';
+/*cambiar el tamaño de una mascota*/
+update mascotas set tamano = 'grande' where id_mascota = 2; 
+/*contar mascotas por cada raza*/
+select r.nombre as raza, count(m.id_mascota) as total_mascotas from razas r left join mascotas m on r.id_raza = m.raza_id group by r.nombre;
+/*mascotas por raza*/
+select m.nombre, r.nombre as raza from mascotas m join razas r on m.raza_id = r.id_raza where r.nombre = 'Perro';
+/*mascotas con edad y raza*/
+select m.nombre, timestampdiff(year, m.fecha_nacimiento, curdate()) as edad, r.nombre as raza from mascotas m join razas r on m.raza_id = r.id_raza order by edad desc; 
+/*mascotas disponibles y las adoptadas*/
+select * from mascotas where estado_adopcion = 0;  select * from mascotas where estado_adopcion = 1; 
+
+
+/*Sentencias Maybel Pag reportes*/
+/*mostrar reportes*/
+select r.id_reporte, r.descripcion, r.fecha_reporte, t.nombre as tipo_reporte, e.nombre as estado_reporte, r.ubicacion from reportes r inner join tipos_reporte t on r.tipo_reporte_id = 
+t.id_tipo_reporte inner join estado_reporte e on r.estado_reporte_id = e.id_estado_reporte order by r.fecha_reporte desc;
+/*contar reportes por tipo*/
+select t.nombre as tipo_reporte, count (r.id_reporte) as total from reportes r inner join tipos_reporte t on r.tipo_reporte_id = t.id_tipo_reporte group by t.nombre;
+/*contar reportes por estado*/
+select e.nombre as estado_reporte, count (r.id_reporte) as total from reportes r inner join estados_reporte e on r.estado_reporte_id = e.id_estado_reporte group by e.nombre;
+/*dar los reportes recientes*/
+select r.id_reporte, r.descripcion, r.fecha_reporte, t.nombre as tipo, e.nombre as estado from reportes r inner join tipos_reporte t on r.tipo_reporte_id = t.id_tipo_reporte
+inner join estados_reporte e on r.estado_reporte_id = e.id_estado_reporte order by r.id_reporte desc limit 5;
+/*buscar reportes por tipo*/
+select * from reportes r inner join tipos_reporte t on r.tipo_reporte_id = t.id_tipo_reporte where t.nombre = 'Sujerencia';
+/*ver detalle de un reporte*/
+select r.*, t.nombre as tipo_reporte, t.descripcion as descripcion_tipo, e.nombre as estado_reporte from reportes r inner join tipos_reporte t on  r.tipo_reporte_id = t.id_tipo_reporte
+inner join estados_reporte e on r.estado_reporte_id = e.id_estado_reporte where r.id_reporte = 1;
+/*cambiar el estado de reporte*/
+update reportes set estado_reporte_id = 2 where id_reporte = 1;
+/*cambiar el tipo de reporte*/
+update reportes set tipo_reporte_id = 3 where id_reporte = 2;
+/*ver reportes por fecha desc*/
+select fecha_reporte count (*) as total from reportes group by fecha_reporte order by fecha_reporte desc;
+/*buscar reporte entre fecha especificas*/
+select * from reportes where fecha_reporte between '2025-01-01' and '2025-03-31';
+/*buscar reportes por una palabra*/
+select * from reportes where descripcion like '%menssajes%';
+/*ver todos los pendientes*/
+select r.id_reporte, r.descripcion, r.fecha_reporte, t.nombre as tipo from reportes r inner join tipos_reporte t on r.tipo_reporte_id = t.id_tipo_reporte where r.estado_reporte_id = 1;
+/*ver los reportes solucionados*/
+select * from reportes where estado_reporte_id = 2;
+/*contar el total de reportes*/
+select count(*) as total from reportes; 
+/*ver el ultimo reporte ingresado*/
+select * from reportes order by id_reporte desc limit 1;
+/*buscar reportes de un usuario en especifico*/
+select * from reportes where usuarios_mascotas_id_relacion = 1;
+/*buscar los reportes viejos*/
+select * from reportes where fecha_reporte < '2025-01-01';
+/*eliminar reportes viejos*/
+delete from reportes where fecha_reporte < '2025-01-01';
+/*eliminar cualquier reporte*/
+delete from reportes where id_reporte = 2;
 
 
 
