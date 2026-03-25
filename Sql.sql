@@ -384,6 +384,38 @@ INSERT INTO `usuarios_mascotas` VALUES
 
 /* Sentencias Sql */
 
+Inicio Sesion Hayber 
+
+SELECT u.email,r.nombre_rol FROM usuarios as u INNER JOIN roles as r ON u.id_rol = r.id_rol WHERE u.correo = 'mateo.garcia@email.com' AND u.contrasena = SHA2('MateoG#82!x',256 );
+
+Registro hayber
+
+insert into usuarios ( nombre,apellido,correo,telefono, contrasena ) values (hayber,garzon,hayberadrian06@gmail.com,3157034909,SHA2('3185010251Adso', 256));
+
+busqueda hayber
+
+select distinct timestampdiff(YEAR,fecha_nacimiento,now()) from mascotas;
+select * from mascotas where timestampdiff(YEAR,fecha_nacimiento,now()) = 2;
+select distinct genero from mascotas;
+select * from mascotas where genero = 1;
+select distinct nombre_especie from especies;
+select m.* from mascotas as m inner join razas as r on raza_id = id_raza inner join especies on id_especie = especie_id where nombre_especie = 'Perro';
+
+Crear tema foro
+
+INSERT INTO foros (titulo, contenido, categoria_id, imagen)
+VALUES (
+    'perros the best friends',     
+    'los perros son el mejor amigo del hombre ...',   
+    1,                      
+    'predeterminado.pnj'        
+);
+
+
+
+
+
+
 
 
 
