@@ -403,6 +403,10 @@ select m.* from mascotas as m inner join razas as r on raza_id = id_raza inner j
 
 Crear tema foro
 
+
+SELECT id_categoria, nombre_categoria
+FROM categorias_foro;
+
 INSERT INTO foros (titulo, contenido, categoria_id, imagen)
 VALUES (
     'perros the best friends',     
