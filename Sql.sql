@@ -384,22 +384,60 @@ INSERT INTO `usuarios_mascotas` VALUES
 
 /* Sentencias Sql */
 
+/* foros */
+
+select f.* from foros as f inner join categorias_foro as cf on categoria_id = id_categoria  where id_categoria in (select id_categoria from categorias_foro where tipo = 1)  ;
+
+select f.* from foros as f inner join categorias_foro as cf on categoria_id = id_categoria  where id_categoria = 2  ;
+
+select pf.*, u.nombre, u.apellido from participaciones_foro as pf inner join usuarios as u on usuario_id = id_usuario where foro_id = (select id_foro from foros where id_foro = 1) order by fecha_participacion desc;
 
 
+/* perfil usuario */
 
 
+select * from usuarios;
 
+select * from usuarios;
 
+select m.nombre, e.nombre_especie, m.estado_adopcion from usuarios as u 
+join usuarios_mascotas as um on id_usuario = usuario_id 
+join mascotas as m on id_mascota = mascota_id 
+join razas as r on id_raza = raza_id 
+join especies as e on id_especie = especie_id where id_usuario = 1 and nombre_especie = 'Perro';
 
+/* Agregare Nueva Mascota */
 
+insert into mascotas (nombre,fecha_nacimiento,tamaño,peso,esterilizado,vacunado,genero) values (Kira,2024-12-25,1,4,1,1,2);
 
+insert into raza (nombre_raza) values (Pincher);
 
+insert into especie (nombre_especie) values (1);
 
+update usuarios set nombre = 'Michael', apellido = 'Bautista', telefono = '3138456187', correo = 'bmaicolsantiago@gmail.com' where id_usuario = 1;
 
+select m.nombre, e.nombre_especie, r.raza_nombre, m.fecha_nacimiento, m.genero, m.peso, m.esterilizado, m.vacunado from usuarios as u 
+join usuarios_mascotas as um on id_usuario = usuario_id 
+join mascotas as m on id_mascota = mascota_id 
+join razas as r on id_raza = raza_id 
+join especies as e on id_especie = especie_id where id_usuario = 1;
 
+select count(id_mascotas) from usuarios as u 
+join usuarios_mascotas as um on id_usuario = usuario_id 
+join mascotas as m on id_mascota = mascota_id 
+join razas as r on id_raza = raza_id 
+join especies as e on id_especie = especie_id where id_usuario = 1;
 
+select count(id_mascotas) from usuarios as u 
+join usuarios_mascotas as um on id_usuario = usuario_id 
+join mascotas as m on id_mascota = mascota_id 
+join razas as r on id_raza = raza_id 
+join especies as e on id_especie = especie_id where id_usuario = 1 and nombre_especie = 'Perro';
 
-
-
+select count(id_mascotas) from usuarios as u 
+join usuarios_mascotas as um on id_usuario = usuario_id 
+join mascotas as m on id_mascota = mascota_id 
+join razas as r on id_raza = raza_id 
+join especies as e on id_especie = especie_id where id_usuario = 1 and nombre_especie = 'Gato';
 
 
