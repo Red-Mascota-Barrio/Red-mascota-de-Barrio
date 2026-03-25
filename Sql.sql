@@ -495,5 +495,45 @@ select m.nombre, timestampdiff(year, m.fecha_nacimiento, curdate()) as edad, r.n
 select * from mascotas where estado_adopcion = 0;  select * from mascotas where estado_adopcion = 1; 
 
 
-/*Sentencias Maybel Pag reportes*/ 
-
+/*Sentencias Maybel Pag reportes*/
+/*mostrar reportes*/
+select r.id_reporte, r.descripcion, r.fecha_reporte, t.nombre as tipo_reporte, e.nombre as estado_reporte, r.ubicacion from reportes r inner join tipos_reporte t on r.tipo_reporte_id = 
+t.id_tipo_reporte inner join estado_reporte e on r.estado_reporte_id = e.id_estado_reporte order by r.fecha_reporte desc;
+/*contar reportes por tipo*/
+select t.nombre as tipo_reporte, count (r.id_reporte) as total from reportes r inner join tipos_reporte t on r.tipo_reporte_id = t.id_tipo_reporte group by t.nombre;
+/*contar reportes por estado*/
+select e.nombre as estado_reporte, count (r.id_reporte) as total from reportes r inner join estados_reporte e on r.estado_reporte_id = e.id_estado_reporte group by e.nombre;
+/*dar los reportes recientes*/
+select r.id_reporte, r.descripcion, r.fecha_reporte, t.nombre as tipo, e.nombre as estado from reportes r inner join tipos_reporte t on r.tipo_reporte_id = t.id_tipo_reporte
+inner join estados_reporte e on r.estado_reporte_id = e.id_estado_reporte order by r.id_reporte desc limit 5;
+/*buscar reportes por tipo*/
+select * from reportes r inner join tipos_reporte t on r.tipo_reporte_id = t.id_tipo_reporte where t.nombre = 'Sujerencia';
+/*ver detalle de un reporte*/
+select r.*, t.nombre as tipo_reporte, t.descripcion as descripcion_tipo, e.nombre as estado_reporte from reportes r inner join tipos_reporte t on  r.tipo_reporte_id = t.id_tipo_reporte
+inner join estados_reporte e on r.estado_reporte_id = e.id_estado_reporte where r.id_reporte = 1;
+/*cambiar el estado de reporte*/
+update reportes set estado_reporte_id = 2 where id_reporte = 1;
+/*cambiar el tipo de reporte*/
+update reportes set tipo_reporte_id = 3 where id_reporte = 2;
+/*ver reportes por fecha desc*/
+select fecha_reporte count (*) as total from reportes group by fecha_reporte order by fecha_reporte desc;
+/*buscar reporte entre fecha especificas*/
+select * from reportes where fecha_reporte between '2025-01-01' and '2025-03-31';
+/*buscar reportes por una palabra*/
+select * from reportes where descripcion like '%menssajes%';
+/*ver todos los pendientes*/
+select r.id_reporte, r.descripcion, r.fecha_reporte, t.nombre as tipo from reportes r inner join tipos_reporte t on r.tipo_reporte_id = t.id_tipo_reporte where r.estado_reporte_id = 1;
+/*ver los reportes solucionados*/
+select * from reportes where estado_reporte_id = 2;
+/*contar el total de reportes*/
+select count(*) as total from reportes; 
+/*ver el ultimo reporte ingresado*/
+select * from reportes order by id_reporte desc limit 1;
+/*buscar reportes de un usuario en especifico*/
+select * from reportes where usuarios_mascotas_id_relacion = 1;
+/*buscar los reportes viejos*/
+select * from reportes where fecha_reporte < '2025-01-01';
+/*eliminar reportes viejos*/
+delete from reportes where fecha_reporte < '2025-01-01';
+/*eliminar cualquier reporte*/
+delete from reportes where id_reporte = 2;
