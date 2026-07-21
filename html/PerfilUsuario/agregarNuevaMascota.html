@@ -1,110 +1,268 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/AgregarNuevaMascota.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red De Mascotas</title>
-    <link rel="icon" type="image/x-icon" href="../../img/LogoPagina.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicar mascota — Red de Mascotas</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/perfil.css">
 </head>
-
 <body>
 
-    <header class="topbar">
-        <div class="logo"><img src="../../img/logopricipal.jpg">
-            <p>Red de Mascotas de Barrio</p>
-        </div>
-        <nav>
-            <a href="../InicioPagina/inicio.html">Inicio</a>
-            <a href="../Mascotas/busqueda.html">Adopta</a>
-            <a href="../Foro/foro.html">Foros</a>
-            <a href="../Eventos/Eventos.html">Eventos</a>
-            <a href="../Perfil Usuario/MascotasUsuario.html">Mascotas</a>
-        </nav>
-    </header>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="../InicioPagina/inicio.html" class="navbar-marca">
+      <div class="navbar-marca-logo">🐾</div>
+      Red de Mascotas de Barrio
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="../InicioPagina/inicio.html">Inicio</a></li>
+      <li><a href="../Mascotas/busqueda.html">Adoptar</a></li>
+      <li><a href="../Foro/foro.html">Foros</a></li>
+      <li><a href="../Eventos/Eventos.html">Eventos</a></li>
+    </ul>
+    <div class="navbar-acciones">
+      <a href="perfil_Usuario.html" class="btn btn-ghost btn-sm">← Mi perfil</a>
+    </div>
+  </nav>
 
-    <div class="contenedor">
-        <div class="formulario">
-            <h2>Agregar Nueva Mascota</h2>
+  <!-- CONTENIDO -->
+  <div class="agregar-mascota-contenedor">
 
-            <div class="fila">
-                <div>
-                    <label>Nombre*</label>
-                    <input type="text" placeholder="Nombre de tu mascota">
-                </div>
-                <div>
-                    <label>Especie*</label>
-                    <div class="botones">
-                        <button class="btn1">🐶 Perro</button>
-                        <button class="btn1">🐱 Gato</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="fila">
-                <div>
-                    <label>Raza*</label>
-                    <input type="text" placeholder="Raza">
-                </div>
-                <div>
-                    <label>Género*</label>
-                    <div class="botones">
-                        <button class="btn2">Macho</button>
-                        <button class="btn2">Hembra</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="fila">
-                <div>
-                    <label>Fecha de Nacimiento*</label>
-                    <input type="date">
-                </div>
-                <div>
-                    <label>Peso (kg)*</label>
-                    <input type="number" placeholder="kg">
-                </div>
-            </div>
-
-            <div>
-                <label>Tamaño*</label>
-                <select>
-                    <option>Pequeño</option>
-                    <option>Mediano</option>
-                    <option>Grande</option>
-                </select>
-            </div>
-
-            <div class="foto">
-                <br>
-                <label>Foto de la Mascota</label>
-                <br>
-                <button class="subir" type="file" multiple>Subir foto</button>
-            </div>
-
-            <div class="salud">
-                <label><input type="checkbox"> Esterilizado</label>
-                <label><input type="checkbox"> Vacunas al día</label>
-            </div>
-
-            <div class="acciones">
-                <a href="../../html/Perfil Usuario/agregarNuevaMascota.html"><button type="button"
-                        class="cancelar">Cancelar</button></a>
-                <button type="button" class="guardar">Guardar Mascota</button>
-            </div>
-        </div>
-
-        <div class="consejos">
-            <h3>Consejos Rápidos</h3>
-            <p>Sube una foto clara</p>
-            <p>Completa todos los campos</p>
-            <p>Mantén info actualizada</p>
-        </div>
+    <div class="agregar-mascota-encabezado">
+      <h1 class="agregar-mascota-titulo">Publicar mascota en adopción 🐾</h1>
+      <p class="agregar-mascota-subtitulo">Completa los 3 pasos para que tu publicación quede visible en la plataforma.</p>
     </div>
 
+    <!-- Barra de pasos -->
+    <div class="pasos-barra">
+      <div class="paso-item activo">
+        <div class="paso-circulo">1</div>
+        <span class="paso-label">Información</span>
+      </div>
+      <div class="paso-item">
+        <div class="paso-circulo">2</div>
+        <span class="paso-label">Fotos</span>
+      </div>
+      <div class="paso-item">
+        <div class="paso-circulo">3</div>
+        <span class="paso-label">Revisar</span>
+      </div>
+    </div>
+
+    <form id="formAgregarMascota" novalidate>
+
+      <!-- PASO 1: Información básica -->
+      <div class="mascota-form-panel activo" id="panel-0">
+        <div class="perfil-seccion">
+          <div class="perfil-seccion-header">
+            <div>
+              <h2>Información de la mascota</h2>
+              <p>Datos básicos que verán los posibles adoptantes</p>
+            </div>
+          </div>
+          <div class="perfil-seccion-body">
+
+            <div class="form-grid-2">
+              <div class="grupo-campo">
+                <label for="inputNombreMascota">Nombre de la mascota</label>
+                <input type="text" id="inputNombreMascota" class="campo" placeholder="Ej: Max, Luna, Rocky…" required>
+              </div>
+              <div class="grupo-campo">
+                <label for="selectEspecie">Especie</label>
+                <select id="selectEspecie" class="campo" required>
+                  <option value="">Selecciona…</option>
+                  <option value="Perro">🐶 Perro</option>
+                  <option value="Gato">🐱 Gato</option>
+                  <option value="Conejo">🐰 Conejo</option>
+                  <option value="Ave">🐦 Ave</option>
+                  <option value="Otro">🐾 Otro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="grupo-campo">
+                <label for="inputRaza">Raza</label>
+                <input type="text" id="inputRaza" class="campo" placeholder="Ej: Labrador, Siamés, Mestizo…">
+              </div>
+              <div class="grupo-campo">
+                <label for="inputEdad">Edad</label>
+                <input type="text" id="inputEdad" class="campo" placeholder="Ej: 3 años, 6 meses…" required>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="grupo-campo">
+                <label for="selectTamano">Tamaño</label>
+                <select id="selectTamano" class="campo" required>
+                  <option value="">Selecciona…</option>
+                  <option value="Pequeño">Pequeño (menos de 10 kg)</option>
+                  <option value="Mediano">Mediano (10 – 25 kg)</option>
+                  <option value="Grande">Grande (más de 25 kg)</option>
+                </select>
+              </div>
+              <div class="grupo-campo">
+                <label for="selectGenero">Género</label>
+                <select id="selectGenero" class="campo" required>
+                  <option value="">Selecciona…</option>
+                  <option value="Macho">♂ Macho</option>
+                  <option value="Hembra">♀ Hembra</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="grupo-campo">
+                <label for="selectEstado">Estado</label>
+                <select id="selectEstado" class="campo" required>
+                  <option value="">Selecciona…</option>
+                  <option value="En adopción">🏠 En adopción</option>
+                  <option value="Perdido">🔍 Perdido</option>
+                  <option value="Encontrado">📍 Encontrado</option>
+                </select>
+              </div>
+              <div class="grupo-campo">
+                <label for="inputBarrio">Barrio</label>
+                <input type="text" id="inputBarrio" class="campo" placeholder="Tu barrio" required>
+              </div>
+            </div>
+
+            <div class="grupo-campo">
+              <label for="inputDescripcion">Descripción</label>
+              <textarea id="inputDescripcion" class="campo campo-textarea" rows="4"
+                placeholder="Describe el carácter, hábitos y necesidades especiales de la mascota." required></textarea>
+            </div>
+
+            <div class="salud-bloque">
+              <p class="salud-bloque-titulo">¿Está vacunada y esterilizada?</p>
+              <div class="salud-checkboxes">
+                <label class="salud-check-item">
+                  <input type="checkbox" id="checkVacunas" class="salud-checkbox">
+                  💉 Vacunas al día
+                </label>
+                <label class="salud-check-item">
+                  <input type="checkbox" id="checkEsterilizado" class="salud-checkbox">
+                  ✂️ Esterilizada/o
+                </label>
+                <label class="salud-check-item">
+                  <input type="checkbox" id="checkDesparasitado" class="salud-checkbox">
+                  💊 Desparasitada/o
+                </label>
+              </div>
+            </div>
+
+            <div class="paso-navegacion paso-navegacion-derecha">
+              <button type="button" class="btn btn-primario btn-siguiente-paso">Siguiente: Fotos →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- PASO 2: Fotos -->
+      <div class="mascota-form-panel" id="panel-1">
+        <div class="perfil-seccion">
+          <div class="perfil-seccion-header">
+            <div>
+              <h2>Fotos de la mascota</h2>
+              <p>Sube hasta 5 fotos. La primera será la imagen principal.</p>
+            </div>
+          </div>
+          <div class="perfil-seccion-body">
+
+            <div class="foto-upload-zone">
+              <input type="file" id="inputFotosMascota" accept="image/*" multiple aria-label="Subir fotos de la mascota">
+              <div class="foto-upload-icono">📷</div>
+              <div class="foto-upload-texto">Haz clic o arrastra tus fotos aquí</div>
+              <div class="foto-upload-sub">JPG o PNG · máximo 3 MB por foto · hasta 5 fotos</div>
+            </div>
+
+            <div class="fotos-preview" id="fotosPreview"></div>
+
+            <div class="consejo-fotos">
+              <p class="consejo-fotos-texto">
+                💡 <strong>Consejo:</strong> Las publicaciones con fotos de buena calidad reciben hasta 3 veces más contactos. Toma fotos con buena luz y muestra el rostro de tu mascota.
+              </p>
+            </div>
+
+            <div class="paso-navegacion">
+              <button type="button" class="btn btn-ghost btn-anterior-paso">← Anterior</button>
+              <button type="button" class="btn btn-primario btn-siguiente-paso">Siguiente: Revisar →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- PASO 3: Resumen -->
+      <div class="mascota-form-panel" id="panel-2">
+        <div class="perfil-seccion">
+          <div class="perfil-seccion-header">
+            <div>
+              <h2>Revisar y publicar</h2>
+              <p>Verifica que todo esté correcto antes de publicar</p>
+            </div>
+          </div>
+          <div class="perfil-seccion-body">
+
+            <div class="resumen-lista">
+              <div class="resumen-campo">
+                <span class="resumen-campo-label">Nombre</span>
+                <span class="resumen-campo-valor" id="resumen-nombre">—</span>
+              </div>
+              <div class="resumen-campo">
+                <span class="resumen-campo-label">Especie</span>
+                <span class="resumen-campo-valor" id="resumen-especie">—</span>
+              </div>
+              <div class="resumen-campo">
+                <span class="resumen-campo-label">Raza</span>
+                <span class="resumen-campo-valor" id="resumen-raza">—</span>
+              </div>
+              <div class="resumen-campo">
+                <span class="resumen-campo-label">Edad</span>
+                <span class="resumen-campo-valor" id="resumen-edad">—</span>
+              </div>
+              <div class="resumen-campo">
+                <span class="resumen-campo-label">Tamaño</span>
+                <span class="resumen-campo-valor" id="resumen-tamano">—</span>
+              </div>
+              <div class="resumen-campo">
+                <span class="resumen-campo-label">Género</span>
+                <span class="resumen-campo-valor" id="resumen-genero">—</span>
+              </div>
+              <div class="resumen-campo">
+                <span class="resumen-campo-label">Estado</span>
+                <span class="resumen-campo-valor" id="resumen-estado">—</span>
+              </div>
+              <div class="resumen-campo">
+                <span class="resumen-campo-label">Barrio</span>
+                <span class="resumen-campo-valor" id="resumen-barrio">—</span>
+              </div>
+            </div>
+
+            <div class="aviso-publicar">
+              🐾 Al publicar, aceptas que la información es veraz y que te comprometes a una adopción responsable. La plataforma podrá retirar publicaciones que no cumplan las normas.
+            </div>
+
+            <div class="paso-navegacion">
+              <button type="button" class="btn btn-ghost btn-anterior-paso">← Anterior</button>
+              <button type="submit" class="btn btn-primario btn-publicar-mascota">
+                🐾 Publicar mascota
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <script src="../../js/perfil.js" defer></script>
 </body>
-
-<script src="../../js/AgregarNuevaMascota.js"></script>
-
 </html>

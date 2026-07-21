@@ -1,60 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión</title>
-    <link rel="icon" type="image/x-icon" href="img/LogoPagina.png">
-
-    <link rel="stylesheet" href="../../css/style_Inicio_sesion.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión — Red de Mascotas</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/auth.css">
 </head>
-
 <body>
-    <div class="contenedor-login">
 
-        <div class="seccion-imagen">
-            <img src="../../img/perroFotoInicioSecion.png" alt="Logo" class="imagen-login">
+  <div class="auth-contenedor">
+
+    <!-- ========= PANEL VISUAL ========= -->
+    <div class="auth-visual">
+      <div class="auth-visual-contenido">
+        <div class="auth-visual-icono">🐾</div>
+        <h2>Bienvenido de vuelta</h2>
+        <p>Accede a tu comunidad de mascotas. Gestiona tus publicaciones, participa en el foro y sigue los eventos de tu barrio.</p>
+
+        <div class="auth-chips">
+          <span class="chip-beneficio">✅ Adopciones</span>
+          <span class="chip-beneficio">🐶 Mascotas</span>
+          <span class="chip-beneficio">📅 Eventos</span>
+          <span class="chip-beneficio">💬 Foros</span>
         </div>
 
-
-        <div class="seccion-formulario">
-            <div class="formulario-box">
-                <h1>Iniciar Sesión</h1>
-
-
-                <div class="opciones_inicio">
-                    <a href="Inicio_Sesion_Administrador.html">
-                        <button type="submit" class="Administrador">Administrador
-                        </button></a>
-
-                </div>
-
-
-                <br>
-
-                <form>
-
-                    <div class="grupo-entrada">
-                        <label for="usuario">Usuario:</label>
-                        <input type="text" id="usuario" name="usuario" required>
-                    </div>
-
-                    <div class="grupo-entrada">
-                        <label for="contrasena">Contraseña:</label>
-                        <input type="password" id="contrasena" name="contrasena" required>
-                    </div>
-
-                    <button type="button" class="boton-iniciar" onclick="verificarLogin()">Iniciar Sesión</button>
-
-                </form>
-                <p class="registro-link">¿No tienes cuenta? <a href="../InicioSesion/registro.html">Regístrate aquí</p>
-                </a>
-            </div>
-        </div>
+        <img src="../../img/perroFotoInicioSecion.png" alt="Perro feliz" class="auth-visual-img"
+             onerror="this.classList.add('auth-visual-img-oculta')">
+      </div>
     </div>
-</body>
-<script src="../../js/verificacionLogin.js"></script>
 
+    <!-- ========= FORMULARIO ========= -->
+    <div class="auth-formulario">
+      <div class="auth-caja">
+
+        <div class="auth-logo">
+          <img src="../../img/logopricipal.jpg" alt="Logo" class="auth-logo-img"
+               onerror="this.classList.add('auth-logo-img-oculta')">
+          Red de Mascotas de Barrio
+        </div>
+
+        <h1>Iniciar sesión</h1>
+        <p class="subtitulo">Ingresa tus datos para continuar</p>
+
+        <div class="alerta-error" id="alertaError" role="alert">
+          ⚠️ Usuario o contraseña incorrectos. Intenta de nuevo.
+        </div>
+
+        <form id="formLogin" novalidate>
+          <div class="grupo-campo">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario" class="campo"
+              placeholder="Tu nombre de usuario" required autocomplete="username" aria-required="true">
+          </div>
+
+          <div class="grupo-campo">
+            <label for="contrasena">Contraseña</label>
+            <div class="campo-password">
+              <input type="password" id="contrasena" name="contrasena" class="campo"
+                placeholder="Tu contraseña" required autocomplete="current-password" aria-required="true">
+              <button type="button" class="ojo-btn" id="ojoBtnLogin"
+                      onclick="togglePassword()" aria-label="Mostrar u ocultar contraseña">
+                👁
+              </button>
+            </div>
+          </div>
+
+          <div class="campo-olvide-wrap">
+            <a href="#" class="campo-olvide-link">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primario btn-bloque" id="btnLogin">
+            Iniciar sesión
+          </button>
+        </form>
+
+        <div class="separador">o accede como</div>
+
+        <a href="Inicio_Sesion_Administrador.html" class="btn-admin">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Entrar como administrador
+        </a>
+
+        <p class="enlace-auth">
+          ¿No tienes cuenta? <a href="registro.html">Regístrate gratis</a>
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/verificacionLogin.js" defer></script>
+</body>
 </html>

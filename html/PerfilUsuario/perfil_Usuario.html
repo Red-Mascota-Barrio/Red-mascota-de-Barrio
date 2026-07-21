@@ -1,100 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red De Mascotas</title>
-    <link rel="icon" type="image/x-icon" href="../../img/LogoPagina.png">
-    <link rel="stylesheet" href="../../css/perfil_Usuario.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi perfil — Red de Mascotas</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/perfil.css">
 </head>
-
 <body>
 
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="../InicioPagina/inicio.html" class="navbar-marca">
+      <div class="navbar-marca-logo">🐾</div>
+      Red de Mascotas de Barrio
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="../InicioPagina/inicio.html">Inicio</a></li>
+      <li><a href="../Mascotas/busqueda.html">Adoptar</a></li>
+      <li><a href="../Foro/foro.html">Foros</a></li>
+      <li><a href="../Eventos/Eventos.html">Eventos</a></li>
+    </ul>
+    <div class="navbar-acciones">
+      <div class="avatar-inicial" title="Mi perfil">JP</div>
+    </div>
+  </nav>
 
-    <header>
-        <div class="logo">
-            <img src="../../img/logopricipal.jpg" alt="logopricipal">
-            <p>Red de Mascotas de Barrio</p>
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="perfil-main">
+
+    <!-- ENCABEZADO DEL PERFIL -->
+    <div class="tarjeta perfil-encabezado-tarjeta">
+      <div class="perfil-encabezado-inner">
+
+        <div class="perfil-avatar-wrap">
+          <img src="../../img/perfilEnBlanco.jpg" alt="Foto de Juan Pérez" class="perfil-avatar"
+               onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2296%22 height=%2296%22><rect width=%2296%22 height=%2296%22 rx=%2248%22 fill=%22%23e6f7f1%22/><text x=%2248%22 y=%2258%22 text-anchor=%22middle%22 font-size=%2232%22 fill=%22%2306503d%22 font-family=%22sans-serif%22>JP</text></svg>'">
         </div>
 
-        <nav class="nav-horizontal">
-            <a href="../InicioPagina/inicio.html">Inicio</a>
-            <a href="../Mascotas/busqueda.html">Adopta</a>
-            <a href="../Foro/foro.html">Foros</a>
-            <a href="../Perfil Usuario/MascotasUsuario.html">Mascotas</a>
-        </nav>
+        <div class="perfil-info-principal">
+          <div class="perfil-nombre-wrap">
+            <h1 class="perfil-nombre">Juan Pérez</h1>
+            <span class="badge badge-verde">✓ Propietario verificado</span>
+          </div>
+          <p class="perfil-dato">📍 Barrio El Pinar, Bucaramanga</p>
+          <p class="perfil-dato">📧 juan.perez@correo.com &nbsp;·&nbsp; 📞 +57 300 123 4567</p>
+          <p class="bio-bloque">
+            "Me encantan los animales y disfruto conectando con otros dueños de mascotas en el barrio."
+          </p>
+        </div>
 
-        <div class="perfil"></div>
-
-    </header>
-
-    <main class="container">
-
-        <section class="card">
-
-            <div class="dropdown">
-
-                <img src="../../img/Icono_ajustes.png" alt="" class="btnbtn-secondarydropdown-toggle" 
-                    data-bs-toggle="dropdown" aria-expanded="false">
-
-                <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item active" href="#">Editar Perfil</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    
-                </ul>
+        <div class="perfil-stats-acciones">
+          <div class="stats-perfil">
+            <div class="stat-perfil">
+              <div class="num">3</div>
+              <div class="lbl">Mascotas</div>
             </div>
-
-            <h2>Perfil del Propietario</h2>
-
-            <div class="profile">
-                <img src="../../img/perfilEnBlanco.jpg" alt="Juan Perez">
-                <div class="profile-info">
-                    <h3>Juan Perez</h3>
-                    <p class="muted">
-                        Telefono: +123456789
-                    </p>
-                    <p class="muted">
-                        Correo electrónico: example@gmail.com
-                    </p>
-                    <p class="bio">
-                        “Me encantan los animales y disfruto conectando con otros
-                        dueños de mascotas en el barrio.”
-                    </p>
-                </div>
+            <div class="stat-perfil">
+              <div class="num">12</div>
+              <div class="lbl">Posts</div>
             </div>
-
-        </section>
-
-        <section class="card highlight">
-            <h3 class="section-title">Mascotas del Propietario</h3>
-
-            <div class="pets">
-                <a href="../Mascotas/info_mascota.html">
-                    <div class="pet-card">
-                        <img src="../../img/perroPerfil.jpg" alt="Max">
-                        <p><strong>Nombre:</strong> Max</p>
-                        <p>Tipo: Perro</p>
-                        <p class="status adoptable">Adoptable</p>
-                    </div>
-                </a>
-
-                <!-- Aquí van las otras mascotas del usuario -->
-
+            <div class="stat-perfil">
+              <div class="num">2</div>
+              <div class="lbl">Adoptadas</div>
             </div>
-        </section>
+          </div>
+          <div class="perfil-botones">
+            <a href="Editar_perfil.html"       class="btn btn-secundario btn-sm">✏️ Editar</a>
+            <a href="agregarNuevaMascota.html"  class="btn btn-primario btn-sm">+ Agregar mascota</a>
+          </div>
+        </div>
 
-    </main>
+      </div>
+    </div>
 
+    <!-- PESTAÑAS -->
+    <div class="pestaña-nav" role="tablist">
+      <button class="pestaña activa" role="tab" aria-selected="true"  onclick="mostrarPestaña('mascotas', this)">🐾 Mis mascotas (3)</button>
+      <button class="pestaña"        role="tab" aria-selected="false" onclick="mostrarPestaña('actividad', this)">📝 Actividad en el foro</button>
+      <button class="pestaña"        role="tab" aria-selected="false" onclick="mostrarPestaña('eventos', this)">📅 Eventos</button>
+    </div>
+
+    <!-- TAB: MASCOTAS -->
+    <div id="tab-mascotas" role="tabpanel">
+      <div class="grid-3">
+
+        <a href="../Mascotas/info_mascota.html" class="perfil-mascota-link">
+          <div class="mascota-card tarjeta-hover">
+            <img src="../../img/perroPerfil.jpg" alt="Max, Labrador 3 años">
+            <div class="mascota-card-cuerpo">
+              <h3>Max</h3>
+              <p>Perro · Labrador · 3 años · Macho</p>
+            </div>
+            <div class="mascota-card-pie">
+              <span class="badge badge-verde">Adoptable</span>
+              <span class="mascota-card-ver-perfil">Ver perfil →</span>
+            </div>
+          </div>
+        </a>
+
+        <div class="mascota-card tarjeta-hover">
+          <img src="../../img/gat1.jpeg" alt="Michi, Siamés 2 años">
+          <div class="mascota-card-cuerpo">
+            <h3>Michi</h3>
+            <p>Gata · Siamés · 2 años · Hembra</p>
+          </div>
+          <div class="mascota-card-pie">
+            <span class="badge badge-gris">En casa</span>
+            <span class="mascota-card-ver-perfil">Ver perfil →</span>
+          </div>
+        </div>
+
+        <a href="agregarNuevaMascota.html" class="tarjeta-agregar" aria-label="Agregar nueva mascota">
+          <div class="tarjeta-agregar-icono">➕</div>
+          <p class="tarjeta-agregar-titulo">Agregar mascota</p>
+          <p class="tarjeta-agregar-sub">Publicar en adopción</p>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- TAB: ACTIVIDAD EN EL FORO -->
+    <div id="tab-actividad" role="tabpanel" class="tab-oculto">
+      <div class="tarjeta">
+        <div class="actividad-item">
+          <div class="actividad-icono">💬</div>
+          <div class="actividad-info">
+            <h4 class="actividad-titulo">Respondiste en "¿Cuántas veces al día se alimenta un labrador?"</h4>
+            <p class="actividad-meta">Foro de Perros · hace 2 días</p>
+          </div>
+          <div class="actividad-accion">
+            <a href="../Foro/foro.html" class="btn btn-ghost btn-sm">Ver hilo</a>
+          </div>
+        </div>
+        <div class="actividad-item">
+          <div class="actividad-icono">📌</div>
+          <div class="actividad-info">
+            <h4 class="actividad-titulo">Creaste el tema "Vacunación FIV para gatos en Bucaramanga"</h4>
+            <p class="actividad-meta">Foro de Gatos · hace 1 semana</p>
+          </div>
+          <div class="actividad-accion">
+            <a href="../Foro/foro.html" class="btn btn-ghost btn-sm">Ver hilo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: EVENTOS -->
+    <div id="tab-eventos" role="tabpanel" class="tab-oculto">
+      <div class="tarjeta perfil-tab-vacio">
+        <div class="perfil-tab-vacio-icono">📅</div>
+        <p class="perfil-tab-vacio-titulo">Aún no te has inscrito a ningún evento</p>
+        <p class="perfil-tab-vacio-sub">Encuentra jornadas de vacunación y ferias de adopción en tu barrio.</p>
+        <a href="../Eventos/Eventos.html" class="btn btn-primario">Ver eventos disponibles →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="../../js/perfil.js" defer></script>
 </body>
-
 </html>

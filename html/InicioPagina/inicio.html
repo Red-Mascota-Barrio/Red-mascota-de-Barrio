@@ -1,112 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Red de Mascotas de Barrio</title>
-
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-        </script>
-    <link rel="stylesheet" href="../../css/estilos.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red de Mascotas de Barrio</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/inicio.css">
 </head>
-
 <body>
 
-    <header class="encabezado" id="inicio">
-        <div class="logo-titulo">
-            <img src="../../img/logopricipal.jpg" alt="Logo">
-            <h1>Red de Mascotas de Barrio</h1>
-
-        </div>
-
-        <nav class="nav-horizontal">
-            <a href="../InicioPagina/inicio.html">Inicio</a>
-            <a href="../Mascotas/busqueda.html">Adopta</a>
-            <a href="../Foro/foro.html">Foros</a>
-            <a href="../PerfilUsuario/MascotasUsuario.html">Mascotas</a>
-            <a href="../InicioSesion/Inicio_Sesion.html" class="btn-login">Iniciar sesión</a>
-            <a href="../InicioSesion/registro.html" class="btn-register">Registrarse</a>
-        </nav>
-    </header>
-
-    <section class="banner-pc">
-        <div class="banner-contenido">
-
-
-            <div class="banner-texto">
-                <h2>BIENVENIDOS A TU RED DE MASCOTAS CONFIABLE!🐾</h2>
-                <p class="frase">
-                    “Conecta con mascotas, cuidadores y amantes de los animales”
-                </p>
-
-                <p class="descripcion">
-                    Conecta, Cuida y Adopta. Somos la comunidad que hace posibles las
-                    conexiones peludas que cambian vidas. Facilitamos la adopción
-                    responsable de mascotas, porque cada animal merece un hogar.
-                    ¡Encontrar a tu alma gemela de cuatro patas es posible aquí!
-                </p>
-
-            </div>
-
-            <div class="banner-img">
-                <img src="../../img/Fondo.png" alt="Mascotas">
-            </div>
-
-
-        </div>
-
-    </section>
-    
-    <div class="anclaInicio">
-
-        <a href="#carouselExampleIndicators"> <img width="80px" src="../../img/Flecha_abajo_inicio.png" alt="flecha">
-        </a>
-
+  <!-- ======================== NAVBAR ======================== -->
+  <nav class="navbar">
+    <div class="navbar-marca">
+      <img src="../../img/logopricipal.jpg" alt="Logo Red de Mascotas"
+           onerror="this.style.display='none'">
+      Red de Mascotas de Barrio
     </div>
-
-    <div class="container">
-
-        <h1>Consejos para mascotas</h1>
-
-        <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="../../img/gat1.jpeg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="../../img/gat3.jpeg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="../../img/gat1.jpeg" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+    <ul class="navbar-nav">
+      <li><a href="inicio.html" class="activo">Inicio</a></li>
+      <li><a href="../Mascotas/busqueda.html">Adoptar</a></li>
+      <li><a href="../Foro/foro.html">Foros</a></li>
+      <li><a href="../Eventos/Eventos.html">Eventos</a></li>
+    </ul>
+    <div class="navbar-acciones">
+      <a href="../InicioSesion/Inicio_Sesion.html" class="btn btn-ghost btn-sm">Iniciar sesión</a>
+      <a href="../InicioSesion/registro.html"       class="btn btn-primario btn-sm">Registrarse</a>
     </div>
+  </nav>
+
+  <!-- ======================== HERO ========================== -->
+  <section class="hero">
+    <div class="hero-contenido">
+      <div>
+        <div class="hero-chip">
+          🐾 La comunidad animal de tu barrio
+        </div>
+        <h1>Conecta, cuida<br>y adopta mascotas</h1>
+        <p>Somos la red que une personas con mascotas, cuidadores y amantes de los animales. Cada animal merece un hogar lleno de amor.</p>
+        <div class="hero-acciones">
+          <a href="../Mascotas/busqueda.html" class="btn-hero-blanco">Buscar mascotas →</a>
+          <a href="../InicioSesion/registro.html" class="btn-hero-outline">Unirme gratis</a>
+        </div>
+      </div>
+      <div class="hero-imagen">
+        <img src="../../img/Fondo.png" alt="Mascotas felices en el barrio"
+             onerror="this.parentElement.classList.add('hero-imagen-oculta')">
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== STATS BANNER ======================== -->
+  <div class="contenedor stat-banner-wrap">
+    <div class="stat-banner">
+      <div class="stat-banner-item">
+        <div class="numero">1,240<span class="numero-plus">+</span></div>
+        <div class="etiqueta">Mascotas registradas</div>
+      </div>
+      <div class="stat-banner-item">
+        <div class="numero">380<span class="numero-plus">+</span></div>
+        <div class="etiqueta">Adopciones exitosas</div>
+      </div>
+      <div class="stat-banner-item">
+        <div class="numero">520<span class="numero-plus">+</span></div>
+        <div class="etiqueta">Usuarios activos</div>
+      </div>
+      <div class="stat-banner-item">
+        <div class="numero">18</div>
+        <div class="etiqueta">Barrios conectados</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== CARACTERÍSTICAS ================ -->
+  <section class="seccion">
+    <div class="contenedor">
+      <p class="seccion-subtitulo seccion-subtitulo-centrado">¿Qué puedes hacer aquí?</p>
+      <h2 class="seccion-titulo seccion-titulo-centrado">Una plataforma para todo lo animal</h2>
+      <div class="grid-3">
+
+        <div class="tarjeta tarjeta-hover">
+          <div class="caracteristica-icono">
+            <svg viewBox="0 0 24 24"><path d="M12 21.7C17.3 17 22 13 22 8.5a5.5 5.5 0 0 0-9.8-3.4A5.5 5.5 0 0 0 2 8.5C2 13 6.7 17 12 21.7z"/></svg>
+          </div>
+          <h3 class="caracteristica-titulo">Adoptar</h3>
+          <p class="caracteristica-texto">Encuentra tu compañero perfecto entre perros y gatos que buscan un hogar. Filtra por raza, tamaño y edad.</p>
+          <a href="../Mascotas/busqueda.html" class="caracteristica-link">Ver mascotas →</a>
+        </div>
+
+        <div class="tarjeta tarjeta-hover">
+          <div class="caracteristica-icono">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="caracteristica-titulo">Comunidad</h3>
+          <p class="caracteristica-texto">Participa en foros sobre cuidado animal, comparte experiencias y recibe consejos de dueños expertos.</p>
+          <a href="../Foro/foro.html" class="caracteristica-link">Ir al foro →</a>
+        </div>
+
+        <div class="tarjeta tarjeta-hover">
+          <div class="caracteristica-icono">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3 class="caracteristica-titulo">Eventos</h3>
+          <p class="caracteristica-texto">Participa en jornadas de vacunación, ferias de adopción y actividades de bienestar animal en tu barrio.</p>
+          <a href="../Eventos/Eventos.html" class="caracteristica-link">Ver eventos →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== GALERÍA CONSEJOS =============== -->
+  <section class="seccion-consejos">
+    <div class="contenedor">
+      <p class="seccion-subtitulo">Para los dueños</p>
+      <h2 class="seccion-titulo seccion-titulo-consejos">Consejos y tips para tus mascotas</h2>
+      <div class="consejos-grid">
+        <div class="consejo-card">
+          <img src="../../img/gat1.jpeg" alt="Alimentación saludable para gatos">
+          <div class="consejo-card-overlay">Alimentación saludable para gatos 🐱</div>
+        </div>
+        <div class="consejo-card">
+          <img src="../../img/gat3.jpeg" alt="Socialización de gatitos">
+          <div class="consejo-card-overlay">Cómo socializar a tu gatito nuevo</div>
+        </div>
+        <div class="consejo-card">
+          <img src="../../img/gat2.jpg" alt="Vacunas esenciales">
+          <div class="consejo-card-overlay">Vacunas esenciales en el primer año</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CTA ============================ -->
+  <section class="seccion-cta">
+    <div class="cta-seccion contenedor-md">
+      <div class="cta-icono">🐾</div>
+      <h2 class="cta-titulo">¿Tienes una mascota que necesita hogar?</h2>
+      <p class="cta-texto">Regístrala en nuestra plataforma y conecta con familias responsables que quieren adoptarla en tu barrio.</p>
+      <div class="cta-acciones">
+        <a href="../InicioSesion/registro.html" class="btn btn-primario btn-lg">Publicar mascota</a>
+        <a href="../Mascotas/busqueda.html"      class="btn btn-secundario btn-lg">Explorar mascotas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ========================= -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-marca">
+        <h3>🐾 Red de Mascotas de Barrio</h3>
+        <p>Conectamos personas, mascotas y comunidades para construir un barrio más amigable con los animales.</p>
+        <p class="footer-contacto">soporte@reddemascotas.com · Bucaramanga, Colombia</p>
+      </div>
+      <div class="footer-col">
+        <h4>Plataforma</h4>
+        <a href="../Mascotas/busqueda.html">Adoptar</a>
+        <a href="../Foro/foro.html">Foros</a>
+        <a href="../Eventos/Eventos.html">Eventos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Cuenta</h4>
+        <a href="../InicioSesion/Inicio_Sesion.html">Iniciar sesión</a>
+        <a href="../InicioSesion/registro.html">Registrarse</a>
+        <a href="../PerfilUsuario/perfil_Usuario.html">Mi perfil</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Bienestar animal</a>
+      </div>
+    </div>
+    <div class="footer-fondo">
+      <span>© 2026 Red de Mascotas de Barrio</span>
+      <span>Hecho con ♥ para los animales de Colombia</span>
+    </div>
+  </footer>
 
 </body>
-
 </html>

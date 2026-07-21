@@ -1,214 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red De Mascotas</title>
-    <link rel="icon" type="image/x-icon" href="../../img/LogoPagina.png">
-    <link rel="stylesheet" href="../../css/regitrase.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrarse — Red de Mascotas</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/auth.css">
 </head>
-
 <body>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Terminos Y Condiciones</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div style="white-space:pre-line; overflow-y:auto" ;></div>
-
-                    <Textarea class="form-control">
-                        Términos y Condiciones – Red de Mascotas
-
-                    Última actualización: 18 de febrero de 2026
-
-                    Bienvenido a Red de Mascotas, una plataforma digital creada para conectar personas, mascotas,
-                    fundaciones, veterinarias y servicios relacionados con el bienestar animal.
-
-                    Al acceder y utilizar esta plataforma, aceptas cumplir con los presentes Términos y Condiciones. Si
-                    no estás de acuerdo con ellos, te recomendamos no utilizar nuestros servicios.
-
-                    1. Objeto del servicio
-
-                    Red de Mascotas tiene como objetivo:
-
-                    Facilitar la adopción responsable.
-
-                    Publicar mascotas perdidas o encontradas.
-
-                    Promover el bienestar animal.
-
-                    Conectar usuarios con veterinarias, fundaciones, cuidadores y otros servicios relacionados.
-
-                    Brindar información educativa sobre mascotas.
-
-                    No somos responsables directos por las adopciones, acuerdos, ventas, intercambios o servicios
-                    realizados entre usuarios.
-
-                    2. Registro y cuentas de usuario
-
-                    Para acceder a ciertas funciones, es necesario registrarse.
-
-                    El usuario se compromete a:
-
-                    Proporcionar información real, actual y verificable.
-
-                    Mantener la confidencialidad de su cuenta.
-
-                    No compartir sus credenciales.
-
-                    Red de Mascotas se reserva el derecho de suspender o eliminar cuentas que incumplan estas normas.
-
-                    3. Uso adecuado de la plataforma
-
-                    Está estrictamente prohibido:
-
-                    Publicar contenido falso, engañoso o fraudulento.
-
-                    Promover maltrato animal, violencia o actividades ilegales.
-
-                    Vender animales de forma irresponsable o ilegal.
-
-                    Publicar contenido ofensivo, sexual, violento o discriminatorio.
-
-                    Usar la plataforma para estafas.
-
-                    El incumplimiento podrá dar lugar a la suspensión inmediata de la cuenta.
-
-                    4. Publicaciones y contenido
-
-                    El usuario es el único responsable del contenido que publica.
-
-                    Red de Mascotas no se responsabiliza por:
-
-                    Información falsa.
-
-                    Publicaciones engañosas.
-
-                    Problemas derivados de adopciones o transacciones entre usuarios.
-
-                    Nos reservamos el derecho de eliminar cualquier contenido que viole estos términos.
-
-                    5. Adopciones y transacciones
-
-                    Red de Mascotas actúa únicamente como intermediario tecnológico.
-
-                    No garantizamos:
-
-                    La veracidad de las publicaciones.
-
-                    El estado de salud de las mascotas.
-
-                    El comportamiento de adoptantes o adoptadores.
-
-                    Recomendamos realizar procesos responsables, verificaciones y contratos de adopción.
-
-                    6. Protección y bienestar animal
-
-                    Promovemos el trato digno y respetuoso hacia los animales. Cualquier contenido relacionado con
-                    maltrato será eliminado y podrá ser reportado a las autoridades competentes.
-
-                    7. Propiedad intelectual
-
-                    Todo el contenido, diseño, logotipo, marca, estructura y código pertenecen a Red de Mascotas. Queda
-                    prohibida su reproducción sin autorización expresa.
-
-                    8. Disponibilidad del servicio
-
-                    No garantizamos disponibilidad continua. Podremos suspender el servicio por mantenimiento, mejoras o
-                    causas técnicas.
-
-                    9. Modificaciones
-
-                    Podremos modificar estos términos en cualquier momento. Los cambios entrarán en vigencia desde su
-                    publicación.
-
-                    10. Legislación aplicable
-
-                    Estos términos se rigen por las leyes de la República de Colombia. Cualquier controversia será
-                    resuelta ante las autoridades colombianas competentes.
-
-                    11. Contacto
-
-                    Correo: soporte@reddemascotas.com
-
-                    Colombia</Textarea>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO estoy de acuerdo</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Estoy de acuerdo</button>
-            </div>
-        </div>
+  <!-- ========= MODAL TÉRMINOS ========= -->
+  <div class="modal-overlay" id="modalTerminos" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+    <div class="modal-caja">
+      <h2 id="modalTitulo">📄 Términos y condiciones</h2>
+      <p><strong>Última actualización:</strong> 18 de febrero de 2026</p>
+      <p>Bienvenido a <strong>Red de Mascotas de Barrio</strong>, plataforma para conectar personas, mascotas, fundaciones y servicios de bienestar animal en Colombia.</p>
+      <p><strong>1. Objeto del servicio:</strong> Facilitar adopción responsable, publicar mascotas perdidas o encontradas y conectar usuarios con servicios veterinarios.</p>
+      <p><strong>2. Registro:</strong> Debes proporcionar información real y mantener la confidencialidad de tu cuenta. Eres responsable del uso que hagas de ella.</p>
+      <p><strong>3. Uso adecuado:</strong> Está prohibido publicar contenido falso, promover maltrato animal, vender animales de forma irresponsable o usar la plataforma para estafas.</p>
+      <p><strong>4. Adopciones:</strong> La plataforma actúa como intermediario tecnológico. No garantizamos la veracidad de las publicaciones de terceros.</p>
+      <p><strong>5. Propiedad intelectual:</strong> Todo el contenido y el código del proyecto pertenecen a Red de Mascotas de Barrio.</p>
+      <p><strong>6. Contacto:</strong> soporte@reddemascotas.com · Colombia</p>
+      <div class="modal-acciones">
+        <button type="button" class="btn btn-ghost" onclick="cerrarModal()">No acepto</button>
+        <button type="button" class="btn btn-primario" onclick="aceptarTerminos()">✅ Acepto los términos</button>
+      </div>
     </div>
-    </div>
+  </div>
 
+  <div class="auth-contenedor">
 
-    <div class="contenedor-login">
+    <!-- ========= FORMULARIO (izquierda) ========= -->
+    <div class="auth-formulario">
+      <div class="auth-caja auth-caja-registro">
 
-        <div class="seccion-imagen">
-            <img src="../../img/imagen.png" alt="Logo" class="imagen-login">
+        <div class="auth-logo">
+          <img src="../../img/logopricipal.jpg" alt="Logo" class="auth-logo-img"
+               onerror="this.classList.add('auth-logo-img-oculta')">
+          Red de Mascotas de Barrio
         </div>
 
-
-        <div class="seccion-formulario">
-            <div class="formulario-box">
-                <h1>Registro</h1>
-
-                <form id="formRegistro">
-                    <br>
-                    <div class="grupo-entrada">
-                        <label for="usuario">Usuario:</label>
-                        <input type="text" id="usuario" name="usuario" required>
-                    </div>
-
-                    <div class="grupo-entrada">
-                        <label for="correo">Correo:</label>
-                        <input type="email" id="correo" name="correo" required>
-                    </div>
-
-                    <div class="grupo-entrada">
-                        <label for="Telefono">Teléfono:</label>
-                        <input type="number" id="Telefono" name="Telefono" maxlength="10" required>
-                    </div>
-
-                    <div class="grupo-entrada">
-                        <label for="contrasena">Contraseña:</label>
-                        <input type="password" id="contrasena" name="contrasena" required>
-                    </div>
-
-                    <div class="grupo-entrada">
-                        <label for="contrasena2">Confirmar Contraseña:</label>
-                        <input type="password" id="contrasena2" name="contrasena2" required>
-                    </div>
-
-                    <button type="submit" class="boton-iniciar">Registrarse</button>
-
-                </form>
-                <p class="registro-link">¿Ya tienes cuenta? <a href="../InicioSesion/Inicio_Sesion.html">Dale
-                        click para Ingresar</a>
-                    <a class="btnbtn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> terminos y
-                        condiciones</a>
-                </p>
-                </p>
-
-            </div>
+        <div class="pasos-registro">
+          <div class="paso activo">
+            <div class="paso-num">1</div>
+            <span>Datos</span>
+          </div>
+          <div class="paso-linea"></div>
+          <div class="paso">
+            <div class="paso-num">2</div>
+            <span>Verificar</span>
+          </div>
+          <div class="paso-linea"></div>
+          <div class="paso">
+            <div class="paso-num">3</div>
+            <span>Listo</span>
+          </div>
         </div>
+
+        <h1>Crea tu cuenta</h1>
+        <p class="subtitulo">Únete a la comunidad animal de tu barrio</p>
+
+        <form id="formRegistro" novalidate>
+
+          <div class="grupo-campo">
+            <label for="usuario">Nombre de usuario</label>
+            <input type="text" id="usuario" name="usuario" class="campo"
+              placeholder="juan_dueño" required autocomplete="username" aria-required="true">
+          </div>
+
+          <div class="grupo-campo">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" class="campo"
+              placeholder="tu@correo.com" required autocomplete="email" aria-required="true">
+          </div>
+
+          <div class="grupo-campo">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" class="campo"
+              placeholder="3001234567" maxlength="10" pattern="[0-9]{10}"
+              required autocomplete="tel" aria-required="true">
+          </div>
+
+          <div class="grupo-campo">
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" class="campo"
+              placeholder="Mínimo 8 caracteres" required
+              oninput="actualizarFuerza(this.value)"
+              autocomplete="new-password" aria-required="true" aria-describedby="fuerzaTexto">
+            <div class="fuerza-barra" aria-hidden="true">
+              <div class="fuerza-barra-inner" id="fuerzaBarra"></div>
+            </div>
+            <span id="fuerzaTexto" class="fuerza-texto" aria-live="polite"></span>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="contrasena2">Confirmar contraseña</label>
+            <input type="password" id="contrasena2" name="contrasena2" class="campo"
+              placeholder="Repite tu contraseña" required
+              autocomplete="new-password" aria-required="true">
+            <span id="matchTexto" class="match-texto" aria-live="polite"></span>
+          </div>
+
+          <div class="terminos-wrap">
+            <input type="checkbox" id="aceptaTerminos" name="aceptaTerminos"
+                   class="terminos-checkbox" required>
+            <label for="aceptaTerminos" class="terminos-label">
+              Acepto los <span class="terminos-link" onclick="abrirModal()" tabindex="0" role="button">términos y condiciones</span> de uso de la plataforma.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primario btn-bloque" id="btnRegistro">
+            Crear cuenta gratis
+          </button>
+        </form>
+
+        <p class="enlace-auth">
+          ¿Ya tienes cuenta? <a href="Inicio_Sesion.html">Inicia sesión aquí</a>
+        </p>
+
+      </div>
     </div>
+
+    <!-- ========= PANEL VISUAL (derecha) ========= -->
+    <div class="auth-visual-registro">
+      <div class="auth-visual-registro-contenido">
+        <div class="auth-visual-icono">🐾</div>
+        <h2 class="auth-visual-registro-titulo">¿Por qué unirte?</h2>
+        <p class="auth-visual-registro-subtitulo">Sé parte de la red que cuida los animales de tu comunidad.</p>
+
+        <div class="beneficio">
+          <span class="beneficio-icono">✅</span>
+          <span>Publica mascotas en adopción o reporta animales perdidos</span>
+        </div>
+        <div class="beneficio">
+          <span class="beneficio-icono">✅</span>
+          <span>Conecta con dueños y amantes de mascotas del barrio</span>
+        </div>
+        <div class="beneficio">
+          <span class="beneficio-icono">✅</span>
+          <span>Recibe avisos de eventos veterinarios y ferias de adopción</span>
+        </div>
+        <div class="beneficio">
+          <span class="beneficio-icono">✅</span>
+          <span>Participa en el foro y comparte consejos de cuidado</span>
+        </div>
+
+        <img src="../../img/imagen.png" alt="Mascota feliz" class="auth-visual-registro-img"
+             onerror="this.classList.add('auth-visual-img-oculta')">
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../../js/funtionsRegistro.js" defer></script>
 </body>
-
-<script src="../../js/funtionsRegistro.js"></script>
-
 </html>

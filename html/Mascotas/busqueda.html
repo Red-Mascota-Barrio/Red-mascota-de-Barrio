@@ -1,131 +1,332 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Red de Mascotas del Barrio</title>
-    <link rel="stylesheet" href="../../css/busqueda.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscar mascotas en adopción — Red de Mascotas</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/mascotas.css">
 </head>
-
 <body>
 
-    <div class="contenedor">
-
-        <div class="menu">
-            <div class="logo">
-                <img width="200%" src="/img/logopricipal.jpg" alt="Patita" class="imagen_logo">
-                <span>Red de Mascotas del Barrio</span>
-            </div>
-
-            <button><a href="/html/Inicio Pagina/inicio.html" class="menu_lateral">Dashboard</a></button>
-            <button><a href="/html/Perfil Usuario/perfil_Usuario.html" class="menu_lateral">Usuarios</a></button>
-            <button><a href="/html/Perfil Usuario/MascotasUsuario.html" class="menu_lateral">Mascotas</a></button>
-            <button><a href="/html/Mascotas/busqueda.html" class="menu_lateral">Adopciones</a></button>
-            <button><a href="/html/Eventos/Eventos.html" class="menu_lateral">Eventos</a></button>
-            <button><a href="/html/Foro/foro.html" class="menu_lateral">Foro</a></button>
-            <button><a href="/html/Foro/Reportar_usuario.html" class="menu_lateral">Reportes</a></button>
-
-            <button>Salir</button>
-        </div>
-
-        <div class="contenido">
-
-            <div class="encabezado">
-                <img width="80px" src="/img/logopricipal.jpg" alt="Patita" class="icono-logo">
-                <h1>Red de Mascotas del Barrio</h1>
-            </div>
-
-            <h2>Busqueda Mascotas</h2>
-
-            <div class="filtros">
-                <select>
-                    <option>Tipo de mascota</option>
-                </select>
-                <select>
-                    <option>Edad</option>
-                </select>
-                <select>
-                    <option>Genero</option>
-                </select>
-                <select>
-                    <option>Ubicacion</option>
-                </select>
-                <button class="boton-buscar">Buscar</button>
-            </div>
-
-            <div class="tarjetas">
-                <div class="tarjeta">
-                    <div class="img-placeholder">Imagen</div>
-                    <a href="/html/Mascotas/info_mascota.html">
-                    <br><!--hacer en js-->
-                    <br>
-                    <br>
-                    <button class="btn-adop">Adoptar</button>
-                    </a>
-                </div>
-
-                <div class="tarjeta">
-                    <div class="img-placeholder">Imagen</div>
-                    <a href="/html/Mascotas/info_mascota.html">
-                    <br><!--hacer en js automaticamente-->
-                    <br>
-                    <br>
-                    <button class="btn-adop">Adoptar</button>
-                    </a>
-                </div>
-
-                <div class="tarjeta">
-                    <div class="img-placeholder">Imagen</div>
-                    <a href="/html/Mascotas/info_mascota.html">
-                    <br>
-                    <br>
-                    <br>
-                    <button class="btn-adop">Adoptar</button>
-                    </a>
-                </div>
-
-                <div class="tarjeta">
-                    <div class="img-placeholder">Imagen</div>
-                    <a href="/html/Mascotas/info_mascota.html">
-                    <br>
-                    <br>
-                    <br>
-                    <button class="btn-adop">Adoptar</button>
-                    </a>
-                </div>
-
-                <div class="tarjeta">
-                    <div class="img-placeholder">Imagen</div>
-                    <a href="/html/Mascotas/info_mascota.html">
-                    <br><!--hacer en js-->
-                    <br>
-                    <br>
-                    <button class="btn-adop">Adoptar</button>
-                    </a>
-                </div>
-
-                <div class="tarjeta">
-                    <div class="img-placeholder">Imagen</div>
-                    <a href="/html/Mascotas/info_mascota.html">
-                    <br><!--hacer en js automaticamente-->
-                    <br>
-                    <br>
-                    <button class="btn-adop">Adoptar</button>
-                    </a>
-                </div>
-            </div>
-
-            <br>
-            <br>
-
-            <div class="paginas">
-                <button class="activo">Anterior</button>
-                <button class="activo">1</button>
-                <button class="activo">2</button>
-                <button class="activo">3</button>
-            </div>
-        </div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="../InicioPagina/inicio.html" class="navbar-marca">
+      <div class="navbar-marca-logo">🐾</div>
+      Red de Mascotas de Barrio
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="../InicioPagina/inicio.html">Inicio</a></li>
+      <li><a href="busqueda.html" class="activo">Adoptar</a></li>
+      <li><a href="../Foro/foro.html">Foros</a></li>
+      <li><a href="../Eventos/Eventos.html">Eventos</a></li>
+    </ul>
+    <div class="navbar-acciones">
+      <a href="../InicioSesion/Inicio_Sesion.html" class="btn btn-ghost btn-sm">Iniciar sesión</a>
+      <a href="../InicioSesion/registro.html"       class="btn btn-primario btn-sm">Registrarse</a>
     </div>
-</body>
+  </nav>
 
+  <!-- HERO BÚSQUEDA -->
+  <section class="busqueda-hero">
+    <div class="busqueda-hero-contenedor">
+      <h1>Encuentra tu próxima mascota 🐾</h1>
+      <p>Más de 1,240 mascotas esperan un hogar en tu barrio</p>
+      <div class="barra-busqueda">
+        <span class="barra-busqueda-icono">🔍</span>
+        <input type="search" id="inputBusqueda" placeholder="Buscar por nombre, raza o barrio…" autocomplete="off">
+        <button type="button" class="btn btn-primario barra-busqueda-btn">Buscar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYOUT PRINCIPAL -->
+  <div class="layout-busqueda">
+
+    <!-- FILTROS -->
+    <aside class="panel-filtros" aria-label="Filtros de búsqueda">
+
+      <p class="filtros-titulo">Filtrar por</p>
+
+      <div class="filtro-seccion" data-filtro="especie">
+        <div class="filtro-titulo">Especie</div>
+        <div class="filtro-opciones">
+          <div class="filtro-opcion activo" data-valor="todas">
+            <span class="filtro-opcion-icono">🐾</span> Todas
+            <span class="filtro-opcion-count">124</span>
+          </div>
+          <div class="filtro-opcion" data-valor="perros">
+            <span class="filtro-opcion-icono">🐶</span> Perros
+            <span class="filtro-opcion-count">72</span>
+          </div>
+          <div class="filtro-opcion" data-valor="gatos">
+            <span class="filtro-opcion-icono">🐱</span> Gatos
+            <span class="filtro-opcion-count">44</span>
+          </div>
+          <div class="filtro-opcion" data-valor="otras">
+            <span class="filtro-opcion-icono">🐰</span> Otras
+            <span class="filtro-opcion-count">8</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filtro-divider"></div>
+
+      <div class="filtro-seccion" data-filtro="edad">
+        <div class="filtro-titulo">Edad</div>
+        <div class="filtro-opciones">
+          <div class="filtro-opcion activo" data-valor="todas">
+            <span class="filtro-opcion-icono">📅</span> Cualquier edad
+          </div>
+          <div class="filtro-opcion" data-valor="cachorro">
+            <span class="filtro-opcion-icono">🐣</span> Cachorro (0–1 año)
+          </div>
+          <div class="filtro-opcion" data-valor="joven">
+            <span class="filtro-opcion-icono">🌱</span> Joven (1–3 años)
+          </div>
+          <div class="filtro-opcion" data-valor="adulto">
+            <span class="filtro-opcion-icono">🐾</span> Adulto (3–8 años)
+          </div>
+          <div class="filtro-opcion" data-valor="senior">
+            <span class="filtro-opcion-icono">🧓</span> Senior (+8 años)
+          </div>
+        </div>
+      </div>
+
+      <div class="filtro-divider"></div>
+
+      <div class="filtro-seccion" data-filtro="tamano">
+        <div class="filtro-titulo">Tamaño</div>
+        <div class="filtro-opciones">
+          <div class="filtro-opcion activo" data-valor="todos">
+            <span class="filtro-opcion-icono">📐</span> Todos los tamaños
+          </div>
+          <div class="filtro-opcion" data-valor="pequeno">
+            <span class="filtro-opcion-icono">🐭</span> Pequeño (−10 kg)
+          </div>
+          <div class="filtro-opcion" data-valor="mediano">
+            <span class="filtro-opcion-icono">🐕</span> Mediano (10–25 kg)
+          </div>
+          <div class="filtro-opcion" data-valor="grande">
+            <span class="filtro-opcion-icono">🦮</span> Grande (+25 kg)
+          </div>
+        </div>
+      </div>
+
+      <div class="filtro-divider"></div>
+
+      <div class="filtro-seccion" data-filtro="genero">
+        <div class="filtro-titulo">Género</div>
+        <div class="filtro-opciones">
+          <div class="filtro-opcion activo" data-valor="todos">
+            <span class="filtro-opcion-icono">⚥</span> Todos
+          </div>
+          <div class="filtro-opcion" data-valor="macho">
+            <span class="filtro-opcion-icono">♂️</span> Macho
+          </div>
+          <div class="filtro-opcion" data-valor="hembra">
+            <span class="filtro-opcion-icono">♀️</span> Hembra
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- RESULTADOS -->
+    <main>
+
+      <div id="chipsActivos" class="chips-activos" aria-live="polite"></div>
+
+      <div class="resultados-header">
+        <p class="resultados-count">
+          Mostrando <strong><span id="resultadosCount">9</span></strong> mascotas
+        </p>
+        <select id="selectOrdenar" class="ordenar-select" aria-label="Ordenar resultados">
+          <option value="reciente">Más recientes</option>
+          <option value="nombre">Nombre A–Z</option>
+          <option value="edad_asc">Menor a mayor edad</option>
+          <option value="edad_desc">Mayor a menor edad</option>
+        </select>
+      </div>
+
+      <div class="grid-mascotas" id="gridMascotas">
+
+        <a href="info_mascota.html" class="mascota-card" data-especie="perros" data-edad="joven" data-tamano="grande">
+          <div class="mascota-card-img">
+            <img src="../../img/perroPerfil.jpg" alt="Max, Labrador"
+                 onerror="this.parentElement.classList.add('mascota-card-img-error')">
+            <span class="mascota-card-badge badge badge-verde">Adoptable</span>
+            <button type="button" class="mascota-card-fav" data-id="1" title="Agregar a favoritos" onclick="event.preventDefault()">♡</button>
+          </div>
+          <div class="mascota-card-cuerpo">
+            <h3>Max</h3>
+            <p>Labrador Retriever · Macho</p>
+            <div class="mascota-card-meta">
+              <span class="mascota-meta-chip">🐾 Perro</span>
+              <span class="mascota-meta-chip">🗓 3 años</span>
+              <span class="mascota-meta-chip">📐 Grande</span>
+            </div>
+          </div>
+          <div class="mascota-card-pie">
+            <div class="mascota-card-dueno">
+              <div class="mascota-card-dueno-avatar">JP</div>
+              Juan P. · El Pinar
+            </div>
+            <span class="mascota-card-ver-mas">Ver más →</span>
+          </div>
+        </a>
+
+        <a href="info_mascota.html" class="mascota-card" data-especie="gatos" data-edad="adulto" data-tamano="pequeno">
+          <div class="mascota-card-img">
+            <img src="../../img/gat1.jpeg" alt="Luna, Siamés"
+                 onerror="this.parentElement.classList.add('mascota-card-img-error')">
+            <span class="mascota-card-badge badge badge-verde">Adoptable</span>
+            <button type="button" class="mascota-card-fav" data-id="2" title="Agregar a favoritos" onclick="event.preventDefault()">♡</button>
+          </div>
+          <div class="mascota-card-cuerpo">
+            <h3>Luna</h3>
+            <p>Siamés · Hembra</p>
+            <div class="mascota-card-meta">
+              <span class="mascota-meta-chip">🐱 Gata</span>
+              <span class="mascota-meta-chip">🗓 4 años</span>
+              <span class="mascota-meta-chip">📐 Pequeño</span>
+            </div>
+          </div>
+          <div class="mascota-card-pie">
+            <div class="mascota-card-dueno">
+              <div class="mascota-card-dueno-avatar">ML</div>
+              María L. · Centro
+            </div>
+            <span class="mascota-card-ver-mas">Ver más →</span>
+          </div>
+        </a>
+
+        <a href="info_mascota.html" class="mascota-card" data-especie="perros" data-edad="cachorro" data-tamano="mediano">
+          <div class="mascota-card-img">
+            <img src="../../img/gat3.jpeg" alt="Rocky, Beagle"
+                 onerror="this.parentElement.classList.add('mascota-card-img-error')">
+            <span class="mascota-card-badge badge badge-naranja">Urgente</span>
+            <button type="button" class="mascota-card-fav" data-id="3" title="Agregar a favoritos" onclick="event.preventDefault()">♡</button>
+          </div>
+          <div class="mascota-card-cuerpo">
+            <h3>Rocky</h3>
+            <p>Beagle · Macho</p>
+            <div class="mascota-card-meta">
+              <span class="mascota-meta-chip">🐶 Perro</span>
+              <span class="mascota-meta-chip">🗓 8 meses</span>
+              <span class="mascota-meta-chip">📐 Mediano</span>
+            </div>
+          </div>
+          <div class="mascota-card-pie">
+            <div class="mascota-card-dueno">
+              <div class="mascota-card-dueno-avatar">CR</div>
+              Carlos R. · La Ceiba
+            </div>
+            <span class="mascota-card-ver-mas">Ver más →</span>
+          </div>
+        </a>
+
+        <a href="info_mascota.html" class="mascota-card" data-especie="gatos" data-edad="cachorro" data-tamano="pequeno">
+          <div class="mascota-card-img">
+            <img src="../../img/gat2.jpg" alt="Mochi, Común europeo"
+                 onerror="this.parentElement.classList.add('mascota-card-img-error')">
+            <span class="mascota-card-badge badge badge-verde">Adoptable</span>
+            <button type="button" class="mascota-card-fav" data-id="4" title="Agregar a favoritos" onclick="event.preventDefault()">♡</button>
+          </div>
+          <div class="mascota-card-cuerpo">
+            <h3>Mochi</h3>
+            <p>Común europeo · Hembra</p>
+            <div class="mascota-card-meta">
+              <span class="mascota-meta-chip">🐱 Gata</span>
+              <span class="mascota-meta-chip">🗓 5 meses</span>
+              <span class="mascota-meta-chip">📐 Pequeño</span>
+            </div>
+          </div>
+          <div class="mascota-card-pie">
+            <div class="mascota-card-dueno">
+              <div class="mascota-card-dueno-avatar">LP</div>
+              Laura P. · Cabecera
+            </div>
+            <span class="mascota-card-ver-mas">Ver más →</span>
+          </div>
+        </a>
+
+        <a href="info_mascota.html" class="mascota-card" data-especie="perros" data-edad="adulto" data-tamano="grande">
+          <div class="mascota-card-img">
+            <img src="../../img/perroPerfil.jpg" alt="Bruno, Pastor alemán"
+                 onerror="this.parentElement.classList.add('mascota-card-img-error')">
+            <span class="mascota-card-badge badge badge-rojo">Perdido</span>
+            <button type="button" class="mascota-card-fav" data-id="5" title="Agregar a favoritos" onclick="event.preventDefault()">♡</button>
+          </div>
+          <div class="mascota-card-cuerpo">
+            <h3>Bruno</h3>
+            <p>Pastor Alemán · Macho</p>
+            <div class="mascota-card-meta">
+              <span class="mascota-meta-chip">🐶 Perro</span>
+              <span class="mascota-meta-chip">🗓 5 años</span>
+              <span class="mascota-meta-chip">📐 Grande</span>
+            </div>
+          </div>
+          <div class="mascota-card-pie">
+            <div class="mascota-card-dueno">
+              <div class="mascota-card-dueno-avatar">AM</div>
+              Ana M. · Sotomayor
+            </div>
+            <span class="mascota-card-ver-mas">Ver más →</span>
+          </div>
+        </a>
+
+        <a href="info_mascota.html" class="mascota-card" data-especie="otras" data-edad="joven" data-tamano="pequeno">
+          <div class="mascota-card-img">
+            <img src="../../img/gat1.jpeg" alt="Coco, Conejo"
+                 onerror="this.parentElement.classList.add('mascota-card-img-error')">
+            <span class="mascota-card-badge badge badge-verde">Adoptable</span>
+            <button type="button" class="mascota-card-fav" data-id="6" title="Agregar a favoritos" onclick="event.preventDefault()">♡</button>
+          </div>
+          <div class="mascota-card-cuerpo">
+            <h3>Coco</h3>
+            <p>Conejo enano · Macho</p>
+            <div class="mascota-card-meta">
+              <span class="mascota-meta-chip">🐰 Otro</span>
+              <span class="mascota-meta-chip">🗓 1 año</span>
+              <span class="mascota-meta-chip">📐 Pequeño</span>
+            </div>
+          </div>
+          <div class="mascota-card-pie">
+            <div class="mascota-card-dueno">
+              <div class="mascota-card-dueno-avatar">SG</div>
+              Sara G. · Real de Minas
+            </div>
+            <span class="mascota-card-ver-mas">Ver más →</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div id="estadoVacio" class="estado-vacio estado-vacio-oculto">
+        <div class="estado-vacio-icono">🐾</div>
+        <h3>No encontramos mascotas</h3>
+        <p>Intenta cambiar los filtros o ampliar la búsqueda.</p>
+        <button type="button" id="btnLimpiarVacio" class="btn btn-secundario">Limpiar filtros</button>
+      </div>
+
+      <nav class="paginacion" aria-label="Paginación de resultados">
+        <button type="button" class="pag-btn" title="Página anterior" disabled>‹</button>
+        <button type="button" class="pag-btn activo">1</button>
+        <button type="button" class="pag-btn">2</button>
+        <button type="button" class="pag-btn">3</button>
+        <span class="paginacion-puntos">…</span>
+        <button type="button" class="pag-btn">14</button>
+        <button type="button" class="pag-btn" title="Página siguiente">›</button>
+      </nav>
+
+    </main>
+  </div>
+
+  <script src="../../js/busqueda.js" defer></script>
+</body>
 </html>

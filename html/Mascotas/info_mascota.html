@@ -1,80 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red De Mascotas</title>
-    <link rel="icon" type="image/x-icon" href="../../img/LogoPagina.png">
-    <link rel="stylesheet" href="../../css/perfil_Usuario.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Max — Labrador en adopción · Red de Mascotas</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/mascotas.css">
 </head>
-
 <body>
 
-
-    <header>
-        <div class="logo">
-            <img src="../../img/logopricipal.jpg" alt="logopricipal">
-            <p>Red de Mascotas de Barrio</p>
+  <!-- MODAL CONTACTO -->
+  <div class="modal-overlay" id="modalContacto" role="dialog" aria-modal="true" aria-labelledby="modalContactoTitulo">
+    <div class="modal-caja">
+      <h2 id="modalContactoTitulo">💬 Contactar a Juan Pérez</h2>
+      <p class="subtitulo-modal">Sobre: Max · Labrador Retriever</p>
+      <form id="formContacto" novalidate>
+        <div class="grupo-campo">
+          <label for="contactoNombre">Tu nombre</label>
+          <input type="text" id="contactoNombre" class="campo" placeholder="Tu nombre completo" required>
         </div>
+        <div class="grupo-campo">
+          <label for="contactoTelefono">Tu teléfono</label>
+          <input type="tel" id="contactoTelefono" class="campo" placeholder="3001234567" required>
+        </div>
+        <div class="grupo-campo">
+          <label for="contactoMensaje">Mensaje</label>
+          <textarea id="contactoMensaje" class="campo campo-textarea" rows="3"
+            placeholder="Hola, me interesa adoptar a Max. ¿Podríamos coordinar una visita?" required></textarea>
+        </div>
+        <div class="modal-form-acciones">
+          <button type="button" id="cerrarModalContacto" class="btn btn-ghost">Cancelar</button>
+          <button type="submit" class="btn btn-primario">Enviar mensaje</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
-        <nav class="nav-horizontal">
-            <a href="../InicioPagina/inicio.html">Inicio</a>
-            <a href="../Mascotas/busqueda.html">Adopta</a>
-            <a href="../Foro/foro.html">Foros</a>
-            <a href="../Eventos/Eventos.html">Eventos</a>
-            <a href="../Perfil Usuario/MascotasUsuario.html">Mascotas</a>
-        </nav>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="../InicioPagina/inicio.html" class="navbar-marca">
+      <div class="navbar-marca-logo">🐾</div>
+      Red de Mascotas de Barrio
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="../InicioPagina/inicio.html">Inicio</a></li>
+      <li><a href="busqueda.html" class="activo">Adoptar</a></li>
+      <li><a href="../Foro/foro.html">Foros</a></li>
+      <li><a href="../Eventos/Eventos.html">Eventos</a></li>
+    </ul>
+    <div class="navbar-acciones">
+      <a href="../InicioSesion/Inicio_Sesion.html" class="btn btn-ghost btn-sm">Iniciar sesión</a>
+      <a href="../InicioSesion/registro.html"       class="btn btn-primario btn-sm">Registrarse</a>
+    </div>
+  </nav>
 
-        <div class="perfil"></div>
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-barra">
+    <div class="breadcrumb-contenedor">
+      <a href="../InicioPagina/inicio.html" class="breadcrumb-link">Inicio</a>
+      <span>›</span>
+      <a href="busqueda.html" class="breadcrumb-link">Adoptar</a>
+      <span>›</span>
+      <span class="breadcrumb-actual">Max</span>
+    </div>
+  </div>
 
-    </header>
+  <!-- LAYOUT DETALLE -->
+  <div class="info-layout">
 
-    <main class="container">
+    <!-- COLUMNA IZQUIERDA: Galería -->
+    <div>
+      <div class="galeria-principal">
+        <img id="imgPrincipal" src="../../img/perroPerfil.jpg" alt="Max, Labrador Retriever"
+             onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22640%22 height=%22420%22><rect fill=%22%23e8f7f1%22 width=%22640%22 height=%22420%22/><text x=%22320%22 y=%22220%22 text-anchor=%22middle%22 font-size=%2280%22>🐶</text></svg>'">
+      </div>
 
-        <section class="card">
-            <h2>Perfil del Propietario</h2>
+      <div class="galeria-thumbs">
+        <div class="galeria-thumb activo">
+          <img src="../../img/perroPerfil.jpg" alt="Max foto 1"
+               onerror="this.parentElement.classList.add('galeria-thumb-error')">
+        </div>
+        <div class="galeria-thumb">
+          <img src="../../img/gat1.jpeg" alt="Max foto 2"
+               onerror="this.parentElement.classList.add('galeria-thumb-error')">
+        </div>
+        <div class="galeria-thumb">
+          <img src="../../img/gat3.jpeg" alt="Max foto 3"
+               onerror="this.parentElement.classList.add('galeria-thumb-error')">
+        </div>
+      </div>
 
-            <div class="profile">
-                <img src="../../img/perfilEnBlanco.jpg" alt="Juan Perez">
-                <div class="profile-info">
-                    <h3>Juan Perez</h3>
-                    <p class="muted">
-                        Telefono: +123456789
-                    </p>
-                    <p class="muted">
-                        Correo electrónico: example@gmail.com
-                    </p>
-                    <p class="bio">
-                        “Me encantan los animales y disfruto conectando con otros
-                        dueños de mascotas en el barrio.”
-                    </p>
-                </div>
-            </div>
+      <div class="info-descripcion info-descripcion-espaciado">
+        <h3>Sobre Max</h3>
+        <p>Max es un Labrador Retriever muy cariñoso y sociable. Le encanta jugar con niños y convive perfectamente con otros perros. Está vacunado, desparasitado y esterilizado. Creció en un hogar familiar y necesita un nuevo hogar por cambio de residencia de sus dueños.</p>
+        <p class="info-descripcion-parrafo-extra">Es ideal para familias con espacio o con acceso a parques cercanos. Le gusta mucho caminar y aprender trucos nuevos. Responde muy bien a las órdenes básicas.</p>
+      </div>
 
-        </section>
+      <div class="tarjeta requisitos-tarjeta">
+        <h3 class="requisitos-titulo">📋 Requisitos de adopción</h3>
+        <ul class="requisitos-lista">
+          <li class="requisito-item">
+            <span class="requisito-check">✓</span>
+            Visita previa al animal acordada con el dueño
+          </li>
+          <li class="requisito-item">
+            <span class="requisito-check">✓</span>
+            Hogar con espacio adecuado (patio o acceso a zona verde)
+          </li>
+          <li class="requisito-item">
+            <span class="requisito-check">✓</span>
+            Compromiso de continuar vacunación anual
+          </li>
+          <li class="requisito-item">
+            <span class="requisito-check">✓</span>
+            Firma de acuerdo de adopción responsable
+          </li>
+        </ul>
+      </div>
+    </div>
 
-        <section class="card highlight">
-            <h3 class="section-title">Mascotas del Propietario</h3>
+    <!-- COLUMNA DERECHA: Info + acciones -->
+    <div class="info-panel">
 
-            <div class="pets">
-                <a href="../Mascotas/info_mascota.html">
-                    <div class="pet-card">
-                        <img src="../../img/perroPerfil.jpg" alt="Max">
-                        <p><strong>Nombre:</strong> Max</p>
-                        <p>Tipo: Perro</p>
-                        <p class="status adoptable">Adoptable</p>
-                    </div>
-                </a>
+      <div class="info-encabezado">
+        <div class="info-encabezado-top">
+          <h1>Max</h1>
+          <span class="badge badge-verde info-badge-estado">Adoptable</span>
+        </div>
+        <p class="info-raza">Labrador Retriever · Macho</p>
+        <p class="info-ubicacion">📍 Barrio El Pinar, Bucaramanga · Publicado hace 2 días</p>
 
-                <!-- Aquí van las otras mascotas del usuario -->
+        <div class="info-atributos">
+          <div class="info-atributo">
+            <div class="info-atributo-label">Edad</div>
+            <div class="info-atributo-valor">3 años</div>
+          </div>
+          <div class="info-atributo">
+            <div class="info-atributo-label">Tamaño</div>
+            <div class="info-atributo-valor">Grande</div>
+          </div>
+          <div class="info-atributo">
+            <div class="info-atributo-label">Peso</div>
+            <div class="info-atributo-valor">~28 kg</div>
+          </div>
+          <div class="info-atributo">
+            <div class="info-atributo-label">Color</div>
+            <div class="info-atributo-valor">Dorado</div>
+          </div>
+          <div class="info-atributo">
+            <div class="info-atributo-label">Vacunas</div>
+            <div class="info-atributo-valor">✅ Al día</div>
+          </div>
+          <div class="info-atributo">
+            <div class="info-atributo-label">Esterilizado</div>
+            <div class="info-atributo-valor">✅ Sí</div>
+          </div>
+        </div>
+      </div>
 
-            </div>
-        </section>
+      <div class="info-dueno">
+        <div class="info-dueno-avatar">JP</div>
+        <div class="info-dueno-datos">
+          <div class="info-dueno-nombre">Juan Pérez</div>
+          <div class="info-dueno-sub">📍 El Pinar · Miembro desde 2024</div>
+        </div>
+        <a href="../PerfilUsuario/perfil_Usuario.html" class="btn btn-ghost btn-sm info-dueno-btn">Ver perfil</a>
+      </div>
 
-    </main>
+      <div class="info-acciones">
+        <button type="button" id="btnContactar" class="btn btn-primario btn-lg btn-bloque">
+          💬 Contactar al dueño
+        </button>
+        <button type="button" id="btnFavorito" data-id="1" class="btn btn-secundario btn-bloque">
+          🤍 Guardar en favoritos
+        </button>
+        <a href="busqueda.html" class="btn btn-ghost btn-bloque info-btn-volver">
+          ← Volver al listado
+        </a>
+      </div>
 
+      <div class="info-aviso-responsable">
+        🐾 <strong>Adopción responsable:</strong> esta plataforma conecta personas. Verifica siempre el estado real del animal antes de completar la adopción.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MASCOTAS SIMILARES -->
+  <section class="similares-seccion">
+    <div class="similares-contenedor">
+      <p class="seccion-subtitulo">También te puede interesar</p>
+      <h2 class="seccion-titulo similares-titulo">Mascotas similares</h2>
+      <div class="grid-mascotas similares-grid">
+
+        <a href="info_mascota.html" class="mascota-card" data-especie="perros" data-edad="joven" data-tamano="mediano">
+          <div class="mascota-card-img">
+            <img src="../../img/gat1.jpeg" alt="Rex"
+                 onerror="this.parentElement.classList.add('mascota-card-img-error')">
+            <span class="mascota-card-badge badge badge-verde">Adoptable</span>
+          </div>
+          <div class="mascota-card-cuerpo">
+            <h3>Rex</h3>
+            <p>Golden Retriever · Macho · 2 años</p>
+          </div>
+          <div class="mascota-card-pie">
+            <span class="badge badge-gris">La Ceiba</span>
+            <span class="mascota-card-ver-mas">Ver más →</span>
+          </div>
+        </a>
+
+        <a href="info_mascota.html" class="mascota-card" data-especie="perros" data-edad="adulto" data-tamano="grande">
+          <div class="mascota-card-img">
+            <img src="../../img/gat3.jpeg" alt="Toby"
+                 onerror="this.parentElement.classList.add('mascota-card-img-error')">
+            <span class="mascota-card-badge badge badge-verde">Adoptable</span>
+          </div>
+          <div class="mascota-card-cuerpo">
+            <h3>Toby</h3>
+            <p>Dálmata · Macho · 4 años</p>
+          </div>
+          <div class="mascota-card-pie">
+            <span class="badge badge-gris">Centro</span>
+            <span class="mascota-card-ver-mas">Ver más →</span>
+          </div>
+        </a>
+
+        <a href="info_mascota.html" class="mascota-card" data-especie="perros" data-edad="cachorro" data-tamano="mediano">
+          <div class="mascota-card-img">
+            <img src="../../img/gat2.jpg" alt="Lola"
+                 onerror="this.parentElement.classList.add('mascota-card-img-error')">
+            <span class="mascota-card-badge badge badge-naranja">Urgente</span>
+          </div>
+          <div class="mascota-card-cuerpo">
+            <h3>Lola</h3>
+            <p>Mestizo · Hembra · 6 meses</p>
+          </div>
+          <div class="mascota-card-pie">
+            <span class="badge badge-gris">Sotomayor</span>
+            <span class="mascota-card-ver-mas">Ver más →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="../../js/info_mascota.js" defer></script>
 </body>
-
 </html>

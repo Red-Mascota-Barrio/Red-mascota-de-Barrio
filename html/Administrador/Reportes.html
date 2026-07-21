@@ -1,134 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reportes de la comunidad</title>
-    <link rel="icon" type="image/x-icon" href="../../img/logo.png">
-    <link rel="stylesheet" href="../../css/Reportes.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportes pendientes — Admin</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/admin.css">
 </head>
-
 <body>
 
+  <div class="layout-sidebar">
+    <aside class="sidebar">
+      <a href="administrativo.html" class="sidebar-logo"><div class="sidebar-logo-icon">🐾</div>Red de Mascotas</a>
+      <div class="sidebar-seccion">Principal</div>
+      <a class="sidebar-item" href="administrativo.html"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard</a>
+      <div class="sidebar-seccion">Gestión</div>
+      <a class="sidebar-item" href="usuarios.html"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Usuarios</a>
+      <a class="sidebar-item" href="mascotas.html"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 21.7C17.3 17 22 13 22 8.5a5.5 5.5 0 0 0-9.8-3.4A5.5 5.5 0 0 0 2 8.5C2 13 6.7 17 12 21.7z"/></svg>Mascotas</a>
+      <a class="sidebar-item" href="eventosadmin.html"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Eventos</a>
+      <a class="sidebar-item" href="../Foro/foro.html"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Foros</a>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-seccion">Moderación</div>
+      <a class="sidebar-item activo sidebar-item-reportes" href="Reportes.html"><svg class="icon-svg icon-svg-reportes" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Reportes<span class="badge badge-rojo badge-sidebar-count" id="conteoReportes">4</span></a>
+      <div class="sidebar-divider"></div>
+      <a class="sidebar-item sidebar-item-cerrar-sesion" href="../InicioSesion/Inicio_Sesion.html" onclick="return confirm('¿Cerrar sesión?')"><svg class="icon-svg icon-svg-cerrar-sesion" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Cerrar sesión</a>
+    </aside>
 
-    <header>
-        <div class="logo">
+    <div>
+      <div class="nav-top">
+        <div class="breadcrumb">Panel Admin <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg><span>Reportes</span></div>
+        <div class="topbar-acciones">
+          <button type="button" class="notif-btn"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="notif-badge">4</span></button>
+          <span class="topbar-label">Administrador</span>
+          <div class="avatar-admin">A</div>
+        </div>
+      </div>
 
-            <img src="../../img/logo.png" alt="logopricipal">
-            <p>Red de Mascotas de Barrio</p>
+      <div class="area-contenido">
+
+        <div class="page-header">
+          <div>
+            <h1>Reportes pendientes</h1>
+            <p>Revisa y resuelve los reportes enviados por la comunidad</p>
+          </div>
+          <div class="reporte-alerta-header">
+            <span class="badge badge-rojo badge-reportes-count">⚠️ 4 sin resolver</span>
+          </div>
         </div>
 
-        <nav class="nav-horizontal">
-            <a href="../InicioPagina/inicio.html ">Inicio</a>
-            <a href="../Mascotas/busqueda.html">Adopta</a>
-            <a href="../Foro/foro.html">Foros</a>
-            <a href="../PerfilUsuario/perfil_Usuario.html">Propietarios</a>
-            <a href="../PerfilUsuario/MascotasUsuario.html">Mascotas</a>
-            <button class="perfil"></button>
-        </nav>
+        <div class="grid-4 stats-con-margen">
+          <div class="stat-card stat-card-alerta"><div class="stat-icono"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke="#9f1239"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div><div class="stat-numero stat-numero-alerta">4</div><div class="stat-label">Pendientes</div></div></div>
+          <div class="stat-card"><div class="stat-icono"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke="var(--verde-oscuro)"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><div class="stat-numero">28</div><div class="stat-label">Resueltos este mes</div></div></div>
+          <div class="stat-card"><div class="stat-icono"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke="var(--verde-oscuro)"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="stat-numero">3</div><div class="stat-label">De foro</div></div></div>
+          <div class="stat-card"><div class="stat-icono"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke="var(--verde-oscuro)"><path d="M12 21.7C17.3 17 22 13 22 8.5a5.5 5.5 0 0 0-9.8-3.4A5.5 5.5 0 0 0 2 8.5C2 13 6.7 17 12 21.7z"/></svg></div><div><div class="stat-numero">1</div><div class="stat-label">De mascotas</div></div></div>
+        </div>
 
-        <div class="perfil"></div>
+        <!-- LISTA DE REPORTES -->
+        <div id="listaReportes">
 
-    </header>
-
-    <div class="contenedor">
-
-
-        <main class="principal">
-
-            <h1>Reportes de la Comunidad</h1>
-            <p class="subtitulo">
-            </p>
-
-            <div class="reporte">
-                <span class="estado pendiente">Pendiente</span>
-                <div class="alineacion-paginacion">
-                   
-
-                    <div class="acciones">
-                        <small></small>
-                        <button onclick="verDetalles('RPT001')">
-                            Ver Detalles
-                        </button>
-                    </div>
+          <div class="reporte-card urgente">
+            <div class="reporte-header">
+              <div>
+                <div class="reporte-titulo">Contenido inapropiado en el foro de Perros</div>
+                <div class="reporte-meta">
+                  <span>👤 Reportado por: <strong>laura.parra</strong></span>
+                  <span>📅 Hace 2 horas</span>
+                  <span>📍 Hilo: "Consejos para socializar perros"</span>
                 </div>
+              </div>
+              <div class="reporte-badges">
+                <span class="badge badge-rojo">🔴 Urgente</span>
+                <span class="badge badge-azul">💬 Foro</span>
+              </div>
             </div>
+            <div class="reporte-cuerpo">
+              El usuario <strong>anon123</strong> publicó imágenes perturbadoras de animales en este hilo y está insultando a otros usuarios que le piden que las retire.
+            </div>
+            <div class="reporte-acciones">
+              <button type="button" class="btn btn-sm btn-eliminar-contenido btn-eliminar-contenido-reporte">🗑 Eliminar contenido</button>
+              <button type="button" class="btn btn-sm btn-suspender-usuario" onclick="alert('Usuario suspendido temporalmente.')">⏸ Suspender usuario</button>
+              <button type="button" class="btn btn-secundario btn-sm btn-resolver-reporte">✅ Marcar como resuelto</button>
+            </div>
+          </div>
 
-            <div class="reporte">
-                <span class="estado revision">En Revisión</span>
-
-                </p>
-
-                <div class="acciones">
-                    <small></small>
-                    <button onclick="verDetalles('RPT002')">
-                        Ver Detalles
-                    </button>
+          <div class="reporte-card moderado">
+            <div class="reporte-header">
+              <div>
+                <div class="reporte-titulo">Publicación de mascota con información falsa</div>
+                <div class="reporte-meta">
+                  <span>👤 Reportado por: <strong>carlos.ruiz</strong></span>
+                  <span>📅 Hace 5 horas</span>
+                  <span>📍 Mascota: "Rex · Golden Retriever"</span>
                 </div>
+              </div>
+              <div class="reporte-badges">
+                <span class="badge badge-naranja">🟠 Moderado</span>
+                <span class="badge badge-verde">🐾 Mascota</span>
+              </div>
             </div>
+            <div class="reporte-cuerpo">
+              La publicación de Rex dice que tiene 1 año pero en realidad el perro tiene al menos 6 años según lo que vimos en persona. Además la foto no coincide con el animal real.
+            </div>
+            <div class="reporte-acciones">
+              <a href="../Mascotas/info_mascota.html" class="btn btn-ghost btn-sm">👁 Ver publicación</a>
+              <button type="button" class="btn btn-sm btn-eliminar-contenido btn-eliminar-contenido-reporte">🗑 Eliminar publicación</button>
+              <button type="button" class="btn btn-secundario btn-sm btn-resolver-reporte">✅ Marcar como resuelto</button>
+            </div>
+          </div>
 
-            <div class="reporte">
-                <span class="estado resuelto">Resuelto</span>
-
-
-                <div class="acciones">
-                    <small></small>
-                    <a href="../Foro/P_detalleForo.html">
-                    <button onclick="verDetalles('RPT003')">
-                        Ver Detalles
-                    </button>
-                    </a>
+          <div class="reporte-card moderado">
+            <div class="reporte-header">
+              <div>
+                <div class="reporte-titulo">Spam en el foro de Gatos</div>
+                <div class="reporte-meta">
+                  <span>👤 Reportado por: <strong>maria.lopez</strong></span>
+                  <span>📅 Hace 1 día</span>
+                  <span>📍 Hilo: "Arena aglomerante vs sílice"</span>
                 </div>
+              </div>
+              <div class="reporte-badges">
+                <span class="badge badge-naranja">🟠 Moderado</span>
+                <span class="badge badge-azul">💬 Foro</span>
+              </div>
             </div>
-
-
-
-            <div class="nuevo">
-                <button onclick="crearReporte()">
-<<<<<<< HEAD
-                    <a href="/html/Foro/Reportar_usuario.html">Crear Nuevo Reporte</a>
-=======
-                    Crear Nuevo Reporte
->>>>>>> 4db7708cacf2bbe8439347c10207c7b21ccc4df7
-                </button>
+            <div class="reporte-cuerpo">
+              Un usuario está publicando el mismo mensaje publicitario repetidamente en varios hilos del foro de gatos. Parece un bot o cuenta de spam para vender productos.
             </div>
-
-
-
-        </main>
-
-
-        <aside class="sidebar">
-
-            <h3>Estadísticas de Reportes</h3>
-
-            <div class="estadistica">
-                <p>Pendientes</p>
-                <div class="barra azul"></div>
-
-                <p>En Revisión</p>
-                <div class="barra verde"></div>
-
-                <p>Resueltos</p>
-                <div class="barra roja"></div>
-
-
+            <div class="reporte-acciones">
+              <button type="button" class="btn btn-sm btn-eliminar-contenido btn-eliminar-contenido-reporte">🗑 Eliminar mensajes</button>
+              <button type="button" class="btn btn-sm btn-suspender-usuario" onclick="alert('Cuenta bloqueada permanentemente.')">🚫 Bloquear cuenta</button>
+              <button type="button" class="btn btn-secundario btn-sm btn-resolver-reporte">✅ Marcar como resuelto</button>
             </div>
+          </div>
 
-            </ul>
+          <div class="reporte-card">
+            <div class="reporte-header">
+              <div>
+                <div class="reporte-titulo">Usuario ofensivo en hilo de adopción</div>
+                <div class="reporte-meta">
+                  <span>👤 Reportado por: <strong>juan.perez</strong></span>
+                  <span>📅 Hace 2 días</span>
+                  <span>📍 Hilo: "¿Cómo redactar un acuerdo de adopción?"</span>
+                </div>
+              </div>
+              <div class="reporte-badges">
+                <span class="badge badge-gris">⚪ Bajo</span>
+                <span class="badge badge-azul">💬 Foro</span>
+              </div>
+            </div>
+            <div class="reporte-cuerpo">
+              Un usuario dejó comentarios hirientes y sarcásticos hacia personas que preguntan sobre adopción por primera vez. Hace que la gente no quiera participar.
+            </div>
+            <div class="reporte-acciones">
+              <button type="button" class="btn btn-ghost btn-sm" onclick="alert('Advertencia enviada al usuario.')">⚠️ Enviar advertencia</button>
+              <button type="button" class="btn btn-sm btn-eliminar-contenido btn-eliminar-contenido-reporte">🗑 Eliminar comentario</button>
+              <button type="button" class="btn btn-secundario btn-sm btn-resolver-reporte">✅ Marcar como resuelto</button>
+            </div>
+          </div>
 
-            <h3>Guías y Políticas</h3>
-            <ul class="links">
-                <li><a href="#">Preguntas Frecuentes</a></li>
-            </ul>
+        </div>
 
-        </aside>
+        <!-- ESTADO VACÍO -->
+        <div id="sinReportes" class="reporte-sin-resultado tab-oculto">
+          <div class="reporte-sin-resultado-icono">✅</div>
+          <h3 class="reporte-sin-resultado-titulo">Todo resuelto</h3>
+          <p class="reporte-sin-resultado-sub">No hay reportes pendientes por revisar.</p>
+        </div>
 
+      </div>
     </div>
+  </div>
 
-
+  <script src="../../js/admin.js" defer></script>
 </body>
-
 </html>

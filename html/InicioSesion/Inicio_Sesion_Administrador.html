@@ -1,56 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión</title>
-    <link rel="icon" type="image/x-icon" href="../../img/LogoPagina.png">
-    <link rel="stylesheet" href="../../css/style_Inicio_sesion.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso Administrativo — Red de Mascotas</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/auth.css">
 </head>
-
 <body>
-    <div class="contenedor-login_admin">
 
-        <div class="seccion-imagen">
-            <img src="../../img/Fondo.png" alt="Logo" class="imagen-login">
+  <div class="auth-contenedor">
 
+    <!-- ========= PANEL VISUAL ========= -->
+    <div class="auth-visual auth-visual-admin">
+      <div class="auth-admin-visual-contenido">
 
-        </div>
-        <div class="seccion-formulario">
-            <div class="formulario-box">
-                <h1>Iniciar Sesión</h1>
+        <div class="auth-admin-icono-wrap">🛡️</div>
 
+        <h2 class="auth-admin-titulo">Panel Administrativo</h2>
+        <p class="auth-admin-subtitulo">Acceso restringido al equipo de moderación y administración de la plataforma.</p>
 
-                <div class="opciones_inicio_admin">
-
-                    <a href="Inicio_Sesion.html"><button type="submit" class="Regresar">Regresar</button></a>
-
-
-                </div>
-
-                <form>
-
-                    <div class="grupo-entrada">
-                        <label for="usuario">Usuario:</label>
-                        <input type="text" id="usuario" name="usuario" required>
-                    </div>
-
-                    <div class="grupo-entrada">
-                        <label for="contrasena">Contraseña:</label>
-                        <input type="password" id="contrasena" name="contrasena" required>
-                    </div>
-
-                    <button type="button" class="boton-iniciar" onclick="verificarLoginAdmin()">Iniciar Sesión</button>
-
-                </form>
-                <p class="registro-link">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        <div class="auth-admin-roles-wrap">
+          <p class="auth-admin-roles-label">Acceso habilitado para</p>
+          <div class="auth-admin-roles-lista">
+            <div class="auth-admin-rol-item">
+              <span class="auth-admin-rol-icono">🛡️</span>
+              Administradores del sistema
             </div>
+            <div class="auth-admin-rol-item">
+              <span class="auth-admin-rol-icono">👮</span>
+              Moderadores de contenido
+            </div>
+            <div class="auth-admin-rol-item">
+              <span class="auth-admin-rol-icono">🔧</span>
+              Equipo técnico
+            </div>
+          </div>
         </div>
+
+        <p class="auth-admin-aviso">
+          Este acceso es monitoreado y registrado.<br>Uso no autorizado está prohibido.
+        </p>
+      </div>
     </div>
+
+    <!-- ========= FORMULARIO ========= -->
+    <div class="auth-formulario auth-formulario-admin">
+      <div class="auth-caja">
+
+        <a href="../InicioPagina/inicio.html" class="auth-logo">
+          <div class="auth-logo-icon auth-logo-icon-admin">🛡️</div>
+          Red de Mascotas · Admin
+        </a>
+
+        <h1 class="auth-admin-form-titulo">Acceso administrativo</h1>
+        <p class="subtitulo">Solo para personal autorizado de la plataforma</p>
+
+        <div class="alerta-acceso-restringido">
+          ⚠️ Si no eres parte del equipo de administración,
+          <a href="Inicio_Sesion.html" class="alerta-acceso-link">inicia sesión como usuario aquí</a>.
+        </div>
+
+        <div class="alerta-error alerta-error-admin" id="alertaError" role="alert"></div>
+
+        <form id="formLoginAdmin" novalidate>
+
+          <div class="grupo-campo">
+            <label for="adminUsuario">Usuario administrador</label>
+            <div class="campo-icono-wrap">
+              <span class="campo-icono-izq">🛡️</span>
+              <input type="text" id="adminUsuario" class="campo campo-con-icono"
+                placeholder="admin@redmascotas.com" required autocomplete="username" aria-required="true">
+            </div>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="adminContrasena">Contraseña</label>
+            <div class="campo-icono-wrap">
+              <input type="password" id="adminContrasena" class="campo"
+                placeholder="••••••••" required autocomplete="current-password" aria-required="true">
+              <button type="button" id="ojoBtnAdmin" class="ojo-btn" aria-label="Mostrar u ocultar contraseña">
+                👁
+              </button>
+            </div>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="adminCodigo">Código de acceso</label>
+            <div class="campo-icono-wrap">
+              <span class="campo-icono-izq">🔑</span>
+              <input type="text" id="adminCodigo" class="campo campo-con-icono"
+                placeholder="Código de 6 dígitos" required maxlength="6" pattern="[0-9]{6}"
+                autocomplete="one-time-code" aria-required="true" inputmode="numeric">
+            </div>
+            <span class="campo-ayuda">El código de acceso es entregado por el equipo técnico.</span>
+          </div>
+
+          <button type="submit" class="btn btn-lg btn-bloque btn-admin-submit" id="btnLoginAdmin">
+            🛡️ Ingresar al panel
+          </button>
+
+        </form>
+
+        <div class="auth-admin-volver-wrap">
+          <a href="Inicio_Sesion.html" class="auth-admin-volver-link">
+            ← Volver al inicio de sesión normal
+          </a>
+        </div>
+
+        <div class="auth-admin-soporte">
+          <p class="auth-admin-soporte-texto">
+            ¿Problemas de acceso? Contacta al equipo técnico:<br>
+            <a href="mailto:soporte@redmascotas.com" class="auth-admin-soporte-email">soporte@redmascotas.com</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../../js/loginAdmin.js" defer></script>
 </body>
-
-<script src="../../js/verificacionLogin.js"></script>
-
 </html>
