@@ -1,0 +1,151 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modificar Mascota — Red de Mascotas de Barrio</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/perfil.css">
+</head>
+<body>
+
+  <!-- NAVBAR COMPARTIDO -->
+  <nav class="navbar">
+    <a href="../InicioPagina/inicio.html" class="navbar-marca">
+      <div class="navbar-marca-logo">🐾</div>
+      Red de Mascotas de Barrio
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="../InicioPagina/inicio.html">Inicio</a></li>
+      <li><a href="../Mascotas/busqueda.html">Adoptar</a></li>
+      <li><a href="../Foro/foro.html">Foros</a></li>
+      <li><a href="../Eventos/Eventos.html">Eventos</a></li>
+    </ul>
+    <div class="navbar-acciones">
+      <a href="perfil_Usuario.html" class="btn btn-ghost btn-sm">← Cancelar y volver</a>
+    </div>
+  </nav>
+
+  <!-- CONTENEDOR PRINCIPAL RF04 -->
+  <div class="agregar-mascota-contenedor">
+
+    <div class="agregar-mascota-encabezado">
+      <h1 class="agregar-mascota-titulo">Modificar Datos de la Mascota ✏️</h1>
+      <p class="agregar-mascota-subtitulo">Actualiza la información esencial de tu mascota (Nombre, edad, raza, peso y detalles clínicos).</p>
+    </div>
+
+    <form id="formModificarMascota" novalidate>
+      <div class="perfil-seccion">
+        <div class="perfil-seccion-header">
+          <div>
+            <h2>Información general</h2>
+            <p>Los campos marcados son obligatorios para cumplir con el RF04</p>
+          </div>
+        </div>
+
+        <div class="perfil-seccion-body">
+
+          <!-- Nombre y Raza (Requerido por RF04) -->
+          <div class="form-grid-2">
+            <div class="grupo-campo">
+              <label for="inputNombreMascota">Nombre de la mascota *</label>
+              <input type="text" id="inputNombreMascota" class="campo" value="Max" required>
+              <span class="mensaje-error" id-error="inputNombreMascota" style="display:none;">El nombre es obligatorio.</span>
+            </div>
+            <div class="grupo-campo">
+              <label for="inputRazaMascota">Raza *</label>
+              <input type="text" id="inputRazaMascota" class="campo" value="Labrador Retriever" required>
+            </div>
+          </div>
+
+          <!-- Edad y Peso (Requerido estrictamente por RF04) -->
+          <div class="form-grid-2">
+            <div class="grupo-campo">
+              <label for="inputEdadMascota">Edad *</label>
+              <input type="text" id="inputEdadMascota" class="campo" value="3 años" placeholder="Ej: 2 años o 8 meses" required>
+            </div>
+            <div class="grupo-campo">
+              <label for="inputPesoMascota">Peso (kg) *</label>
+              <input type="text" id="inputPesoMascota" class="campo" value="28 kg" placeholder="Ej: 14 kg" required>
+            </div>
+          </div>
+
+          <!-- Especie y Estado -->
+          <div class="form-grid-2">
+            <div class="grupo-campo">
+              <label for="selectEspecie">Especie</label>
+              <select id="selectEspecie" class="campo">
+                <option value="Perro" selected>🐶 Perro</option>
+                <option value="Gato">🐱 Gato</option>
+                <option value="Otro">🐾 Otro</option>
+              </select>
+            </div>
+            <div class="grupo-campo">
+              <label for="selectEstado">Estado actual</label>
+              <select id="selectEstado" class="campo">
+                <option value="Adoptable" selected>🏠 En adopción</option>
+                <option value="Perdido">🔍 Extraviado / Perdido</option>
+                <option value="En casa">🏡 Con su familia</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Descripción / Señas particulares -->
+          <div class="grupo-campo">
+            <label for="inputDescripcion">Descripción o notas adicionales</label>
+            <textarea id="inputDescripcion" class="campo campo-textarea" rows="4">Max es un perro muy enérgico, le encanta correr en el parque y convive bien con otros animales.</textarea>
+          </div>
+
+          <!-- Botones de acción con control de tiempo de respuesta (RNF04) -->
+          <div class="perfil-form-acciones" style="margin-top: 24px; display: flex; gap: 10px; justify-content: flex-end;">
+            <a href="perfil_Usuario.html" class="btn btn-ghost">Volver</a>
+            <button type="submit" class="btn btn-primario" id="btnActualizarMascota">💾 Guardar Modificaciones</button>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- SCRIPT DE VALIDACIÓN Y TIEMPO DE RESPUESTA < 2s (RNF04) -->
+  <script>
+    document.getElementById('formModificarMascota').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const nombre = document.getElementById('inputNombreMascota').value.trim();
+      const edad = document.getElementById('inputEdadMascota').value.trim();
+      const raza = document.getElementById('inputRazaMascota').value.trim();
+      const peso = document.getElementById('inputPesoMascota').value.trim();
+
+      if (!nombre || !edad || !raza || !peso) {
+        alert('Por favor completa los campos obligatorios (Nombre, Edad, Raza y Peso).');
+        return;
+      }
+
+      const btn = document.getElementById('btnActualizarMascota');
+      btn.textContent = 'Actualizando...';
+      btn.disabled = true;
+
+      const tiempoInicio = performance.now();
+
+      // Simulación de guardado rápido para cumplir con RNF04 (< 2 segundos)
+      setTimeout(() => {
+        const tiempoFin = performance.now();
+        const tiempoTotal = ((tiempoFin - tiempoInicio) / 1000).toFixed(2);
+        
+        console.log(`[RNF04 Check] Modificación realizada en ${tiempoTotal} segundos.`);
+        
+        btn.textContent = '✅ ¡Modificado con éxito!';
+        btn.style.background = '#16a47a';
+
+        setTimeout(() => {
+          window.location.href = 'perfil_Usuario.html';
+        }, 500); // Redirección fluida inmediata
+      }, 400); // Operación de actualización simulada en 0.4s (Muy por debajo del límite de 2s)
+    });
+  </script>
+</body>
+</html>

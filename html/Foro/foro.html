@@ -47,6 +47,39 @@
     </div>
   </div>
 
+  <!-- MODAL REPORTE -->
+  <div class="modal-overlay" id="modalReporte" role="dialog" aria-modal="true" aria-labelledby="tituloModalReporte">
+    <div class="modal-caja">
+      <h2 id="tituloModalReporte" class="texto-peligro">🚩 Reportar contenido</h2>
+      <p class="modal-subtitulo">Ayúdanos a mantener la comunidad segura. Por favor, indícanos cuál es el problema con este hilo.</p>
+      
+      <form id="formReporte" novalidate>
+        <!-- Campo oculto para saber qué hilo estamos reportando -->
+        <input type="hidden" id="reporteHiloId" value="">
+        
+        <div class="grupo-campo">
+          <label for="reporteMotivo">Motivo del reporte</label>
+          <select id="reporteMotivo" class="campo" required>
+            <option value="">Selecciona un motivo…</option>
+            <option value="spam">Publicidad o Spam</option>
+            <option value="ofensivo">Lenguaje ofensivo o acoso</option>
+            <option value="falso">Información falsa o peligrosa</option>
+            <option value="otro">Otro motivo</option>
+          </select>
+        </div>
+        <div class="grupo-campo">
+          <label for="reporteDetalles">Detalles (opcional)</label>
+          <textarea id="reporteDetalles" class="campo campo-textarea" rows="3"
+            placeholder="Añade más contexto sobre el problema..."></textarea>
+        </div>
+        <div class="modal-form-acciones">
+          <button type="button" id="cerrarModalReporte" class="btn btn-ghost">Cancelar</button>
+          <button type="submit" class="btn btn-peligro">Enviar reporte</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- NAVBAR -->
   <nav class="navbar">
     <a href="../InicioPagina/inicio.html" class="navbar-marca">
@@ -61,7 +94,7 @@
     </ul>
     <div class="navbar-acciones">
       <a href="../InicioSesion/Inicio_Sesion.html" class="btn btn-ghost btn-sm">Iniciar sesión</a>
-      <a href="../InicioSesion/registro.html"       class="btn btn-primario btn-sm">Registrarse</a>
+      <a href="../InicioSesion/registro.html" class="btn btn-primario btn-sm">Registrarse</a>
     </div>
   </nav>
 
@@ -82,7 +115,7 @@
   <!-- LAYOUT PRINCIPAL -->
   <div class="foro-layout">
 
-    <!-- HILOS -->
+   <!-- HILOS -->
     <main>
 
       <div class="foro-busqueda-wrap">
@@ -104,7 +137,7 @@
       </div>
 
       <!-- HILO 1 -->
-      <a href="#" class="foro-hilo destacado" data-categoria="perros">
+      <a href="hilo.html" class="foro-hilo destacado" data-categoria="perros">
         <div class="foro-avatar">JP</div>
         <div class="foro-hilo-cuerpo">
           <div class="foro-hilo-titulo">¿Cuántas veces al día se debe alimentar un Labrador adulto?</div>
@@ -114,6 +147,7 @@
             <span class="foro-meta-item">📅 hace 2 horas</span>
             <span class="badge badge-azul badge-foro">🐶 Perros</span>
             <span class="badge badge-verde badge-foro">📌 Destacado</span>
+            <button type="button" class="btn-reportar-hilo badge badge-foro" data-id="hilo_01">🚩 Reportar</button>
           </div>
         </div>
         <div class="foro-hilo-stats">
@@ -129,7 +163,7 @@
       </a>
 
       <!-- HILO 2 -->
-      <a href="#" class="foro-hilo" data-categoria="gatos">
+      <a href="hilo.html" class="foro-hilo" data-categoria="gatos">
         <div class="foro-avatar foro-avatar-violeta">ML</div>
         <div class="foro-hilo-cuerpo">
           <div class="foro-hilo-titulo">Vacunación FIV para gatos en Bucaramanga — ¿dónde hacerla?</div>
@@ -138,6 +172,7 @@
             <span class="foro-meta-item">👤 María López</span>
             <span class="foro-meta-item">📅 hace 1 día</span>
             <span class="badge badge-azul badge-foro">🐱 Gatos</span>
+            <button type="button" class="btn-reportar-hilo badge badge-foro" data-id="hilo_02">🚩 Reportar</button>
           </div>
         </div>
         <div class="foro-hilo-stats">
@@ -147,7 +182,7 @@
       </a>
 
       <!-- HILO 3 -->
-      <a href="#" class="foro-hilo" data-categoria="adopcion">
+      <a href="hilo.html" class="foro-hilo" data-categoria="adopcion">
         <div class="foro-avatar foro-avatar-naranja">CR</div>
         <div class="foro-hilo-cuerpo">
           <div class="foro-hilo-titulo">¿Cómo redactar un buen acuerdo de adopción responsable?</div>
@@ -156,6 +191,7 @@
             <span class="foro-meta-item">👤 Carlos Ruiz</span>
             <span class="foro-meta-item">📅 hace 3 días</span>
             <span class="badge badge-azul badge-foro">🏠 Adopción</span>
+            <button type="button" class="btn-reportar-hilo badge badge-foro" data-id="hilo_03">🚩 Reportar</button>
           </div>
         </div>
         <div class="foro-hilo-stats">
@@ -165,7 +201,7 @@
       </a>
 
       <!-- HILO 4 -->
-      <a href="#" class="foro-hilo" data-categoria="salud">
+      <a href="hilo.html" class="foro-hilo" data-categoria="salud">
         <div class="foro-avatar foro-avatar-teal">LP</div>
         <div class="foro-hilo-cuerpo">
           <div class="foro-hilo-titulo">Mi gato no quiere comer desde hace 2 días — ¿es urgencia?</div>
@@ -175,6 +211,7 @@
             <span class="foro-meta-item">📅 hace 5 horas</span>
             <span class="badge badge-azul badge-foro">💊 Salud</span>
             <span class="badge badge-rojo badge-foro">🆘 Urgente</span>
+            <button type="button" class="btn-reportar-hilo badge badge-foro" data-id="hilo_04">🚩 Reportar</button>
           </div>
         </div>
         <div class="foro-hilo-stats">
@@ -184,7 +221,7 @@
       </a>
 
       <!-- HILO 5 -->
-      <a href="#" class="foro-hilo" data-categoria="general">
+      <a href="hilo.html" class="foro-hilo" data-categoria="general">
         <div class="foro-avatar foro-avatar-rosa">SG</div>
         <div class="foro-hilo-cuerpo">
           <div class="foro-hilo-titulo">Parque para mascotas en La Ceiba — nueva zona inaugurada</div>
@@ -193,6 +230,7 @@
             <span class="foro-meta-item">👤 Sara Gómez</span>
             <span class="foro-meta-item">📅 hace 1 semana</span>
             <span class="badge badge-azul badge-foro">💬 General</span>
+            <button type="button" class="btn-reportar-hilo badge badge-foro" data-id="hilo_05">🚩 Reportar</button>
           </div>
         </div>
         <div class="foro-hilo-stats">
@@ -202,7 +240,7 @@
       </a>
 
       <!-- HILO 6 -->
-      <a href="#" class="foro-hilo" data-categoria="perros">
+      <a href="hilo.html" class="foro-hilo" data-categoria="perros">
         <div class="foro-avatar foro-avatar-verde">AM</div>
         <div class="foro-hilo-cuerpo">
           <div class="foro-hilo-titulo">Consejos para socializar un perro rescatado con otros perros</div>
@@ -211,6 +249,7 @@
             <span class="foro-meta-item">👤 Ana Morales</span>
             <span class="foro-meta-item">📅 hace 2 días</span>
             <span class="badge badge-azul badge-foro">🐶 Perros</span>
+            <button type="button" class="btn-reportar-hilo badge badge-foro" data-id="hilo_06">🚩 Reportar</button>
           </div>
         </div>
         <div class="foro-hilo-stats">
@@ -220,7 +259,7 @@
       </a>
 
       <!-- HILO 7 -->
-      <a href="#" class="foro-hilo" data-categoria="gatos">
+      <a href="hilo.html" class="foro-hilo" data-categoria="gatos">
         <div class="foro-avatar foro-avatar-ambar">RV</div>
         <div class="foro-hilo-cuerpo">
           <div class="foro-hilo-titulo">¿Arena aglomerante o de sílice para gatos? Diferencias y costos</div>
@@ -229,6 +268,7 @@
             <span class="foro-meta-item">👤 Ricardo V.</span>
             <span class="foro-meta-item">📅 hace 4 días</span>
             <span class="badge badge-azul badge-foro">🐱 Gatos</span>
+            <button type="button" class="btn-reportar-hilo badge badge-foro" data-id="hilo_07">🚩 Reportar</button>
           </div>
         </div>
         <div class="foro-hilo-stats">
@@ -238,7 +278,7 @@
       </a>
 
       <!-- HILO 8 -->
-      <a href="#" class="foro-hilo" data-categoria="adopcion">
+      <a href="hilo.html" class="foro-hilo" data-categoria="adopcion">
         <div class="foro-avatar foro-avatar-azul">DM</div>
         <div class="foro-hilo-cuerpo">
           <div class="foro-hilo-titulo">Experiencia adoptando en la feria de adopción del 15 de junio</div>
@@ -247,6 +287,7 @@
             <span class="foro-meta-item">👤 Diego M.</span>
             <span class="foro-meta-item">📅 hace 6 días</span>
             <span class="badge badge-azul badge-foro">🏠 Adopción</span>
+            <button type="button" class="btn-reportar-hilo badge badge-foro" data-id="hilo_08">🚩 Reportar</button>
           </div>
         </div>
         <div class="foro-hilo-stats">

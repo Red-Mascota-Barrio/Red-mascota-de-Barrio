@@ -1,0 +1,150 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Cuántas veces al día se debe alimentar un Labrador adulto? — Red de Mascotas</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/foro.css">
+</head>
+<body>
+
+  <!-- MODAL REPORTE (Reutilizado para publicaciones y comentarios) -->
+  <div class="modal-overlay" id="modalReporte" role="dialog" aria-modal="true">
+    <div class="modal-caja">
+      <h2 class="texto-peligro">🚩 Reportar contenido</h2>
+      <p class="modal-subtitulo">Ayúdanos a mantener la comunidad segura. Indícanos el problema.</p>
+      
+      <form id="formReporte" novalidate>
+        <input type="hidden" id="reporteElementoId" value="">
+        <div class="grupo-campo">
+          <label for="reporteMotivo">Motivo del reporte</label>
+          <select id="reporteMotivo" class="campo" required>
+            <option value="">Selecciona un motivo…</option>
+            <option value="spam">Publicidad o Spam</option>
+            <option value="ofensivo">Lenguaje ofensivo o acoso</option>
+            <option value="falso">Información falsa o peligrosa</option>
+          </select>
+        </div>
+        <div class="grupo-campo">
+          <label for="reporteDetalles">Detalles (opcional)</label>
+          <textarea id="reporteDetalles" class="campo campo-textarea" rows="3" placeholder="Añade más contexto..."></textarea>
+        </div>
+        <div class="modal-form-acciones">
+          <button type="button" id="cerrarModalReporte" class="btn btn-ghost">Cancelar</button>
+          <button type="submit" class="btn btn-peligro">Enviar reporte</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="../InicioPagina/inicio.html" class="navbar-marca">
+      <div class="navbar-marca-logo">🐾</div>
+      Red de Mascotas de Barrio
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="../InicioPagina/inicio.html">Inicio</a></li>
+      <li><a href="../Mascotas/busqueda.html">Adoptar</a></li>
+      <li><a href="foro.html" class="activo">Foros</a></li>
+      <li><a href="../Eventos/Eventos.html">Eventos</a></li>
+    </ul>
+    <div class="navbar-acciones">
+      <a href="../InicioSesion/Inicio_Sesion.html" class="btn btn-ghost btn-sm">Iniciar sesión</a>
+      <a href="../InicioSesion/registro.html" class="btn btn-primario btn-sm">Registrarse</a>
+    </div>
+  </nav>
+
+  <!-- LAYOUT DEL HILO (Contenido principal) -->
+  <div class="hilo-detalle-layout">
+    
+    <!-- Migas de pan (Breadcrumbs) para volver atrás -->
+    <a href="foro.html" class="btn-volver">← Volver al Foro</a>
+
+    <main class="hilo-contenedor-principal">
+      
+      <!-- PUBLICACIÓN PRINCIPAL -->
+      <article class="publicacion-principal">
+        <div class="publicacion-header">
+          <div class="foro-avatar">JP</div>
+          <div class="publicacion-info">
+            <div class="publicacion-autor">Juan Pérez</div>
+            <div class="publicacion-fecha">Publicado hace 2 horas</div>
+          </div>
+          <span class="badge badge-azul badge-foro">🐶 Perros</span>
+        </div>
+        
+        <h1 class="publicacion-titulo">¿Cuántas veces al día se debe alimentar un Labrador adulto?</h1>
+        
+        <div class="publicacion-cuerpo">
+          <p>Hola a todos en la comunidad. Tengo un labrador de 3 años llamado Max. Últimamente me he dado cuenta de que parece tener hambre todo el tiempo, incluso después de comer su ración de la mañana.</p>
+          <p>Actualmente le estoy dando de comer dos veces al día (mañana y noche). ¿Es normal en esta raza? ¿Debería dividir su comida en 3 porciones más pequeñas durante el día para que no pase tanta hambre, o sigo con las 2 porciones?</p>
+          <p>¡Agradezco cualquier consejo de otros dueños de labradores!</p>
+        </div>
+
+        <div class="publicacion-footer">
+          <button type="button" class="btn-reportar-hilo btn-reportar-accion" data-id="pub_01">🚩 Reportar publicación</button>
+        </div>
+      </article>
+
+      <!-- SECCIÓN DE COMENTARIOS -->
+      <section class="seccion-comentarios">
+        <h3 class="comentarios-titulo">Respuestas (<span id="contadorComentarios">2</span>)</h3>
+
+        <!-- Lista donde aparecerán los comentarios -->
+        <div class="lista-comentarios" id="listaComentarios">
+          
+          <!-- Comentario 1 -->
+          <div class="comentario-item">
+            <div class="comentario-header">
+              <div class="foro-avatar foro-avatar-verde">AM</div>
+              <div class="comentario-info">
+                <span class="comentario-autor">Ana Morales</span>
+                <span class="comentario-fecha">hace 1 hora</span>
+              </div>
+              <button type="button" class="btn-reportar-hilo btn-reportar-accion" data-id="com_01" title="Reportar comentario">🚩</button>
+            </div>
+            <div class="comentario-cuerpo">
+              ¡Hola Juan! Es súper normal en los labradores, son perros muy glotones por naturaleza. Dos veces al día está perfecto para un perro adulto. Si le das 3 veces, corres el riesgo de sobrealimentarlo. Lo que puedes hacer es darle zanahorias crudas como premio si lo ves muy ansioso, les encantan y no engordan.
+            </div>
+          </div>
+
+          <!-- Comentario 2 -->
+          <div class="comentario-item">
+            <div class="comentario-header">
+              <div class="foro-avatar foro-avatar-naranja">CR</div>
+              <div class="comentario-info">
+                <span class="comentario-autor">Carlos Ruiz</span>
+                <span class="comentario-fecha">hace 30 minutos</span>
+              </div>
+              <button type="button" class="btn-reportar-hilo btn-reportar-accion" data-id="com_02" title="Reportar comentario">🚩</button>
+            </div>
+            <div class="comentario-cuerpo">
+              Concuerdo con Ana. Mi veterinario me recomendó mantener las dos raciones estrictas. Asegúrate también de que el concentrado que le estás dando sea de buena calidad y lo llene lo suficiente.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FORMULARIO PARA NUEVO COMENTARIO (SPA) -->
+        <div class="caja-nuevo-comentario">
+          <div class="foro-avatar foro-avatar-azul">TU</div>
+          <form id="formNuevoComentario" class="formulario-comentar">
+            <textarea id="textoComentario" class="campo campo-textarea" rows="3" placeholder="Escribe tu respuesta aquí..." required></textarea>
+            <div class="acciones-comentar">
+              <button type="submit" class="btn btn-primario">Publicar respuesta</button>
+            </div>
+          </form>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="../../js/hilo.js" defer></script>
+</body>
+</html>

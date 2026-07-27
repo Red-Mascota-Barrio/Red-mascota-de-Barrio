@@ -1,7 +1,3 @@
-/* ============================================================
-   foro.js — Filtro de categorías y modal de nuevo hilo
-   ============================================================ */
-
 (function () {
   'use strict';
 
@@ -9,6 +5,7 @@
     iniciarCategorias();
     iniciarModal();
     iniciarBusqueda();
+    iniciarModalReporte(); // <-- Añadido
   });
 
   /* ---- Filtro de categorías ---- */
@@ -110,6 +107,65 @@
           btn.style.background = '';
           form.reset();
         }, 1800);
+      });
+    }
+  }
+
+  /* ---- Modal Reporte (SPA) ---- */
+  function iniciarModalReporte() {
+    const modal = document.getElementById('modalReporte');
+    const btnCerrar = document.getElementById('cerrarModalReporte');
+    const form = document.getElementById('formReporte');
+    const inputId = document.getElementById('reporteHiloId');
+    const botonesReportar = document.querySelectorAll('.btn-reportar-hilo');
+
+    if (!modal) return;
+
+    // 1. Abrir modal al hacer clic en reportar
+    botonesReportar.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();  // Evita que el navegador siga el enlace
+        e.stopPropagation(); // Evita que el clic abra el hilo
+
+        const idHilo = btn.getAttribute('data-id');
+        if(inputId) inputId.value = idHilo;
+
+        modal.classList.add('visible');
+      });
+    });
+
+    // 2. Cerrar modal
+    if (btnCerrar) {
+      btnCerrar.addEventListener('click', function () {
+        modal.classList.remove('visible');
+      });
+    }
+
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) modal.classList.remove('visible');
+    });
+
+    // 3. Enviar formulario sin recargar
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); 
+        
+        const motivo = document.getElementById('reporteMotivo').value;
+        if (!motivo) return;
+
+        const btnSubmit = form.querySelector('[type="submit"]');
+        const textoOriginal = btnSubmit.textContent;
+        
+        btnSubmit.textContent = 'Enviando...';
+        btnSubmit.disabled = true;
+
+        setTimeout(function () {
+          modal.classList.remove('visible');
+          btnSubmit.textContent = textoOriginal;
+          btnSubmit.disabled = false;
+          form.reset();
+          alert('El reporte ha sido enviado al equipo de moderación. ¡Gracias por tu ayuda!');
+        }, 1200);
       });
     }
   }
