@@ -1,102 +1,299 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eventos - Red de Mascotas del Barrio</title>
-    <link rel="icon" type="image/x-icon" href="../../img/LogoPagina.png">
-    <link rel="stylesheet" href="../../css/style_eventos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos — Red de Mascotas de Barrio</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/eventos.css">
 </head>
-
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="../../img/logopricipal.jpg" alt="logopricipal">
-            <p>Red de Mascotas de Barrio</p>
+  <!-- MODAL INSCRIPCIÓN -->
+  <div class="modal-overlay" id="modalInscripcion" role="dialog" aria-modal="true">
+    <div class="modal-caja">
+      <h2>📅 Inscribirme al evento</h2>
+      <p class="modal-evento-nombre" id="nombreEvento"></p>
+      <form id="formInscripcion" novalidate>
+        <div class="grupo-campo">
+          <label for="inscNombre">Nombre completo</label>
+          <input type="text" id="inscNombre" class="campo" placeholder="Tu nombre completo" required>
         </div>
-
-        <div class="flex">
-            <nav class="nav-horizontal">
-               <a href="../InicioPagina/inicio.html ">Inicio</a>
-            <a href="../Mascotas/busqueda.html">Adopta</a>
-            <a href="../Foro/foro.html">Foros</a>
-            <a href="../PerfilUsuario/MascotasUsuario.html">Mascotas</a>
-            </nav>
-
-            <div class="perfil"></div>
+        <div class="grupo-campo">
+          <label for="inscCorreo">Correo electrónico</label>
+          <input type="email" id="inscCorreo" class="campo" placeholder="tu@correo.com" required>
         </div>
-    </header>
-
-    <div class="contenedor-eventos">
-
-
-        <section class="lista-eventos">
-
-            <div class="TituloEventos">
-
-                <h2>Eventos de la Comunidad</h2>
-
-
-            </div>
-            <br>
-
-            <div class="Cont-filtros">
-                <div class="filtros">
-                    <button class="btn active">Todos los Eventos</button>
-                    <button class="btn">Próximos</button>
-                    <button class="btn">Mis Eventos</button>
-                </div>
-                <button class="btn-crear" onclick="CrearEvento()">
-                    + Crear Evento
-                </button>
-            </div>
-
-
-            <div class="evento">
-                <img src="../../img/perroPerfil.jpg" class="img-evento">
-                <div class="info">
-                    <span class="tag verde">Paseo</span>
-                    <h3>Paseo matutino por el parque</h3>
-                    <p class="detail">Un agradable paseo con nuestras mascotas por el parque principal.</p>
-
-                    <div class="mini">
-                        <p><strong>Fecha:</strong> 05/02/2026</p>
-                        <p><strong>Hora:</strong> 8:00 AM</p>
-                        <p><strong>Lugar:</strong> Parque Central</p>
-                    </div>
-
-                    <button class="btn-info" onclick="paticiparEvento()">Participar</button>
-                </div>
-            </div>
-
-
-        </section>
-
-        <aside class="sidebar">
-
-            <section class="box">
-                <h3>Categorías Populares</h3>
-                <div class="cats">
-                    <p>Paseos</p><span>42</span>
-                    <p>Adopción</p><span>35</span>
-                    <p>Concursos</p><span>16</span>
-                    <p>Charlas</p><span>54</span>
-                </div>
-            </section>
-
-            <section class="box">
-                <h3>Calendario</h3>
-                <img src="../../img/Calendario.jpg" class="calendario">
-            </section>
-
-        </aside>
-
+        <div class="grupo-campo">
+          <label for="inscTelefono">Teléfono</label>
+          <input type="tel" id="inscTelefono" class="campo" placeholder="3001234567" required>
+        </div>
+        <div class="grupo-campo">
+          <label for="inscMascotas">¿Llevarás mascotas?</label>
+          <select id="inscMascotas" class="campo">
+            <option value="no">No, solo yo</option>
+            <option value="1">Sí, 1 mascota</option>
+            <option value="2">Sí, 2 mascotas</option>
+            <option value="mas">Sí, más de 2</option>
+          </select>
+        </div>
+        <div class="modal-form-acciones">
+          <button type="button" id="cerrarModalEvento" class="btn btn-ghost">Cancelar</button>
+          <button type="submit" class="btn btn-primario">Confirmar inscripción</button>
+        </div>
+      </form>
     </div>
+  </div>
 
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="../InicioPagina/inicio.html" class="navbar-marca">
+      <div class="navbar-marca-logo">🐾</div>
+      Red de Mascotas de Barrio
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="../InicioPagina/inicio.html">Inicio</a></li>
+      <li><a href="../Mascotas/busqueda.html">Adoptar</a></li>
+      <li><a href="../Foro/foro.html">Foros</a></li>
+      <li><a href="Eventos.html" class="activo">Eventos</a></li>
+    </ul>
+    <div class="navbar-acciones">
+      <a href="../InicioSesion/Inicio_Sesion.html" class="btn btn-ghost btn-sm">Iniciar sesión</a>
+      <a href="../InicioSesion/registro.html"       class="btn btn-primario btn-sm">Registrarse</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="eventos-hero">
+    <div class="eventos-hero-contenedor">
+      <h1>Eventos de la comunidad 📅</h1>
+      <p>Jornadas de vacunación, ferias de adopción y actividades pet-friendly en tu barrio</p>
+    </div>
+  </section>
+
+  <!-- LAYOUT -->
+  <div class="eventos-layout">
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+      <div class="eventos-filtros">
+        <button type="button" class="evento-filtro-btn activo" data-tipo="todos">🐾 Todos</button>
+        <button type="button" class="evento-filtro-btn" data-tipo="vacunacion">💉 Vacunación</button>
+        <button type="button" class="evento-filtro-btn" data-tipo="adopcion">🏠 Adopción</button>
+        <button type="button" class="evento-filtro-btn" data-tipo="taller">📚 Talleres</button>
+        <button type="button" class="evento-filtro-btn" data-tipo="recreacion">🌳 Recreación</button>
+      </div>
+
+      <!-- Evento destacado -->
+      <div class="evento-featured">
+        <div class="evento-featured-img">
+          <img src="../../img/Fondo.png" alt="Feria de Adopción Masiva"
+               onerror="this.parentElement.classList.add('evento-featured-img-error')">
+          <span class="evento-featured-badge badge badge-verde">⭐ Destacado</span>
+        </div>
+        <div class="evento-featured-info">
+          <div>
+            <span class="badge badge-naranja evento-featured-tipo">🏠 Adopción</span>
+            <h2>Gran Feria de Adopción Masiva — Julio 2026</h2>
+            <p>El evento más grande del año. Más de 80 mascotas en búsqueda de hogar, con stands de veterinarias, nutricionistas y tiendas de mascotas.</p>
+          </div>
+          <div class="evento-meta-list">
+            <div class="evento-meta-item">📅 <strong>26 de julio, 2026</strong> · 9:00 AM – 4:00 PM</div>
+            <div class="evento-meta-item">📍 <strong>Parque Santander</strong>, Centro, Bucaramanga</div>
+            <div class="evento-meta-item">👥 <strong>148 inscritos</strong> · Entrada gratuita</div>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primario btn-inscribirse"
+                    data-evento="Gran Feria de Adopción Masiva — Julio 2026">
+              Inscribirme al evento →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="eventos-proximos-titulo">Próximos eventos</h3>
+
+      <div class="grid-eventos">
+
+        <div class="evento-card" data-tipo="vacunacion">
+          <div class="evento-fecha-barra">
+            <div class="dia">19</div>
+            <div class="mes">Jul</div>
+          </div>
+          <div class="evento-card-cuerpo">
+            <h3>Jornada de Vacunación Gratuita — Barrio El Pinar</h3>
+            <p>Vacunación antirrábica y desparasitación gratuita para perros y gatos del sector. Lleva carné de vacunación.</p>
+            <div class="evento-card-meta">
+              <span>⏰ 8:00 AM – 12:00 PM</span>
+              <span>📍 Parque El Pinar</span>
+              <span class="badge badge-azul badge-evento-tipo">💉 Vacunación</span>
+            </div>
+          </div>
+          <div class="evento-card-accion">
+            <button type="button" class="btn btn-secundario btn-sm btn-inscribirse"
+                    data-evento="Jornada de Vacunación Gratuita — El Pinar">
+              Inscribirme
+            </button>
+          </div>
+        </div>
+
+        <div class="evento-card" data-tipo="taller">
+          <div class="evento-fecha-barra">
+            <div class="dia">22</div>
+            <div class="mes">Jul</div>
+          </div>
+          <div class="evento-card-cuerpo">
+            <h3>Taller: Primeros auxilios para mascotas</h3>
+            <p>Aprende qué hacer en emergencias con tu mascota antes de llegar al veterinario. Cupos limitados a 20 personas.</p>
+            <div class="evento-card-meta">
+              <span>⏰ 3:00 PM – 5:30 PM</span>
+              <span>📍 Biblioteca Pública Sur</span>
+              <span class="badge badge-azul badge-evento-tipo">📚 Taller</span>
+            </div>
+          </div>
+          <div class="evento-card-accion">
+            <button type="button" class="btn btn-secundario btn-sm btn-inscribirse"
+                    data-evento="Taller: Primeros auxilios para mascotas">
+              Inscribirme
+            </button>
+          </div>
+        </div>
+
+        <div class="evento-card" data-tipo="recreacion">
+          <div class="evento-fecha-barra">
+            <div class="dia">27</div>
+            <div class="mes">Jul</div>
+          </div>
+          <div class="evento-card-cuerpo">
+            <h3>Caminata Pet-Friendly por el Río de Oro</h3>
+            <p>Recorrido de 5 km a lo largo del río. Apta para todas las razas. Llevar correa, agua y bolsas para recoger.</p>
+            <div class="evento-card-meta">
+              <span>⏰ 7:00 AM – 10:00 AM</span>
+              <span>📍 Punto de encuentro: Puente La Flora</span>
+              <span class="badge badge-azul badge-evento-tipo">🌳 Recreación</span>
+            </div>
+          </div>
+          <div class="evento-card-accion">
+            <button type="button" class="btn btn-secundario btn-sm btn-inscribirse"
+                    data-evento="Caminata Pet-Friendly por el Río de Oro">
+              Inscribirme
+            </button>
+          </div>
+        </div>
+
+        <div class="evento-card" data-tipo="adopcion">
+          <div class="evento-fecha-barra">
+            <div class="dia">02</div>
+            <div class="mes">Ago</div>
+          </div>
+          <div class="evento-card-cuerpo">
+            <h3>Feria de Adopción Barrio La Ceiba</h3>
+            <p>Pequeña feria con 25 mascotas en adopción. Organizada por voluntarios del barrio. Entrada libre.</p>
+            <div class="evento-card-meta">
+              <span>⏰ 10:00 AM – 2:00 PM</span>
+              <span>📍 Parque La Ceiba</span>
+              <span class="badge badge-azul badge-evento-tipo">🏠 Adopción</span>
+            </div>
+          </div>
+          <div class="evento-card-accion">
+            <button type="button" class="btn btn-secundario btn-sm btn-inscribirse"
+                    data-evento="Feria de Adopción Barrio La Ceiba">
+              Inscribirme
+            </button>
+          </div>
+        </div>
+
+        <div class="evento-card" data-tipo="taller">
+          <div class="evento-fecha-barra">
+            <div class="dia">09</div>
+            <div class="mes">Ago</div>
+          </div>
+          <div class="evento-card-cuerpo">
+            <h3>Taller de nutrición canina y felina — gratis</h3>
+            <p>Médico veterinario nutricionista explica cómo elegir el alimento correcto según raza, edad y condición.</p>
+            <div class="evento-card-meta">
+              <span>⏰ 4:00 PM – 6:00 PM</span>
+              <span>📍 Casa de la Cultura, Cabecera</span>
+              <span class="badge badge-azul badge-evento-tipo">📚 Taller</span>
+            </div>
+          </div>
+          <div class="evento-card-accion">
+            <button type="button" class="btn btn-secundario btn-sm btn-inscribirse"
+                    data-evento="Taller de nutrición canina y felina">
+              Inscribirme
+            </button>
+          </div>
+        </div>
+
+        <div class="evento-card" data-tipo="vacunacion">
+          <div class="evento-fecha-barra">
+            <div class="dia">16</div>
+            <div class="mes">Ago</div>
+          </div>
+          <div class="evento-card-cuerpo">
+            <h3>Jornada de esterilización subsidiada — Sotomayor</h3>
+            <p>Cirugías de esterilización a bajo costo para mascotas de estratos 1, 2 y 3. Cupos limitados — inscripción previa obligatoria.</p>
+            <div class="evento-card-meta">
+              <span>⏰ 7:00 AM – 1:00 PM</span>
+              <span>📍 Clínica veterinaria comunitaria</span>
+              <span class="badge badge-rojo badge-evento-tipo">⚠️ Cupos limitados</span>
+            </div>
+          </div>
+          <div class="evento-card-accion">
+            <button type="button" class="btn btn-primario btn-sm btn-inscribirse"
+                    data-evento="Jornada de esterilización subsidiada — Sotomayor">
+              Inscribirme
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside>
+
+      <div class="sidebar-evento-card">
+        <div class="sidebar-evento-titulo">📊 Este mes</div>
+        <div class="eventos-sidebar-stats">
+          <div class="eventos-sidebar-stat">
+            <div class="eventos-sidebar-stat-num">6</div>
+            <div class="eventos-sidebar-stat-lbl">Eventos</div>
+          </div>
+          <div class="eventos-sidebar-stat">
+            <div class="eventos-sidebar-stat-num">312</div>
+            <div class="eventos-sidebar-stat-lbl">Inscritos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-evento-card">
+        <div class="sidebar-evento-titulo">📍 Barrios con eventos</div>
+        <div class="eventos-barrios-wrap">
+          <span class="badge badge-verde">El Pinar</span>
+          <span class="badge badge-verde">La Ceiba</span>
+          <span class="badge badge-verde">Centro</span>
+          <span class="badge badge-gris">Cabecera</span>
+          <span class="badge badge-gris">Sotomayor</span>
+          <span class="badge badge-gris">Real de Minas</span>
+        </div>
+      </div>
+
+      <div class="sidebar-evento-card">
+        <div class="sidebar-evento-titulo">💡 ¿Quieres organizar un evento?</div>
+        <p class="eventos-sidebar-cta-texto">Si tienes una jornada de vacunación, feria o taller, publícalo aquí para que toda la comunidad se entere.</p>
+        <a href="../InicioSesion/Inicio_Sesion.html" class="btn btn-primario btn-bloque btn-sm">
+          Publicar evento
+        </a>
+      </div>
+
+    </aside>
+  </div>
+
+  <script src="../../js/eventos.js" defer></script>
 </body>
-
-<script src="../../js/Eventos.js"></script>
-
 </html>

@@ -1,53 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
-  <title>Red de Mascotas del Barrio</title>
-  <link rel="stylesheet" href="../../css/usuarios.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de mascotas — Admin</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/admin.css">
 </head>
-
 <body>
+  <div class="layout-sidebar">
+    <aside class="sidebar">
+      <a href="administrativo.html" class="sidebar-logo"><div class="sidebar-logo-icon">🐾</div>Red de Mascotas</a>
+      <div class="sidebar-seccion">Principal</div>
+      <a class="sidebar-item" href="administrativo.html"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard</a>
+      <div class="sidebar-seccion">Gestión</div>
+      <a class="sidebar-item" href="usuarios.html"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Usuarios</a>
+      <a class="sidebar-item activo" href="mascotas.html"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 21.7C17.3 17 22 13 22 8.5a5.5 5.5 0 0 0-9.8-3.4A5.5 5.5 0 0 0 2 8.5C2 13 6.7 17 12 21.7z"/></svg>Mascotas</a>
+      <a class="sidebar-item" href="eventosadmin.html"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Eventos</a>
+      <a class="sidebar-item" href="../Foro/foro.html"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Foros</a>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-seccion">Moderación</div>
+      <a class="sidebar-item sidebar-item-reportes" href="Reportes.html"><svg class="icon-svg icon-svg-reportes" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Reportes<span class="badge badge-rojo badge-sidebar-count">4</span></a>
+      <div class="sidebar-divider"></div>
+      <a class="sidebar-item sidebar-item-cerrar-sesion" href="../InicioSesion/Inicio_Sesion.html" onclick="return confirm('¿Cerrar sesión?')"><svg class="icon-svg icon-svg-cerrar-sesion" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Cerrar sesión</a>
+    </aside>
 
-  <div class="contenedor">
-
-    <div class="menu">
-      <div class="logo">
-        <img src="../../img/logo.1.jpg" alt="Patita" class="imagen_logo">
-        <span>Red de Mascotas del Barrio</span>
+    <div>
+      <div class="nav-top">
+        <div class="breadcrumb">Panel Admin <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg><span>Mascotas</span></div>
+        <div class="topbar-acciones">
+          <button type="button" class="notif-btn"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="notif-badge">4</span></button>
+          <span class="topbar-label">Administrador</span>
+          <div class="avatar-admin">A</div>
+        </div>
       </div>
 
-      <button>Dashboard</button>
-      <button>Usuarios</button>
-      <button>Mascotas</button>
-      <button>Adopciones</button>
-      <button>Eventos</button>
-      <button>Foro</button>
-      <button>Reportes</button>
+      <div class="area-contenido">
+        <div class="page-header">
+          <div><h1>Gestión de mascotas</h1><p>1,240 mascotas registradas en la plataforma</p></div>
+          <a href="../Mascotas/busqueda.html" class="btn btn-ghost btn-sm">Ver listado público</a>
+        </div>
 
-      <button>Salir</button>
+        <div class="grid-4 stats-con-margen">
+          <div class="stat-card"><div class="stat-icono"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke="var(--verde-oscuro)"><path d="M12 21.7C17.3 17 22 13 22 8.5a5.5 5.5 0 0 0-9.8-3.4A5.5 5.5 0 0 0 2 8.5C2 13 6.7 17 12 21.7z"/></svg></div><div><div class="stat-numero">1,240</div><div class="stat-label">Total mascotas</div></div></div>
+          <div class="stat-card"><div class="stat-icono"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke="var(--verde-oscuro)"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="stat-numero">842</div><div class="stat-label">En adopción</div></div></div>
+          <div class="stat-card"><div class="stat-icono"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke="var(--verde-oscuro)"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div><div class="stat-numero">156</div><div class="stat-label">Perdidas</div></div></div>
+          <div class="stat-card"><div class="stat-icono"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke="var(--verde-oscuro)"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><div class="stat-numero">382</div><div class="stat-label">Adoptadas</div></div></div>
+        </div>
+
+        <div class="toolbar">
+          <div class="toolbar-search"><span>🔍</span><input type="search" id="buscarTabla" placeholder="Buscar por nombre, raza o dueño…"></div>
+          <select class="toolbar-select"><option value="">Todas las especies</option><option>Perro</option><option>Gato</option><option>Otro</option></select>
+          <select class="toolbar-select"><option value="">Todos los estados</option><option>En adopción</option><option>Perdido</option><option>Adoptado</option></select>
+        </div>
+
+        <div class="tabla-wrap">
+          <table class="tabla-admin">
+            <thead>
+              <tr>
+                <th class="th-checkbox"><input type="checkbox"></th>
+                <th>Mascota</th>
+                <th>Especie / Raza</th>
+                <th>Dueño</th>
+                <th>Estado</th>
+                <th>Barrio</th>
+                <th>Publicado</th>
+                <th class="th-derecha">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="tabla-usuario"><div class="tabla-mascota-icono">🐶</div><div><div class="tabla-nombre">Max</div><div class="tabla-sub">Macho · 3 años</div></div></div></td>
+                <td class="td-barrio">Perro · Labrador</td>
+                <td class="td-barrio">Juan Pérez</td>
+                <td><span class="badge badge-verde badge-estado">En adopción</span></td>
+                <td class="td-fecha">El Pinar</td>
+                <td class="td-fecha">hace 2 días</td>
+                <td><div class="acciones-tabla acciones-tabla-derecha"><a href="../Mascotas/info_mascota.html" class="accion-btn">👁</a><button type="button" class="accion-btn btn-toggle-estado">⏸</button><button type="button" class="accion-btn peligro btn-eliminar-fila" data-nombre="Max">🗑</button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="tabla-usuario"><div class="tabla-mascota-icono tabla-mascota-icono-azul">🐱</div><div><div class="tabla-nombre">Luna</div><div class="tabla-sub">Hembra · 4 años</div></div></div></td>
+                <td class="td-barrio">Gato · Siamés</td>
+                <td class="td-barrio">María López</td>
+                <td><span class="badge badge-verde badge-estado">En adopción</span></td>
+                <td class="td-fecha">Centro</td>
+                <td class="td-fecha">hace 1 hora</td>
+                <td><div class="acciones-tabla acciones-tabla-derecha"><a href="../Mascotas/info_mascota.html" class="accion-btn">👁</a><button type="button" class="accion-btn btn-toggle-estado">⏸</button><button type="button" class="accion-btn peligro btn-eliminar-fila" data-nombre="Luna">🗑</button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="tabla-usuario"><div class="tabla-mascota-icono tabla-mascota-icono-naranja">🐶</div><div><div class="tabla-nombre">Bruno</div><div class="tabla-sub">Macho · 5 años</div></div></div></td>
+                <td class="td-barrio">Perro · Pastor Alemán</td>
+                <td class="td-barrio">Ana Morales</td>
+                <td><span class="badge badge-rojo badge-estado">Perdido</span></td>
+                <td class="td-fecha">Sotomayor</td>
+                <td class="td-fecha">hace 3 días</td>
+                <td><div class="acciones-tabla acciones-tabla-derecha"><a href="../Mascotas/info_mascota.html" class="accion-btn">👁</a><button type="button" class="accion-btn btn-toggle-estado">⏸</button><button type="button" class="accion-btn peligro btn-eliminar-fila" data-nombre="Bruno">🗑</button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="tabla-usuario"><div class="tabla-mascota-icono tabla-mascota-icono-azul">🐱</div><div><div class="tabla-nombre">Mochi</div><div class="tabla-sub">Hembra · 5 meses</div></div></div></td>
+                <td class="td-barrio">Gato · Común europeo</td>
+                <td class="td-barrio">Laura Parra</td>
+                <td><span class="badge badge-verde badge-estado">En adopción</span></td>
+                <td class="td-fecha">Cabecera</td>
+                <td class="td-fecha">ayer</td>
+                <td><div class="acciones-tabla acciones-tabla-derecha"><a href="../Mascotas/info_mascota.html" class="accion-btn">👁</a><button type="button" class="accion-btn btn-toggle-estado">⏸</button><button type="button" class="accion-btn peligro btn-eliminar-fila" data-nombre="Mochi">🗑</button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="tabla-usuario"><div class="tabla-mascota-icono">🐰</div><div><div class="tabla-nombre">Coco</div><div class="tabla-sub">Macho · 1 año</div></div></div></td>
+                <td class="td-barrio">Conejo · Enano</td>
+                <td class="td-barrio">Sara Gómez</td>
+                <td><span class="badge badge-gris badge-estado">Adoptado</span></td>
+                <td class="td-fecha">Real de Minas</td>
+                <td class="td-fecha">hace 1 semana</td>
+                <td><div class="acciones-tabla acciones-tabla-derecha"><a href="../Mascotas/info_mascota.html" class="accion-btn">👁</a><button type="button" class="accion-btn btn-toggle-estado">⏸</button><button type="button" class="accion-btn peligro btn-eliminar-fila" data-nombre="Coco">🗑</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tabla-footer">
+            <span>Mostrando <strong><span id="conteoFilas">5</span></strong> de 1,240 mascotas</span>
+            <div class="tabla-paginacion">
+              <button type="button" class="pag-btn-sm" disabled>‹</button>
+              <button type="button" class="pag-btn-sm activo">1</button>
+              <button type="button" class="pag-btn-sm">2</button>
+              <button type="button" class="pag-btn-sm">3</button>
+              <span class="pag-puntos">…</span>
+              <button type="button" class="pag-btn-sm">124</button>
+              <button type="button" class="pag-btn-sm">›</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <main class="contenido">
-      <h1>Mascotas</h1>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Especie</th>
-            <th>Edad</th>
-          </tr>
-        </thead>
-        <tbody id="tablaUsuarios">
-          <tr>
-
-          </tr>
-        </tbody>
-      </table>
-    </main>
-
   </div>
+  <script src="../../js/admin.js" defer></script>
 </body>
-
 </html>

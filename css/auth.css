@@ -1,0 +1,757 @@
+/* ============================================================
+   auth.css — Login, Registro y Login Admin
+   ============================================================ */
+
+body { background: white; }
+
+/* ---- Layout dos columnas ---- */
+.auth-contenedor {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ---- Panel visual izquierdo ---- */
+.auth-visual {
+  background: linear-gradient(155deg, var(--verde-oscuro) 0%, #0a7a5e 45%, var(--verde-principal) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 48px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.auth-visual::before {
+  content: '';
+  position: absolute;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  top: -140px; right: -120px;
+  pointer-events: none;
+}
+.auth-visual::after {
+  content: '';
+  position: absolute;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  bottom: -80px; left: -70px;
+  pointer-events: none;
+}
+
+/* ---- Panel formulario derecho ---- */
+.auth-formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 48px;
+  background: white;
+  overflow-y: auto;
+}
+
+.auth-caja {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ---- Logo en el formulario ---- */
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 36px;
+  color: var(--verde-oscuro);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.auth-logo-icon {
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--verde-principal), var(--verde-oscuro));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* ---- Títulos del formulario ---- */
+.auth-caja h1 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--texto-principal);
+  letter-spacing: -0.025em;
+}
+.auth-caja p.subtitulo {
+  color: var(--texto-secundario);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 960px) {
+  .auth-contenedor { grid-template-columns: 1fr; }
+  .auth-visual     { display: none; }
+  .auth-formulario { padding: 48px 24px; }
+}
+
+
+/* ============================================================
+   Estilos extraídos de Inicio_Sesion.html
+   ============================================================ */
+body { background: var(--fondo-pagina); }
+
+    /* Separador */
+    .separador {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 22px 0;
+      color: var(--texto-tenue);
+      font-size: 12.5px;
+    }
+    .separador::before,
+    .separador::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--borde);
+    }
+
+    /* Enlace al registro */
+    .enlace-auth {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--texto-secundario);
+    }
+    .enlace-auth a {
+      color: var(--verde-principal);
+      font-weight: 600;
+    }
+    .enlace-auth a:hover { text-decoration: underline; }
+
+    /* Botón administrador */
+    .btn-admin {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px;
+      border: 1.5px solid var(--borde-fuerte);
+      border-radius: var(--radio-md);
+      background: white;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--texto-secundario);
+      cursor: pointer;
+      transition: all var(--transicion);
+      text-decoration: none;
+      font-family: var(--font-principal);
+    }
+    .btn-admin:hover {
+      border-color: var(--verde-principal);
+      color: var(--verde-oscuro);
+      background: var(--verde-fondo);
+    }
+
+    /* Campo contraseña con ojo */
+    .campo-password {
+      position: relative;
+    }
+    /* CORRECCIÓN: el input dentro del campo-password debe tener width:100% */
+    .campo-password input.campo {
+      padding-right: 46px;
+      width: 100%;
+    }
+    .ojo-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--texto-tenue);
+      font-size: 16px;
+      padding: 4px;
+      line-height: 1;
+      transition: color var(--transicion);
+    }
+    .ojo-btn:hover { color: var(--texto-secundario); }
+
+    /* Mensaje de error de login */
+    .alerta-error {
+      background: #fce8e8;
+      border: 1px solid #f5c0c0;
+      color: #8b1a1a;
+      border-radius: var(--radio-md);
+      padding: 12px 14px;
+      font-size: 13.5px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .alerta-error.visible { display: block; }
+
+    /* Visual lado izquierdo */
+    .auth-visual-contenido { text-align: center; position: relative; z-index: 1; }
+    .auth-visual-contenido h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .auth-visual-contenido p {
+      font-size: 15px;
+      opacity: 0.84;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 340px;
+    }
+    .auth-visual-img {
+      border-radius: var(--radio-xl);
+      max-height: 280px;
+      object-fit: cover;
+      width: 100%;
+      box-shadow: var(--sombra-lg);
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Chips de beneficio en panel visual */
+    .chip-beneficio {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 99px;
+      padding: 5px 12px;
+      font-size: 12.5px;
+      margin: 4px;
+    }
+
+
+/* ============================================================
+   Estilos extraídos de registro.html
+   ============================================================ */
+body { background: var(--fondo-pagina); }
+
+    /* CORRECCIÓN: el panel visual va a la derecha en registro */
+    .auth-contenedor { direction: ltr; }
+
+    /* Beneficios en panel visual */
+    .beneficio {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      opacity: 0.92;
+      text-align: left;
+    }
+    .beneficio-icono { flex-shrink: 0; font-size: 16px; margin-top: 1px; }
+
+    /* Enlace al login */
+    .enlace-auth {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--texto-secundario);
+    }
+    .enlace-auth a { color: var(--verde-principal); font-weight: 600; }
+    .enlace-auth a:hover { text-decoration: underline; }
+
+    /* Enlace de términos */
+    .terminos-link {
+      color: var(--verde-principal);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .terminos-link:hover { text-decoration: underline; }
+
+    /* Indicador de fuerza de contraseña */
+    .fuerza-barra {
+      height: 5px;
+      border-radius: 3px;
+      background: var(--borde);
+      margin-top: 8px;
+      overflow: hidden;
+    }
+    .fuerza-barra-inner {
+      height: 100%;
+      border-radius: 3px;
+      width: 0%;
+      transition: width 0.3s ease, background 0.3s ease;
+    }
+
+    /* Modal de términos */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.48);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      /* CORRECCIÓN: backdrop-filter para que se vea bien sobre el formulario */
+      backdrop-filter: blur(3px);
+    }
+    .modal-overlay.visible { display: flex; }
+
+    .modal-caja {
+      background: white;
+      border-radius: var(--radio-xl);
+      padding: 36px;
+      max-width: 600px;
+      width: 92%;
+      max-height: 82vh;
+      overflow-y: auto;
+      box-shadow: var(--sombra-lg);
+      /* CORRECCIÓN: la caja del modal no hereda direction del contenedor auth */
+      direction: ltr;
+    }
+
+    .modal-caja h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 20px;
+      margin-bottom: 16px;
+      color: var(--verde-oscuro);
+      letter-spacing: -0.01em;
+    }
+
+    .modal-caja p,
+    .modal-caja li {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: var(--texto-secundario);
+      margin-bottom: 10px;
+    }
+
+    .modal-acciones {
+      display: flex;
+      gap: 10px;
+      margin-top: 28px;
+      justify-content: flex-end;
+    }
+
+    /* Paso a paso visual */
+    .pasos-registro {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 28px;
+    }
+    .paso {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: var(--texto-tenue);
+    }
+    .paso-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--borde);
+      color: var(--texto-tenue);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .paso.activo .paso-num {
+      background: var(--verde-principal);
+      color: white;
+    }
+    .paso.activo { color: var(--verde-oscuro); font-weight: 600; }
+    .paso-linea { width: 28px; height: 1px; background: var(--borde); }
+
+    /* Visual lado derecho */
+    .auth-visual-registro {
+      background: linear-gradient(155deg, var(--verde-oscuro) 0%, var(--teal-medio) 50%, var(--verde-principal) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 56px 48px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .auth-visual-registro::before {
+      content: '';
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      top: -80px;
+      left: -80px;
+      pointer-events: none;
+    }
+
+/* ============================================================
+   Clases extraídas de Inicio_Sesion.html
+   ============================================================ */
+
+.auth-visual-icono {
+  font-size: 52px;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.auth-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.auth-visual-img-oculta { display: none; }
+
+.auth-logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--borde);
+  background: var(--verde-fondo);
+}
+.auth-logo-img-oculta { display: none; }
+
+.campo-olvide-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.campo-olvide-link {
+  font-size: 13px;
+  color: var(--verde-principal);
+  font-weight: 500;
+  text-decoration: none;
+}
+.campo-olvide-link:hover { text-decoration: underline; }
+
+/* ============================================================
+   Clases extraídas de registro.html
+   ============================================================ */
+
+.auth-caja-registro { max-width: 460px; }
+
+.fuerza-texto {
+  font-size: 12px;
+  color: var(--texto-tenue);
+  margin-top: 4px;
+  display: block;
+}
+
+.match-texto {
+  font-size: 12px;
+  margin-top: 4px;
+  display: none;
+}
+
+.terminos-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.terminos-checkbox {
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--verde-principal);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.terminos-label {
+  font-size: 13px;
+  color: var(--texto-secundario);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+/* ---- Panel visual registro (lado derecho) ---- */
+.auth-visual-registro {
+  background: linear-gradient(155deg, var(--verde-oscuro) 0%, #0a7a5e 45%, var(--verde-principal) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 48px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-visual-registro::before {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  top: -100px; left: -100px;
+}
+
+.auth-visual-registro::after {
+  content: '';
+  position: absolute;
+  width: 250px; height: 250px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  bottom: -60px; right: -60px;
+}
+
+.auth-visual-registro-contenido {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 360px;
+}
+
+.auth-visual-registro-titulo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.auth-visual-registro-subtitulo {
+  font-size: 14px;
+  opacity: 0.84;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.auth-visual-registro-img {
+  border-radius: var(--radio-xl);
+  margin-top: 28px;
+  max-height: 200px;
+  object-fit: cover;
+  width: 100%;
+  box-shadow: var(--sombra-lg);
+  background: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 960px) {
+  .auth-visual-registro { display: none; }
+}
+
+/* ============================================================
+   Clases extraídas de Inicio_Sesion_Administrador.html
+   ============================================================ */
+
+/* ---- Panel visual admin (azul oscuro) ---- */
+.auth-visual-admin {
+  background: linear-gradient(155deg, #0f172a 0%, #1e3a5f 50%, #1d4ed8 100%);
+}
+
+.auth-admin-visual-contenido {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 360px;
+}
+
+.auth-admin-icono-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin: 0 auto 24px;
+}
+
+.auth-admin-titulo {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.auth-admin-subtitulo {
+  font-size: 14.5px;
+  opacity: 0.80;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.auth-admin-roles-wrap {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: var(--radio-lg);
+  padding: 20px;
+  text-align: left;
+}
+
+.auth-admin-roles-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+  margin-bottom: 14px;
+}
+
+.auth-admin-roles-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-admin-rol-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+}
+
+.auth-admin-rol-icono {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.auth-admin-aviso {
+  font-size: 12px;
+  opacity: 0.45;
+  margin-top: 28px;
+  line-height: 1.6;
+}
+
+/* ---- Formulario admin ---- */
+.auth-formulario-admin { background: #f8fafc; }
+
+.auth-logo-icon-admin {
+  background: linear-gradient(135deg, #1d4ed8, #0f172a);
+}
+
+.auth-admin-form-titulo { color: var(--texto-principal); }
+
+.alerta-acceso-restringido {
+  background: #fef9e7;
+  border: 1px solid #fde68a;
+  border-left: 3px solid #f59e0b;
+  border-radius: var(--radio-md);
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #78350f;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+.alerta-acceso-link {
+  color: #b45309;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.alerta-error-admin {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-left: 3px solid #f43f5e;
+  border-radius: var(--radio-md);
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: #7f1d1d;
+  margin-bottom: 20px;
+  display: none;
+}
+
+/* ---- Campos con icono izquierdo ---- */
+.campo-icono-wrap { position: relative; }
+
+.campo-icono-izq {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.campo-con-icono { padding-left: 40px; }
+
+.campo-ayuda {
+  font-size: 12px;
+  color: var(--texto-tenue);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ---- Botón submit admin ---- */
+.btn-admin-submit {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  color: white;
+  border: none;
+  margin-top: 8px;
+  font-size: 15px;
+  padding: 13px;
+}
+.btn-admin-submit:hover {
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+  transform: translateY(-1px);
+}
+
+/* ---- Volver y soporte ---- */
+.auth-admin-volver-wrap {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.auth-admin-volver-link {
+  font-size: 13.5px;
+  color: var(--texto-tenue);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  transition: color var(--transicion);
+}
+.auth-admin-volver-link:hover { color: var(--texto-secundario); }
+
+.auth-admin-soporte {
+  border-top: 1px solid #e2e8f0;
+  margin-top: 28px;
+  padding-top: 18px;
+  text-align: center;
+}
+
+.auth-admin-soporte-texto {
+  font-size: 12px;
+  color: var(--texto-tenue);
+  line-height: 1.6;
+}
+
+.auth-admin-soporte-email {
+  color: var(--verde-principal);
+  font-weight: 600;
+  text-decoration: none;
+}
+.auth-admin-soporte-email:hover { text-decoration: underline; }

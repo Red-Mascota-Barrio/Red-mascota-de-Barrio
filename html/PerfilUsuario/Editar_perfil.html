@@ -1,86 +1,218 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/Editar_perfil.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red De Mascotas</title>
-    <link rel="icon" type="image/x-icon" href="../../img/LogoPagina.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar perfil — Red de Mascotas</title>
+  <link rel="icon" href="../../img/LogoPagina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/perfil.css">
 </head>
-
 <body>
 
-    <header class="topbar">
-        <div class="logo"><img src="/img/logopricipal.jpg">
-            <p>Red de Mascotas de Barrio</p>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="../InicioPagina/inicio.html" class="navbar-marca">
+      <div class="navbar-marca-logo">🐾</div>
+      Red de Mascotas de Barrio
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="../InicioPagina/inicio.html">Inicio</a></li>
+      <li><a href="../Mascotas/busqueda.html">Adoptar</a></li>
+      <li><a href="../Foro/foro.html">Foros</a></li>
+      <li><a href="../Eventos/Eventos.html">Eventos</a></li>
+    </ul>
+    <div class="navbar-acciones">
+      <a href="perfil_Usuario.html" class="btn btn-ghost btn-sm">← Mi perfil</a>
+    </div>
+  </nav>
+
+  <!-- LAYOUT -->
+  <div class="perfil-layout">
+
+    <!-- NAV LATERAL -->
+    <nav class="perfil-nav" aria-label="Secciones del perfil">
+      <a href="#datos"          class="perfil-nav-item activo">👤 Datos personales</a>
+      <a href="#seguridad"      class="perfil-nav-item">🔒 Seguridad</a>
+      <a href="#notificaciones" class="perfil-nav-item">🔔 Notificaciones</a>
+      <div class="perfil-nav-divider"></div>
+      <a href="perfil_Usuario.html" class="perfil-nav-item">← Volver al perfil</a>
+    </nav>
+
+    <!-- FORMULARIOS -->
+    <div>
+
+      <!-- Foto de perfil -->
+      <div class="perfil-seccion">
+        <div class="perfil-seccion-header">
+          <div>
+            <h2>Foto de perfil</h2>
+            <p>Imagen que verán otros usuarios en el foro y publicaciones</p>
+          </div>
         </div>
-
-        <div class="flex-1">
-            <nav>
-            <a href="../InicioPagina/inicio.html">Inicio</a>
-            <a href="../Mascotas/busqueda.html">Adopta</a>
-            <a href="../Foro/foro.html">Foros</a>
-            <a href="../Eventos/Eventos.html">Eventos</a>
-            <a href="../Perfil Usuario/MascotasUsuario.html">Mascotas</a>
-            </nav>
-
-            <div class="perfil"></div>
+        <div class="perfil-seccion-body">
+          <div class="avatar-upload-wrap">
+            <img id="previewAvatar" src="../../img/perfilEnBlanco.jpg" alt="Foto de perfil actual"
+                 class="avatar-upload-img"
+                 onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2288%22 height=%2288%22><rect width=%2288%22 height=%2288%22 rx=%2244%22 fill=%22%23e8f7f1%22/><text x=%2244%22 y=%2257%22 text-anchor=%22middle%22 font-size=%2232%22 fill=%22%23064e3b%22 font-weight=%22bold%22 font-family=%22sans-serif%22>JP</text></svg>'">
+            <div class="avatar-upload-info">
+              <h3>Cambiar foto</h3>
+              <p>JPG o PNG · máximo 3 MB</p>
+              <label class="avatar-upload-btn">
+                📷 Subir imagen
+                <input type="file" id="inputAvatar" accept="image/jpeg,image/png" class="input-oculto">
+              </label>
+            </div>
+          </div>
         </div>
+      </div>
 
-    </header>
-
-    <div class="contenedor">
-        <div class="formulario">
-            <h2>Editar perfil</h2>
-
-            <div class="fila">
-                <div>
-                    <label>Nombre*</label>
-                    <input type="text" placeholder="Nombre del evento">
-                </div>
-            </div>
-
-            <br>
-
-            <div class="fila">
-                <div>
-                    <label>Telefono*</label>
-                    <input type="text" placeholder="Telefono del usuario">
-                </div>
-            </div>
-
-            <br>
-
-            <div class="fila">
-                <div>
-                    <label>Correo Electrónico*</label>
-                    <input type="text" placeholder="Correo electrónico del usuario">
-                </div>
-            </div>
-
-            <br>
-
-            <div class="fila">
-                <div>
-                    <label>Descripción*</label>
-                    <input type="text" placeholder="Descripción del usuario">
-                </div>
-            </div>
-
-            <br>
-
-            <div class="acciones">
-                <a href="perfil_Usuario.html"><button type="button"
-                        class="cancelar">Cancelar</button></a>
-                <button type="button" class="guardar" onclick="Editar_perfil()">Guardar Perfil</button>
-            </div>
+      <!-- Datos personales -->
+      <div class="perfil-seccion" id="datos">
+        <div class="perfil-seccion-header">
+          <div>
+            <h2>Datos personales</h2>
+            <p>Tu información pública en la plataforma</p>
+          </div>
         </div>
+        <div class="perfil-seccion-body">
+          <form id="formEditarPerfil" novalidate>
+            <div class="form-grid-2">
+              <div class="grupo-campo">
+                <label for="editNombre">Nombre completo</label>
+                <input type="text" id="editNombre" class="campo" value="Juan Pérez" required>
+              </div>
+              <div class="grupo-campo">
+                <label for="editUsuario">Nombre de usuario</label>
+                <input type="text" id="editUsuario" class="campo" value="juan_perez" required>
+              </div>
+            </div>
+            <div class="form-grid-2">
+              <div class="grupo-campo">
+                <label for="editCorreo">Correo electrónico</label>
+                <input type="email" id="editCorreo" class="campo" value="juan.perez@correo.com" required>
+              </div>
+              <div class="grupo-campo">
+                <label for="editTelefono">Teléfono</label>
+                <input type="tel" id="editTelefono" class="campo" value="3001234567">
+              </div>
+            </div>
+            <div class="grupo-campo">
+              <label for="editBarrio">Barrio</label>
+              <input type="text" id="editBarrio" class="campo" value="El Pinar" placeholder="Tu barrio en Bucaramanga">
+            </div>
+            <div class="grupo-campo">
+              <label for="editBio">Sobre mí</label>
+              <textarea id="editBio" class="campo campo-textarea" rows="3"
+                placeholder="Cuéntale a la comunidad sobre ti y tus mascotas…">Me encantan los animales y disfruto conectando con otros dueños de mascotas en el barrio.</textarea>
+            </div>
+            <div class="perfil-form-acciones">
+              <a href="perfil_Usuario.html" class="btn btn-ghost">Cancelar</a>
+              <button type="submit" class="btn btn-primario">Guardar cambios</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Seguridad -->
+      <div class="perfil-seccion" id="seguridad">
+        <div class="perfil-seccion-header">
+          <div>
+            <h2>Seguridad</h2>
+            <p>Cambia tu contraseña de acceso</p>
+          </div>
+        </div>
+        <div class="perfil-seccion-body">
+          <form novalidate>
+            <div class="grupo-campo">
+              <label for="passActual">Contraseña actual</label>
+              <input type="password" id="passActual" class="campo" placeholder="••••••••" required autocomplete="current-password">
+            </div>
+            <div class="form-grid-2">
+              <div class="grupo-campo">
+                <label for="passNueva">Nueva contraseña</label>
+                <input type="password" id="passNueva" class="campo" placeholder="Mínimo 8 caracteres" required autocomplete="new-password">
+              </div>
+              <div class="grupo-campo">
+                <label for="passConfirmar">Confirmar contraseña</label>
+                <input type="password" id="passConfirmar" class="campo" placeholder="Repite la nueva contraseña" required autocomplete="new-password">
+              </div>
+            </div>
+            <div class="perfil-form-acciones perfil-form-acciones-derecha">
+              <button type="submit" class="btn btn-primario">Actualizar contraseña</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Notificaciones -->
+      <div class="perfil-seccion" id="notificaciones">
+        <div class="perfil-seccion-header">
+          <div>
+            <h2>Notificaciones</h2>
+            <p>Elige qué avisos quieres recibir por correo</p>
+          </div>
+        </div>
+        <div class="perfil-seccion-body">
+          <div class="notif-lista">
+
+            <label class="notif-item">
+              <div class="notif-item-texto">
+                <div class="notif-item-titulo">Nuevos mensajes</div>
+                <div class="notif-item-sub">Cuando alguien te contacta por una mascota</div>
+              </div>
+              <input type="checkbox" checked class="notif-checkbox">
+            </label>
+
+            <label class="notif-item">
+              <div class="notif-item-texto">
+                <div class="notif-item-titulo">Respuestas en el foro</div>
+                <div class="notif-item-sub">Cuando responden tus hilos o comentarios</div>
+              </div>
+              <input type="checkbox" checked class="notif-checkbox">
+            </label>
+
+            <label class="notif-item">
+              <div class="notif-item-texto">
+                <div class="notif-item-titulo">Eventos del barrio</div>
+                <div class="notif-item-sub">Nuevas jornadas de vacunación y ferias</div>
+              </div>
+              <input type="checkbox" checked class="notif-checkbox">
+            </label>
+
+            <label class="notif-item">
+              <div class="notif-item-texto">
+                <div class="notif-item-titulo">Boletín semanal</div>
+                <div class="notif-item-sub">Resumen de actividad de la comunidad</div>
+              </div>
+              <input type="checkbox" class="notif-checkbox">
+            </label>
+
+          </div>
+          <div class="perfil-form-acciones perfil-form-acciones-derecha perfil-notif-guardar">
+            <button type="button" class="btn btn-primario">Guardar preferencias</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zona de peligro -->
+      <div class="zona-peligro">
+        <div>
+          <h3>Eliminar cuenta</h3>
+          <p>Esta acción es irreversible. Se borrarán todos tus datos y publicaciones.</p>
+        </div>
+        <button type="button" class="btn btn-sm btn-eliminar-cuenta"
+          onclick="if(confirm('¿Seguro que deseas eliminar tu cuenta? Esta acción no se puede deshacer.')) alert('Función disponible próximamente.')">
+          Eliminar cuenta
+        </button>
+      </div>
 
     </div>
+  </div>
 
+  <script src="../../js/perfil.js" defer></script>
 </body>
-
-<script src="../../js/Editar_perfil.js"></script>
-
 </html>
